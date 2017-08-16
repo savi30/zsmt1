@@ -1,0 +1,16 @@
+<mvc:View controllerName="zsmt1.controller.App" xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	<App class="zsmt1">
+		<pages>
+			<Page class="myCustomText" title="{i18n>homePageTitle}">
+				<content>
+					<Button text="{i18n>selectEmployeeText}" press="onSelectEmployee"
+						class="myCustomButton" icon="sap-icon://employee"/>
+					<Button text="{i18n>selectManagerText}" press="onSelectManager"
+						class="myCustomButton" icon="sap-icon://manager"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+
+</mvc:View>
