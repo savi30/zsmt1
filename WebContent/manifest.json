@@ -50,7 +50,7 @@
 		  "bundleName": "zsmt1.i18n.i18n"
 		}
 	  },
-	  "invoice": {
+	  "": {
 	    "dataSource":"invoiceRemote"
 	  }
 	},

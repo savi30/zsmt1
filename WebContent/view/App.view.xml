@@ -5,10 +5,30 @@
 			<Page class="myCustomText" title="{i18n>homePageTitle}">
 				<content>
 					<Button text="{i18n>selectEmployeeText}" press="onSelectEmployee"
-						class="myCustomButton" icon="sap-icon://employee"/>
+						class="myCustomButton" icon="sap-icon://employee" />
 					<Button text="{i18n>selectManagerText}" press="onSelectManager"
-						class="myCustomButton" icon="sap-icon://manager"/>
+						class="myCustomButton" icon="sap-icon://manager" />
 				</content>
+				<List id="employeeList" class="sapUiResponsiveMargin" width="auto"
+					items="{
+					path:'/EmployeeSet',
+					sorter : {
+							path : 'IdSrvU',
+							group : true
+						}
+					}">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="{i18n>employeeListTitle}" />
+							<ToolbarSpacer />
+						</Toolbar>
+					</headerToolbar>
+					<items>
+						<ObjectListItem title="{Name}"
+							type="Navigation" press="onPress">
+						</ObjectListItem>
+					</items>
+				</List>
 			</Page>
 		</pages>
 	</App>

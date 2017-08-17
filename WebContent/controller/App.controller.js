@@ -1,12 +1,16 @@
 sap.ui.define([
 	"jquery.sap.global",
-   "sap/ui/core/mvc/Controller",
+   "zsmt1/controller/BaseController",
    "sap/m/MessageToast",
    "sap/ui/model/resource/ResourceModel"
-], function (JQuery, Controller, MessageToast, ResourceModel) {
+], function (JQuery, BaseController, MessageToast, ResourceModel) {
    "use strict";
   
-   return Controller.extend("zsmt1.controller.App", {
+   return BaseController.extend("zsmt1.controller.App", {
+	   
+		onPress: function (oEvent) {
+			MessageToast.show("employee selected");
+		},
 	   
 	   onSelectEmployee:function(evt){
 
@@ -15,6 +19,7 @@ sap.ui.define([
 	   onSelectManager:function(evt){
 
 	         MessageToast.show("manager");
-	   }
-   });
+	   },
+
+	});
 });
