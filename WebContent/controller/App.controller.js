@@ -8,18 +8,20 @@ sap.ui.define([
   
    return BaseController.extend("zsmt1.controller.App", {
 	   
-		onPress: function (oEvent) {
-			MessageToast.show("employee selected");
-		},
-	   
-	   onSelectEmployee:function(evt){
+	   onSelectEmployee:function(oEvent){
 
-	         MessageToast.show("employee");
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("login", {
+				isManager: "false"
+			});
 	   },
 	   onSelectManager:function(evt){
 
-	         MessageToast.show("manager");
-	   },
+		   var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("login", {
+				isManager: "true"
+			});
+	   }
 
 	});
 });

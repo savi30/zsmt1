@@ -54,6 +54,36 @@
 	    "dataSource":"invoiceRemote"
 	  }
 	},
+	"routing": {
+	  "config": {
+		"routerClass": "sap.m.routing.Router",
+		"viewType": "XML",
+		"viewPath": "zsmt1.view",
+		"controlId": "app",
+		"controlAggregation": "pages"
+	  },
+	  "routes": [
+		{
+		  "pattern": "",
+		  "name": "App",
+		  "target": "App"
+		},
+		{
+		  "pattern": "login/{isManager}",
+		  "name": "login",
+		  "target": "login"
+		}
+	  ],
+	  "targets": {
+		"App": {
+		  "viewName": "App"
+		},
+		"login": {
+		  "viewName": "Login",
+		  "transition": "flip"
+		}
+	  }
+	},
 	"resources": {
 	  "css": [
 		{

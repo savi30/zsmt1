@@ -18,6 +18,8 @@ sap.ui.define([
 	             bundleName : "zsmt1.i18n.i18n"
 	          });
 	          this.setModel(i18nModel, "i18n");
+	          
+	          this.getRouter().initialize();
 			
 		}
 	});

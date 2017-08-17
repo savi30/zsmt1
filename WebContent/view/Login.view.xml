@@ -1,0 +1,6 @@
+<mvc:View controllerName="zsmt1.controller.Login" xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	
+	<Text id="userType"/>
+	
+</mvc:View>
