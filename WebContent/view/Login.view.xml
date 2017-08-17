@@ -1,6 +1,10 @@
 <mvc:View controllerName="zsmt1.controller.Login" xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-	
-	<Text id="userType"/>
-	
+	<Page title="{i18n>loginPageTitle}"
+		showNavButton="true"
+		navButtonPress="onNavBack">
+		<content>
+			<Text id="userType" />
+		</content>
+	</Page>
 </mvc:View>
