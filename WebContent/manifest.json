@@ -60,7 +60,10 @@
 		"viewType": "XML",
 		"viewPath": "zsmt1.view",
 		"controlId": "app",
-		"controlAggregation": "pages"
+		"controlAggregation": "pages",
+		"bypassed": {
+               "target": "notFound"
+            }
 	  },
 	  "routes": [
 		{
@@ -81,7 +84,11 @@
 		"login": {
 		  "viewName": "Login",
 		  "transition": "flip"
-		}
+		},
+            "notFound": {
+               "viewName": "NotFound",
+               "transition": "show"
+            }
 	  }
 	},
 	"resources": {
