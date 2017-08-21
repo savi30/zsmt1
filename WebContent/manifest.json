@@ -75,15 +75,28 @@
 		  "pattern": "login/{isManager}",
 		  "name": "login",
 		  "target": "login"
+		},
+		{
+		  "pattern": "employee/{employeeId}",
+		  "name": "employee",
+		  "target": "employee"
 		}
 	  ],
 	  "targets": {
 		"App": {
-		  "viewName": "App"
+		  "viewName": "App",
+		  "viewLevel":1
 		},
 		"login": {
 		  "viewName": "Login",
-		  "transition": "flip"
+		  "transition": "flip",
+		  "viewLevel":2
+		},
+		"employee":
+		{
+			"viewName":"Employee",
+			"viewLevel":3
+			
 		},
         "notFound": {
           "viewName": "NotFound",
