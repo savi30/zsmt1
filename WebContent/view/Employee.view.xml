@@ -9,7 +9,7 @@
 				<Button icon="sap-icon://menu2" press="handleOpenToolbar"
 				class="sapUiSmallMarginBottom"/>
 		</Toolbar>
-</headerContent>
+	</headerContent>
 	<mvc:XMLView viewName="zsmt1.view.EmployeeDetails"/> 
 	</Page>
 </mvc:View>
