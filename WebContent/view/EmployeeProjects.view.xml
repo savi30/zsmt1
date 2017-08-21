@@ -2,9 +2,5 @@
 	 xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<List id="employeeProjectList" class="sapUiResponsiveMargin" width="auto">
-		<items>
-			<ObjectListItem title="{Name}" type="Navigation">
-			</ObjectListItem>
-		</items>
 	</List>
 </mvc:View>

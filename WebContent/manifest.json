@@ -80,6 +80,11 @@
 		  "pattern": "employee/{employeeId}",
 		  "name": "employee",
 		  "target": "employee"
+		},
+		{
+		"pattern":"manager",
+		"name":"manager",
+		"target":"manager"
 		}
 	  ],
 	  "targets": {
@@ -98,9 +103,15 @@
 			"viewLevel":3
 			
 		},
-        "notFound": {
-          "viewName": "NotFound",
-          "transition": "show"
+
+		"manager":
+		{
+			"viewName":"Manager",
+			"viewLevel":3
+		},
+            "notFound": {
+               "viewName": "NotFound",
+               "transition": "show"
             }
 	  }
 	},
