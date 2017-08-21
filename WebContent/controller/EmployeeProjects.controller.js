@@ -16,7 +16,7 @@ sap.ui.define([
 		_onRouteMatched : function (oEvent) {
 			var oArgs, oView;
 			oArgs = oEvent.getParameter("arguments");
-			oView = this.getView();
+/*			oView = this.getView();
 			oView.bindElement({
 				path : "/EmployeeSet(" + oArgs.employeeId + ")/toProject",
 				events : {
@@ -28,7 +28,17 @@ sap.ui.define([
 						oView.setBusy(false);
 					}
 				}
-			});
+			
+			});*/
+			var oList = this.getView().byId("employeeProjectList");
+			oList.bindItems({
+                path :  "/EmployeeSet(" + oArgs.employeeId + ")/toProject",
+         
+                template : new sap.m.StandardListItem({
+                    title: "{Name}",
+                    description: "{CustName}"
+                })
+            }); 
 		},
 		_onBindingChange : function (oEvent) {
 			// No data for the binding
