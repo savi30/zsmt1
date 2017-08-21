@@ -85,9 +85,9 @@
 		  "viewName": "Login",
 		  "transition": "flip"
 		},
-            "notFound": {
-               "viewName": "NotFound",
-               "transition": "show"
+        "notFound": {
+          "viewName": "NotFound",
+          "transition": "show"
             }
 	  }
 	},
