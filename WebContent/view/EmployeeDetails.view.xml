@@ -1,14 +1,13 @@
 <mvc:View 
 	controllerName="zsmt1.controller.EmployeeDetail" 
 	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
 	xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core"
-	xmlns:f="sap.ui.layout.form"
 	xmlns:mvc="sap.ui.core.mvc">
-		
-			<VBox class="sapUiSmallMargin">
-		<f:Form id="FormDisplayEmpDetails"
-			editable="false">
+	
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="FormDisplayEmpDetails" editable="false">
 			<f:title>
 				<core:Title text="{Name} {Surname}" />
 			</f:title>

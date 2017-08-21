@@ -1,0 +1,5 @@
+<mvc:View controllerName="zsmt1.controller.EmployeeSkills"
+	 xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<List id="employeeSkillList" class="sapUiResponsiveMargin" width="auto"/>
+</mvc:View>

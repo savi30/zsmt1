@@ -11,7 +11,7 @@
 						<mvc:XMLView viewName="zsmt1.view.EmployeeProjects"/> 
 					</IconTabFilter>
 					<IconTabFilter id="skillsTab" text="skills" key="Skills">
-						
+						<mvc:XMLView viewName="zsmt1.view.EmployeeSkills"/> 
 					</IconTabFilter>
 				</items>
 			</IconTabBar>
