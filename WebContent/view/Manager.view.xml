@@ -1,0 +1,15 @@
+<mvc:View 
+	controllerName="zsmt1.controller.Manager" 
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page >
+	<headerContent>
+		<Toolbar id="managerToolBar">
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://menu2" press="handleOpenToolbar"
+				class="sapUiSmallMarginBottom"/>
+		</Toolbar>
+</headerContent>
+	<mvc:XMLView viewName="zsmt1.view.ManagerTabBar"/> 
+	</Page>
+</mvc:View>

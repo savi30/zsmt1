@@ -1,0 +1,24 @@
+<mvc:View controllerName="zsmt1.controller.SkillList" xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<List id="skillList" class="sapUiResponsiveMargin" width="auto"
+		items="{
+					path:'/SkillSet',
+					sorter : {
+							path : 'Name',
+							group : true
+						}
+					}"
+		> 
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>skillListTitle}" />
+				<ToolbarSpacer />
+			</Toolbar>
+		</headerToolbar>
+		<items>
+			<ObjectListItem title="{Name}" type="Navigation"
+				press="onPress">
+			</ObjectListItem>
+		</items>
+	</List>
+</mvc:View>
