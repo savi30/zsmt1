@@ -4,14 +4,7 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.ui.layout.form"
 	busyIndicatorDelay="0">
-	<App>
-	<Page
-		title="{i18n>appTitle}"
-		id="managerPage"
-		showNavButton="true"
-		navButtonPress="onNavBack"
-		class="sapUiResponsiveContentPadding">
-		<content>
+	
 			<IconTabBar
 				id="iconTabBar"
 				class="sapUiResponsiveContentPadding"
@@ -38,7 +31,5 @@
 					 
 				</items>
 			</IconTabBar>
-		</content>
-	</Page>
-	</App>
+	
 </mvc:View>

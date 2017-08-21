@@ -14,18 +14,7 @@ sap.ui.define([
 			
 			/*var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("manager").attachMatched(this._onRouteMatched, this)*/
-		},		
-		onNavBack: function () {
-			var oHistory = History.getInstance();
-			var sPreviousHash = oHistory.getPreviousHash();
-
-			if (sPreviousHash !== undefined) {
-				window.history.go(-1);
-			} else {
-				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-				oRouter.navTo("App", {}, true);
-			}
-		},
+		},				
 		
 		handleOpenToolbar : function (oEvent) {
 			var oButton = oEvent.getSource();

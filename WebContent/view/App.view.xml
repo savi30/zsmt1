@@ -2,14 +2,13 @@
 	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
 	<App class="zsmt1" id="app">
 		<pages>
-			<Page class="myCustomText" title="{i18n>homePageTitle}">
+			<Page class="myCustomText"  title="{i18n>homePageTitle}">
 				<content>
 					<Button text="{i18n>selectEmployeeText}" press="onSelectEmployee"
 						class="myCustomButton" icon="sap-icon://employee" />
 					<Button text="{i18n>selectManagerText}" press="onSelectManager"
 						class="myCustomButton" icon="sap-icon://manager" />
-					
-					<mvc:XMLView viewName="zsmt1.view.Manager"/> 
+			
 					
 				</content>
 			</Page>
