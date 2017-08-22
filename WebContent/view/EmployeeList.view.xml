@@ -1,0 +1,30 @@
+<mvc:View controllerName="zsmt1.controller.EmployeeList" xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<List id="projectList" class="sapUiResponsiveMargin" width="auto"
+		items="{
+					path:'/EmployeeSet',
+					sorter : {
+							path : 'Name'
+						}
+					}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>employeeListTitle}" />
+				<ToolbarSpacer />
+								<Title text="{i18n>employeeListNoProjects}" />
+			</Toolbar>
+		</headerToolbar>
+		<items>
+			<ObjectListItem title="{Name} {Surname}" type="Active"
+press="onPress"
+				number="{
+					parts:[{path:'NoProjects'}],
+					formatOptions: {showMeasure: false}
+				}"
+			numberState="{= ${NoProjects} > 50 ? 'Error' : 'Success'}">
+				
+			</ObjectListItem>
+		</items>
+	</List>
+</mvc:View>
+

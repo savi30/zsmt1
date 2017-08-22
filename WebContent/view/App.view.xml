@@ -8,9 +8,9 @@
 						class="myCustomButton" icon="sap-icon://employee" />
 					<Button text="{i18n>selectManagerText}" press="onSelectManager"
 						class="myCustomButton" icon="sap-icon://manager" />
-					<!--
-					<mvc:XMLView viewName="zsmt1.view.ProjectList"/> 
-					-->
+					
+					
+				
 				</content>
 			</Page>
 		</pages>
