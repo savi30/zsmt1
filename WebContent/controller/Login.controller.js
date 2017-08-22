@@ -6,18 +6,20 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 				SimpleType, ValidateException, JSONModel) {
 			"use strict";
 
-			var isManager ;
+			var isManager;
 			var username;
 			var password;
 			var oRouter;
 			return BaseController.extend("zsmt1.controller.Login", {
 
 				onInit : function() {
-					
+
 					oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-					oRouter.getRoute("login").attachMatched(this._onRouteMatched, this);
+					oRouter.getRoute("login").attachMatched(
+							this._onRouteMatched, this);
 					username = this.getView().byId("nameInput").setValue("");
-					password = this.getView().byId("passwordInput").setValue("");
+					password = this.getView().byId("passwordInput")
+							.setValue("");
 
 				},
 
@@ -38,20 +40,34 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 							MessageBox.alert("Incorrect username or password");
 						}
 					} else {
-						
-						oRouter.navTo("employee",{
-							employeeId:password
-						});
+
+						var oModel = this.getView().getModel();
+						var sPath = "/EmployeeSet(" + password + ")";
+						try {
+							oModel.read(sPath, this);
+							var name = oModel.getProperty("/EmployeeSet("+password+")/Name");
+							var id = oModel.getProperty("/EmployeeSet("+password+")/IdEmployee");
+							if(name == username && password == id){
+							oRouter.navTo("employee", {
+								employeeId : password
+							});
+							}else{
+								MessageBox.alert("Incorrect username or password");
+							}
+						} catch (error) {
+							MessageBox.alert("Incorrect username or password");
+						}
 					}
 
 					username = this.getView().byId("nameInput").setValue("");
-					password = this.getView().byId("passwordInput").setValue("");
+					password = this.getView().byId("passwordInput")
+							.setValue("");
 				},
 
 				onNavBack : function() {
-					
-						oRouter.navTo("App", {}, true);
-					
+
+					oRouter.navTo("App", {}, true);
+
 				}
 
 			});
