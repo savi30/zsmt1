@@ -6,7 +6,7 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 				SimpleType, ValidateException, JSONModel) {
 			"use strict";
 
-			var isManager = false;
+			var isManager ;
 			var username;
 			var password;
 			var oRouter;
@@ -31,7 +31,7 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 
 					username = this.getView().byId("nameInput").getValue();
 					password = this.getView().byId("passwordInput").getValue();
-					if (isManager == true) {
+					if (isManager === "true") {
 						if (username == "Manager" && password == "1234") {
 							oRouter.navTo("manager");
 						} else {
