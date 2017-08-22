@@ -1,5 +1,5 @@
 <mvc:View 
-	controllerName="zsmt1.controller.EmployeeDetail" 
+	controllerName="zsmt1.controller.ProjectDetails" 
 	xmlns="sap.m"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:l="sap.ui.layout"
@@ -7,9 +7,9 @@
 	xmlns:mvc="sap.ui.core.mvc">
 	
 	<VBox class="sapUiSmallMargin">
-		<f:Form id="FormDisplayEmpDetails" editable="false">
+		<f:Form id="FormDisplayProjDetails" editable="false">
 			<f:title>
-				<core:Title text="{Name} {Surname}" />
+				<core:Title text="{Name} {CustName}" />
 			</f:title>
 			<f:layout>
 				<f:ResponsiveGridLayout
@@ -35,14 +35,9 @@
 								<Text text="{Name}" id="nameText"  />
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label="Surname">
+						<f:FormElement label="Customer">
 							<f:fields>
-								<Text text="{Surname}" id="surnameText"  />
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Active Projects">
-							<f:fields>
-								<Text text="{NoProjects}" id="projectsText"  />
+								<Text text="{CustName}" id="custNameText"  />
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>
@@ -50,7 +45,5 @@
 			</f:formContainers>
 		</f:Form>
 	</VBox>
-	
-	<mvc:XMLView viewName="zsmt1.view.EmployeeTabBar"/> 
 		
 </mvc:View>

@@ -1,10 +1,24 @@
 <mvc:View controllerName="zsmt1.controller.Login" xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-	<Page title="{i18n>loginPageTitle}"
-		showNavButton="true"
+	xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	<Page title="{i18n>loginPageTitle}" showNavButton="true"
 		navButtonPress="onNavBack">
 		<content>
-			<Text id="userType" />
+
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+				<l:content>
+
+					<Label text="username" labelFor="nameInput" />
+					<Input id="nameInput" class="sapUiSmallMarginBottom" type="Text"
+						placeholder="Enter Username ..." valueStateText="Name must not be empty. Maximum 30 characters."
+						 />
+
+					<Label text="Password" labelFor="passwordInput" />
+					<Input id="passwordInput" class="sapUiSmallMarginBottom" type="Password"
+						placeholder="Enter Password ..." valueStateText="Password must not be empty."
+						 />
+					<Button text="Login" press="handleLogin" />		
+				</l:content>
+			</l:VerticalLayout>
 		</content>
 	</Page>
 </mvc:View>

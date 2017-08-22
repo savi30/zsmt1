@@ -85,6 +85,11 @@
 		"pattern":"manager",
 		"name":"manager",
 		"target":"manager"
+		},
+		{
+		"pattern":"project/{projectId}",
+		"name":"project",
+		"target":"project"
 		}
 	  ],
 	  "targets": {
@@ -102,6 +107,11 @@
 			"viewName":"Employee",
 			"viewLevel":3
 			
+		},
+		"project":
+		{
+			"viewName":"Project",
+			"viewLevel":3
 		},
 		"manager":
 		{
