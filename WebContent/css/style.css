@@ -1,5 +1,5 @@
 .zsmt1 .myCustomButton.sapMBtn {
-  margin-right: 0.125rem
+  margin-right: 5.125rem
   
 }
 
@@ -11,6 +11,14 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 .zsmt1.myCustomText {
   font-weight: bold;
 }
+
+.zsmt1.myScreen {
+	background-attachment: fixed;
+	float: left;
+}
+
+
+
 
 /* .zsmt1.myCustomBody {
 	background-color: transparent !important;
