@@ -4,26 +4,33 @@
 		items="{
 					path:'/ProjectSet',
 					sorter : {
+							parameters:{
+							operationMode:'Client'
+							},
 							path : 'CustName',
 							group : true
 						}
 					}">
 		<!-- mode="SingleSelectLeft" -->
-			
+
 		<headerToolbar>
 			<Toolbar>
 				<Title text="{i18n>projectListTitle}" />
 				<ToolbarSpacer />
-				<Button text="{i18n>createProjectTitle}" press="onOpenDialog" 
-			class="myCustomButton" icon="sap-icon://create"/>
-				
+				<Button text="{i18n>createProjectTitle}" press="onOpenDialog"
+					class="myCustomButton" icon="sap-icon://create" />
+
 			</Toolbar>
 		</headerToolbar>
-		
 		<items>
-			<ObjectListItem title="{Name}" type="Navigation"
-				press="onPress">				
-			</ObjectListItem>			
-		</items>
+			<CustomListItem type="Navigation" press="onPress">
+				<FlexBox alignItems="Start" justifyContent="SpaceBetween" >
+				
+						<Label text="{Name}"/>
+						<Button icon="sap-icon://edit"  press="onEditProject" />
+				
+				</FlexBox>
+			</CustomListItem>
+			</items>
 	</List>
 </mvc:View>
