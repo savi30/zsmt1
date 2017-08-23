@@ -1,40 +1,42 @@
 <mvc:View controllerName="zsmt1.controller.Login" xmlns="sap.m"
 	xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-	
-		<Page title="{i18n>loginPageTitle}" showNavButton="true"
-			navButtonPress="onNavBack">
-			<content>
-				<l:VerticalLayout class="sapUiContentPadding"
-					width="100%">
-					<l:content>
-						<Panel>
 
-							<FlexBox 
-								class="myFlexContainer">
-								<items>
-									<Label text="Username" labelFor="nameInput" />
-									<Input id="nameInput" class="sapUiSmallMarginBottom"
-										type="Text" placeholder="Enter Username ..."
-										valueStateText="Username must not be empty. Maximum 30 characters." />
+	<Page title="{i18n>loginPageTitle}" showNavButton="true"
+		navButtonPress="onNavBack" class="myPage">
+		<content>
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+				<l:content>
+					
 
-									<Label text="Password" labelFor="passwordInput" />
-									<Input id="passwordInput" class="sapUiSmallMarginBottom"
-										type="Password" placeholder="Enter Password ..."
-										valueStateText="Password must not be empty." />
-									<Button text="Login" press="handleLogin"
-										 class="myLoginButton"/>
+						<FlexBox class="myFlexContainer">
 
+							<VBox class="myVbox">
+								<Label text="Username" labelFor="nameInput" />
 
+								<Input id="nameInput" class="sapUiSmallMarginBottom" type="Text"
+									placeholder="Enter Username ..."
+									valueStateText="Username must not be empty. Maximum 30 characters." />
 
-								</items>
-							</FlexBox>
+								<Label text="Password" labelFor="passwordInput" />
 
-						</Panel>
+								<Input id="passwordInput" class="sapUiSmallMarginBottom"
+									type="Password" placeholder="Enter Password ..."
+									valueStateText="Password must not be empty." />
+							</VBox>
+							<VBox class="myVboxButton">
+								<Button text="Login" press="handleLogin" class="myLoginButton" />
+							</VBox>
 
 
-					</l:content>
-				</l:VerticalLayout>
-			</content>
-		</Page>
+
+						</FlexBox>
+
+			
+
+
+				</l:content>
+			</l:VerticalLayout>
+		</content>
+	</Page>
 
 </mvc:View>

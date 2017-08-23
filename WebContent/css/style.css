@@ -1,15 +1,14 @@
 .zsmt1 .myCustomButton.sapMBtn {
-  margin-right: 5.125rem
-  
+	margin-right: 5.125rem
 }
 
 html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
-  margin-left: 0.125rem;
-  margin-right: 0 
+	margin-left: 0.125rem;
+	margin-right: 0
 }
 
 .zsmt1 .myCustomText {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .zsmt1 .myScreen {
@@ -17,32 +16,57 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 	float: left;
 }
 
-.zsmt1 .myLoginButton.sapMBtn {
-	background-color: #2d55ce; /* Green */
-    border: none;
-   	width: 50%;
-   	align: center;
-    border-radius: 4px;
-    text-align: center;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+.zsmt1 .myVbox {
+	align-self: center;
+	justify-self: center;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.zsmt1 .myVboxButton {
+	align-self: center;
+	justify-self: center;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.zsmt1 .myPanel {
+	background-color: blue;
+	height: 100%;
+	
+}
+
+.zsmt1 .myLoginButton {
+	background-color: #82abf7; /* Green */
+	border: none;
+	width: 100%;
+	border-radius: 4px;
+	text-align: center;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
 
 .zsmt1 .myFlexContainer {
-    display: -webkit-flex;
-    display: flex;
-    
-   
-    flex-direction: column;
-    -webkit-justify-content: center;
-    justify-content: center;
-    width: 70%;
-    height: 100%;
-    background-color: lightblue;
+	display: -webkit-flex;
+	display: flex;
+	align-self: center;
+	justify-self: center;
+	flex-direction: column;
+	width: 30%;
+	height: 100%;
+	padding: 50px;
+	border: 4px blue; margin-right : auto;
+	margin-left: auto;
+	margin-right: auto; margin-left : auto;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
-
-
-
-
 
 /* .zsmt1 .myCustomBody {
 	background-color: transparent !important;
