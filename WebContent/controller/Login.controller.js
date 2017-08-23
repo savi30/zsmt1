@@ -10,6 +10,7 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 			var username;
 			var password;
 			var oRouter;
+			var oModel;
 			return BaseController.extend("zsmt1.controller.Login", {
 
 				onInit : function() {
@@ -30,24 +31,24 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 				},
 
 				handleLogin : function(oEvent) {
-
+					
+					oModel = this.getView().getModel();
 					username = this.getView().byId("nameInput").getValue();
 					password = this.getView().byId("passwordInput").getValue();
 					if (isManager === "true") {
-						if (username == "Manager" && password == "1234") {
+						if (username == "manager" && password == "1234") {
 							oRouter.navTo("manager");
 						} else {
 							MessageBox.alert("Incorrect username or password");
 						}
 					} else {
 
-						var oModel = this.getView().getModel();
 						var sPath = "/EmployeeSet(" + password + ")";
 						try {
 							oModel.read(sPath, this);
 							var name = oModel.getProperty("/EmployeeSet("+password+")/Name");
 							var id = oModel.getProperty("/EmployeeSet("+password+")/IdEmployee");
-							if(name == username && password == id){
+							if( username.toUpperCase()==name && password == id){
 							oRouter.navTo("employee", {
 								employeeId : password
 							});
