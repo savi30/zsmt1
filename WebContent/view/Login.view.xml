@@ -1,24 +1,40 @@
 <mvc:View controllerName="zsmt1.controller.Login" xmlns="sap.m"
 	xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-	<Page title="{i18n>loginPageTitle}" showNavButton="true"
-		navButtonPress="onNavBack">
-		<content>
+	
+		<Page title="{i18n>loginPageTitle}" showNavButton="true"
+			navButtonPress="onNavBack">
+			<content>
+				<l:VerticalLayout class="sapUiContentPadding"
+					width="100%">
+					<l:content>
+						<Panel>
 
-			<l:VerticalLayout class="sapUiContentPadding" width="100%">
-				<l:content>
+							<FlexBox 
+								class="myFlexContainer">
+								<items>
+									<Label text="Username" labelFor="nameInput" />
+									<Input id="nameInput" class="sapUiSmallMarginBottom"
+										type="Text" placeholder="Enter Username ..."
+										valueStateText="Username must not be empty. Maximum 30 characters." />
 
-					<Label text="username" labelFor="nameInput" />
-					<Input id="nameInput" class="sapUiSmallMarginBottom" type="Text"
-						placeholder="Enter Username ..." valueStateText="Name must not be empty. Maximum 30 characters."
-						 />
+									<Label text="Password" labelFor="passwordInput" />
+									<Input id="passwordInput" class="sapUiSmallMarginBottom"
+										type="Password" placeholder="Enter Password ..."
+										valueStateText="Password must not be empty." />
+									<Button text="Login" press="handleLogin"
+										 class="myLoginButton"/>
 
-					<Label text="Password" labelFor="passwordInput" />
-					<Input id="passwordInput" class="sapUiSmallMarginBottom" type="Password"
-						placeholder="Enter Password ..." valueStateText="Password must not be empty."
-						 />
-					<Button text="Login" press="handleLogin" />		
-				</l:content>
-			</l:VerticalLayout>
-		</content>
-	</Page>
+
+
+								</items>
+							</FlexBox>
+
+						</Panel>
+
+
+					</l:content>
+				</l:VerticalLayout>
+			</content>
+		</Page>
+
 </mvc:View>
