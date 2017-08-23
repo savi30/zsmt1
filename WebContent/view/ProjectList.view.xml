@@ -8,16 +8,22 @@
 							group : true
 						}
 					}">
+		<!-- mode="SingleSelectLeft" -->
+			
 		<headerToolbar>
 			<Toolbar>
 				<Title text="{i18n>projectListTitle}" />
 				<ToolbarSpacer />
+				<Button text="{i18n>createProjectTitle}" press="onOpenDialog" 
+			class="myCustomButton" icon="sap-icon://create"/>
+				
 			</Toolbar>
 		</headerToolbar>
+		
 		<items>
 			<ObjectListItem title="{Name}" type="Navigation"
-				press="onPress">
-			</ObjectListItem>
+				press="onPress">				
+			</ObjectListItem>			
 		</items>
 	</List>
 </mvc:View>

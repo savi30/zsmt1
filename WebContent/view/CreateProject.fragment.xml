@@ -1,0 +1,86 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"> 
+	
+	<Dialog
+		id="createDialog"
+		title="{i18n>createProject}">
+		<content>
+		<l:VerticalLayout
+		class="sapUiContentPadding"
+		width="100%"> 
+		
+		<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormToolbar"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			
+			<f:content>				
+				<Label text="{i18n>projectName}" />
+				<Input type="Text"
+						placeholder="Enter name ..." />
+						
+				<Label text="{i18n>custName}" />
+				<Input type="Text"
+						placeholder="Enter customer name ..."/>
+						
+				<Label text="{i18n>budgetDays}"/>
+				<Input  type="Number"
+						placeholder="Enter budget days for this project ..."/>
+				
+				<Label text="{i18n>startProject}" labelFor="DP1"/>
+				<DatePicker
+					id="DP1"
+					placeholder="Enter start date ..."
+					change="handleChange"
+					class="sapUiSmallMarginBottom"/>
+				
+				<Label text="{i18n>endProject}" labelFor="DP2"/>
+				<DatePicker
+					id="DP2"
+					placeholder="Enter end date ..."
+					change="handleChange"
+					class="sapUiSmallMarginBottom"/>
+										
+				
+				</f:content>
+			</f:SimpleForm>
+		 </VBox>	
+	</l:VerticalLayout>
+</content>
+		
+		<beginButton>
+					
+			<Button 
+			text="{i18n>closeButtonText}"
+			press="onCloseDialog" />	
+		</beginButton>
+		
+		<endButton>
+			<Button 
+			text="{i18n>saveButtonText}"
+			press="onSaveDialog"/>
+		</endButton>
+		
+		
+	</Dialog>
+	
+
+</core:FragmentDefinition>
+	
+	

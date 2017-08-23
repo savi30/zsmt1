@@ -10,6 +10,10 @@
 				class="sapUiSmallMarginBottom"/>
 		</Toolbar>
 	</headerContent>
-	<mvc:XMLView viewName="zsmt1.view.EmployeeDetails"/> 
+	
+	<Panel id="EmployeeDetailsFragment"/>
+	
+	<mvc:XMLView viewName="zsmt1.view.EmployeeTabBar"/> 
+	
 	</Page>
 </mvc:View>

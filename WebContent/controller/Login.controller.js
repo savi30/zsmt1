@@ -6,18 +6,21 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 				SimpleType, ValidateException, JSONModel) {
 			"use strict";
 
-			var isManager = false;
+			var isManager;
 			var username;
 			var password;
 			var oRouter;
+			var oModel;
 			return BaseController.extend("zsmt1.controller.Login", {
 
 				onInit : function() {
-					
+
 					oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-					oRouter.getRoute("login").attachMatched(this._onRouteMatched, this);
+					oRouter.getRoute("login").attachMatched(
+							this._onRouteMatched, this);
 					username = this.getView().byId("nameInput").setValue("");
-					password = this.getView().byId("passwordInput").setValue("");
+					password = this.getView().byId("passwordInput")
+							.setValue("");
 
 				},
 
@@ -28,29 +31,44 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 				},
 
 				handleLogin : function(oEvent) {
-
+					
+					oModel = this.getView().getModel();
 					username = this.getView().byId("nameInput").getValue();
 					password = this.getView().byId("passwordInput").getValue();
-					if (isManager == true) {
-						if (username == "Manager" && password == "1234") {
+					if (isManager === "true") {
+						if (username == "manager" && password == "1234") {
 							oRouter.navTo("manager");
 						} else {
 							MessageBox.alert("Incorrect username or password");
 						}
 					} else {
-						oRouter.navTo("employee",{
-							employeeId:password
-						});
+
+						var sPath = "/EmployeeSet(" + password + ")";
+						try {
+							oModel.read(sPath, this);
+							var name = oModel.getProperty("/EmployeeSet("+password+")/Name");
+							var id = oModel.getProperty("/EmployeeSet("+password+")/IdEmployee");
+							if( username.toUpperCase()==name && password == id){
+							oRouter.navTo("employee", {
+								employeeId : password
+							});
+							}else{
+								MessageBox.alert("Incorrect username or password");
+							}
+						} catch (error) {
+							MessageBox.alert("Incorrect username or password");
+						}
 					}
 
 					username = this.getView().byId("nameInput").setValue("");
-					password = this.getView().byId("passwordInput").setValue("");
+					password = this.getView().byId("passwordInput")
+							.setValue("");
 				},
 
 				onNavBack : function() {
-					
-						oRouter.navTo("App", {}, true);
-					
+
+					oRouter.navTo("App", {}, true);
+
 				}
 
 			});
