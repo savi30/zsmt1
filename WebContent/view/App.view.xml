@@ -4,7 +4,7 @@
 		<pages>
 			<Page class="myCustomText"  title="{i18n>homePageTitle}">
 				<content>
-				<Image class="myScreen" src="image/mhpcar.jpg"></Image>
+					<Image class="myScreen" src="image/porscheman.jpg"></Image>
 					<Button text="{i18n>selectEmployeeText}" press="onSelectEmployee"
 						class="myCustomButton" icon="sap-icon://employee" />
 					<Button text="{i18n>selectManagerText}" press="onSelectManager"
