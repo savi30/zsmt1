@@ -1,6 +1,6 @@
 <mvc:View controllerName="zsmt1.controller.EmployeeList" xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<List id="projectList" class="sapUiResponsiveMargin" width="auto"
+	<Table id="employeeList" class="sapUiResponsiveMargin" width="auto"
 		items="{
 					path:'/EmployeeSet',
 					parameters:{
@@ -12,23 +12,47 @@
 							group : true
 						}
 					}">
-		<headerToolbar>
-			<Toolbar>
-				<Title text="{i18n>employeeListTitle}" />
-				<ToolbarSpacer />
-								<Title text="{i18n>employeeListNoProjects}" />
-			</Toolbar>
-		</headerToolbar>
+		<columns>
+			<Column width="12em">
+				<Text text="{i18n>employeeListTitle}" />
+			</Column>
+			
+			<Column minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="{i18n>consLeveltitle}" />
+			</Column>
+			
+			<Column minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="{i18n>workingHoursTitle}" />
+			</Column>
+			
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+				<Text text="{i18n>employeeListNoProjects}" />
+			</Column>
+		</columns>
+
 		<items>
-			<ObjectListItem title="{Name} {Surname}" type="Active" press="onPress"
-				number="{
+			<ColumnListItem type="Active" press="onPress">
+				<cells>
+					<ObjectIdentifier title="{Name} {Surname}" />
+
+					<Text text="{ConsultLevel}" />
+
+					<ObjectNumber number="{WorkingHours}" />
+
+					<ObjectNumber
+						number="{
 					parts:[{path:'NoProjects'}],
 					formatOptions: {showMeasure: false}
 				}"
-			numberState="{= ${NoProjects} > 4 ? 'Error' : ${NoProjects}> 1 ? 'Warning' :'Success'}">
-				
-			</ObjectListItem>
+						state="{= ${NoProjects} > 4 ? 'Error' : ${NoProjects}> 1 ? 'Warning' :'Success'}">
+					</ObjectNumber>
+				</cells>
+			</ColumnListItem>
 		</items>
-	</List>
+	</Table>
 </mvc:View>
 

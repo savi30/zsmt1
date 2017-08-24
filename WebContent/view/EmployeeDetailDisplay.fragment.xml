@@ -83,12 +83,7 @@
 								<Text text="{IdSrvU}" id="srvUnitText" />
 							</f:fields>
 						</f:FormElement>
-
-						<f:FormElement label="Last Modified">
-							<f:fields>
-								<Text text="{LastModified}" id="lastModText" />
-							</f:fields>
-						</f:FormElement>
+						
 						
 						</f:formElements>
 						</f:FormContainer>
