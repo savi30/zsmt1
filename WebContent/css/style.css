@@ -19,11 +19,6 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 	font-weight: bold;
 }
 
-.zsmt1 .myScreen {
-	background-attachment: fixed;
-	float: left;
-}
-
 .zsmt1 .myLoginImage {
 	display: flex;
 	width: 80%;
@@ -35,6 +30,30 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 	opacity: 0.8;
 	filter: alpha(opacity = 50);
 	width: 80%;
+}
+
+.zsmt1 .myAppImage {
+	display: flex;
+	width: 80%;
+	height: 50%;
+	align-self: center;
+	justify-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0.8;
+	filter: alpha(opacity = 50);
+}
+
+.zsmt1 .myScreen {
+	height: 40%;
+	align-self: center;
+	justify-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-right: auto;
 }
 
 .zsmt1 .myVbox {
@@ -51,16 +70,12 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 	width: 60%;
 	margin-left: auto;
 	margin-right: auto;
+	color: blue;
 }
 
 .zsmt1 .myBackgroundImage .sapMPageBgStandard {
 	background-image: url('HTML5_Badge_32.png');
 }
-
-.zsmt1 .myPage {
-	background-color: #82abf7;
-}
-
 
 .zsmt1 .myPanel {
 	display: -webkit-flex;
@@ -77,6 +92,36 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 	border-radius: 4px;
 }
 
+.zsmt1 .myAppPage {
+	width: 100%;
+	height: 100%;
+	background-color: #82abf7;
+}
+
+.zsmt1 .myAppImage {
+	width: 60%;
+	align-self: center;
+	justify-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+}
+
+.zsmt1 .myAppVbox {
+	padding: 4%;
+	align-content: center;
+	justify-content: center;
+}
+
+.zsmt1 .myAppVboxButtons {
+	padding: 4%;
+	width: 100%;
+	align-self: center;
+	justify-self: center;
+	align-content: center;
+	justify-content: center;
+}
+
 .zsmt1 .myLoginButton {
 	background-color: #82abf7; /* Green */
 	border: none;
@@ -85,6 +130,85 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 	text-align: center;
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
 		rgba(0, 0, 0, 0.19);
+}
+
+.zsmt1 .myLoginButton:hover {
+	background-color: #0000ff; /* Green */
+    color: white;
+}
+
+.zsmt1 .myAppButtonManager {
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	color: #82abf7; /* Green */
+	text-align: center;
+	align-self: center;
+	justify-self: center;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	border-radius: 8px;
+	width: 100%;
+	margin: auto;
+	margin-bottom: 3%;
+	
+}
+
+.zsmt1 .myAppButtonManager:hover {
+	background-color: #0000ff; /* Green */
+    color: white;
+}
+
+.zsmt1 .myAppButtonEmployee {
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	color: #82abf7; /* Green */
+	text-align: center;
+	align-self: center;
+	justify-self: center;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	border-radius: 8px;
+	width: 100%;
+	margin: auto;
+	margin-top: 3%;
+}
+
+.zsmt1 .myAppButtonEmployee:hover {
+	background-color: #0000ff; /* Green */
+    color: white;
+}
+
+.zsmt1 .myAppFlexContainer {
+	display: -webkit-flex;
+	display: flex;
+	align-self: center;
+	justify-self: center;
+	flex-direction: column;
+	width: 50%;
+	height: 100%;
+	padding: 6%;
+	border: 4px blue;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: white;
+	border-radius: 1px;
+	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0
+		rgba(0, 0, 0, 0.38);
+	justify-self: center;
+	border-radius: 4px;
+}
+
+.zsmt1 .myAppFlexBoxButtons {
+	display: -webkit-flex;
+	display: flex;
+	padding: 4%;
+	flex-direction: column;
+	width: 40%;
+	align-self: center;
+	justify-self: center;
+	align-content: center;
+	justify-content: center;
+
 }
 
 .zsmt1 .myFlexContainer {
