@@ -7,10 +7,10 @@
 				id="iconTabBar"
 				class="sapUiResponsiveContentPadding">
 				<items>
-					<IconTabFilter id="projectsTab" text="projects" key="Projects">
+					<IconTabFilter id="projectsTab" text="{i18n>projectListTitle}" key="Projects">
 						<mvc:XMLView viewName="zsmt1.view.ManagerEmployeeProjects"/> 
 					</IconTabFilter>
-					<IconTabFilter id="skillsTab" text="skills" key="Skills">
+					<IconTabFilter id="skillsTab" text="{i18n>skillListTitle}" key="Skills">
 						<mvc:XMLView viewName="zsmt1.view.ManagerEmployeeSkills"/> 
 					</IconTabFilter>
 				</items>

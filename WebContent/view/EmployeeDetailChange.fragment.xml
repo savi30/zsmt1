@@ -39,14 +39,8 @@
 							<f:fields>
 								<Input value="{Surname}" id="surnameValue"  />
 							</f:fields>
-						</f:FormElement>					
-												
-						<f:FormElement label="Working Hours">
-							<f:fields>
-								<Input value="{WorkingHours}" id="workingHoursValue"  />
-							</f:fields>
-						</f:FormElement>											
-						
+						</f:FormElement>																	
+																												
 						<f:FormElement label="Region">
 							<f:fields>
 								<Input value="{Region}" id="regionValue"  />
@@ -58,13 +52,6 @@
 								<Input value="{Country}" id="countryValue"  />
 							</f:fields>
 						</f:FormElement>
-						
-						<f:FormElement label="Service Unit">
-							<f:fields>
-								<Input value="{IdSrvU}" id="srvUnitValue"  />
-							</f:fields>
-						</f:FormElement>
-																							
 						
 					</f:formElements>
 				</f:FormContainer>
