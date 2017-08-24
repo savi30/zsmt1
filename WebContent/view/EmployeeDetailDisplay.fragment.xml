@@ -16,11 +16,11 @@
 			</f:layout>
 			
 			
-			<f:formContainers>
-				
-			
+			<f:formContainers>	
+	
 				<f:FormContainer >
-					<f:formElements class="myPos1">
+
+					<f:formElements >
 
 						<f:FormElement>
 							<f:fields>
@@ -30,11 +30,8 @@
 						</f:FormElement>
 						
 					</f:formElements>
-				</f:FormContainer>
-			
-	
-				<f:FormContainer>
-					<f:formElements class="myPos2">
+					
+					<f:formElements >
 			
 			
 						<f:FormElement label="Name">
@@ -84,8 +81,9 @@
 							</f:fields>
 						</f:FormElement>
 						
-						
 						</f:formElements>
+		
+						
 						</f:FormContainer>
 						
 
