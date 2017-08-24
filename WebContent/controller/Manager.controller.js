@@ -7,7 +7,7 @@ sap.ui.define([
 	"use strict";
 	return BaseController.extend("zsmt1.controller.Manager", {
 		onInit: function () {			
-		
+
 		},				
 		
 		handleOpenToolbar : function (oEvent) {
@@ -30,9 +30,6 @@ sap.ui.define([
 			oRouter.navTo("App", {}, true);
 		},
 		
-		onEdit:function(){
-			MessageToast.show("Implement Edit");
-		}
 		
 	});
 });

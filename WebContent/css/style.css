@@ -1,5 +1,6 @@
 .zsmt1 .myCustomButton.sapMBtn {
 	margin-right: 5.125rem
+
 }
 
 html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
@@ -10,7 +11,12 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 .zsmt1 .myCustomText {
 
 	font-weight: bold;
+}
 
+
+.zsmt1 .fontSize {
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .zsmt1 .myScreen {
@@ -115,11 +121,32 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 
 .zsmt1 .myFlexContainer-item--bottom {
 	align-self: flex-end;
+
 }
 
 .zsmt1 .myCustomBody {
 	background-color: transparent !important;
 	background-image: url("mhpcar.jpg") !important;
 	background-repeat: no-repeat;
+	background-size:cover;
+}  
+
+.zsmt1 .myEmployeeImage {
+	
+	height: 80px;
+	
+	 align-self: center;
+	justify-self: center;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+.zsmt1 .myPos1{
+	float: left;
+}
+
+.zsmt1 .myPos2{
+	float: right;
 	background-size: cover;
+
 }

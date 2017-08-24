@@ -7,7 +7,6 @@
 		placement="Bottom">
 		<buttons>
 			<Button text="Logout" icon="sap-icon://decline" press="onLogout"/>
-			<Button text="Edit" icon="sap-icon://edit"  press="onEdit"/>
 		</buttons>
 	</ActionSheet>
 </core:FragmentDefinition>
