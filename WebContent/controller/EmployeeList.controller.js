@@ -18,7 +18,7 @@ sap.ui.define([
 	   
 	   onPress:function(oEvent){
 		  
-		   oRouter.navTo("employee",{
+		   oRouter.navTo("managerEmployee",{
 			   employeeId : oEvent.getSource().getBindingContext().getProperty("IdEmployee")
 		   });
 	   }

@@ -90,6 +90,11 @@
 		"pattern":"project/{projectId}",
 		"name":"project",
 		"target":"project"
+		},
+		{
+		"pattern":"manager/{employeeId}",
+		"name":"managerEmployee",
+		"target":"managerEmployee"
 		}
 	  ],
 	  "targets": {
@@ -121,7 +126,13 @@
             "notFound": {
                "viewName": "NotFound",
                "transition": "show"
-            }
+            
+	  	},
+	  "managerEmployee":
+	  {
+	  		"viewName":"ManagerEmployee",
+	  		"viewLevel":3
+	  }
 	  }
 	},
 	"resources": {
