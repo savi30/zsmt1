@@ -11,25 +11,14 @@
 				binding="{Manager}">
 				<items>	
 					<IconTabFilter id="empTab" text="{i18n>employeeListTitle}" key="Employee">
-					<mvc:XMLView viewName="zsmt1.view.EmployeeList"></mvc:XMLView>	
+						<mvc:XMLView viewName="zsmt1.view.EmployeeList"></mvc:XMLView>	
 					</IconTabFilter>
-				
 					<IconTabFilter id="projectTab" text="{i18n>projectListTitle}" key="Projects">
 						<mvc:XMLView viewName="zsmt1.view.ProjectList"></mvc:XMLView>					
 					</IconTabFilter>
-					
 					<IconTabFilter id="reportTab" text="{i18n>reportTitle}" key="Reports">
-					</IconTabFilter>
 					
-
-<!--  doar pentru a vedea ca merge si lista de skill 
-					
-					<IconTabFilter id="skillTab" text="{i18n>skillListTitle}" key="Skills"> 
- 						<mvc:XMLView viewName="zsmt1.view.SkillList"></mvc:XMLView>	 
-					</IconTabFilter>
-					 -->
-					 
-					 
+					</IconTabFilter>					 
 				</items>
 			</IconTabBar>
 	

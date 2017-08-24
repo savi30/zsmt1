@@ -3,8 +3,13 @@
 	<List id="projectList" class="sapUiResponsiveMargin" width="auto"
 		items="{
 					path:'/EmployeeSet',
+					parameters:{
+							operationMode:'Client'
+							},
 					sorter : {
-							path : 'Name'
+							
+							path : 'IdSrvU',
+							group : true
 						}
 					}">
 		<headerToolbar>

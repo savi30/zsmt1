@@ -8,10 +8,19 @@ sap.ui.define([
 ], function (JQuery, BaseController, MessageToast, ResourceModel, formatter) {
    "use strict";
    
+   var oRouter;
+   
    return BaseController.extend("zsmt1.controller.EmployeeList", {
-	   formatter: model.formatter,
+	  
+	   onInit:function(){
+		   oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+	   },
+	   
 	   onPress:function(oEvent){
-		   MessageToast.show("projectSelected");
+		  
+		   oRouter.navTo("employee",{
+			   employeeId : oEvent.getSource().getBindingContext().getProperty("IdEmployee")
+		   });
 	   }
 
 	});
