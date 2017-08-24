@@ -9,8 +9,7 @@
 						class="myCustomButton" icon="sap-icon://employee" />
 					<Button text="{i18n>selectManagerText}" press="onSelectManager"
 						class="myCustomButton" icon="sap-icon://manager" />
-			
-					
+
 				</content>
 			</Page>
 		</pages>

@@ -1,6 +1,6 @@
 .zsmt1 .myCustomButton.sapMBtn {
 	margin-right: 5.125rem
-	
+
 }
 
 html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
@@ -9,26 +9,128 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 }
 
 .zsmt1 .myCustomText {
+
 	font-weight: bold;
 }
 
-/* .zsmt1 .myScreen {
-   height: 90%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
 
 .zsmt1 .fontSize {
 	font-size: 20px;
+	font-weight: bold;
 }
 
-/* .zsmt1.myCustomBody {
+.zsmt1 .myScreen {
+	background-attachment: fixed;
+	float: left;
+}
+
+.zsmt1 .myLoginImage {
+	display: flex;
+	width: 80%;
+	height: 80%;
+	align-self: center;
+	justify-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0.8;
+	filter: alpha(opacity = 50);
+	width: 80%;
+}
+
+.zsmt1 .myVbox {
+	align-self: center;
+	justify-self: center;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.zsmt1 .myVboxButton {
+	align-self: center;
+	justify-self: center;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.zsmt1 .myBackgroundImage .sapMPageBgStandard {
+	background-image: url('HTML5_Badge_32.png');
+}
+
+.zsmt1 .myPage {
+	background-color: #82abf7;
+}
+
+
+.zsmt1 .myPanel {
+	display: -webkit-flex;
+	display: flex;
+	align-self: center;
+	justify-self: center;
+	flex-direction: column;
+	width: 30%;
+	height: 100%;
+	padding: 3%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #82abf7;
+	border-radius: 4px;
+}
+
+.zsmt1 .myLoginButton {
+	background-color: #82abf7; /* Green */
+	border: none;
+	width: 100%;
+	border-radius: 4px;
+	text-align: center;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.zsmt1 .myFlexContainer {
+	display: -webkit-flex;
+	display: flex;
+	align-self: center;
+	justify-self: center;
+	flex-direction: column;
+	width: 30%;
+	height: 100%;
+	padding: 3%;
+	border: 4px blue;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	justify-self: center;
+	border-radius: 4px;
+}
+
+.zsmt1 .myFlexContainer-item {
+	max-width: 50%;
+}
+
+.zsmt1 .myFlexContainer-item--top {
+	align-self: flex-start;
+}
+
+.myBackgroundStyle .sapMPageBgStandard {
+	background-image: url('HTML5_Badge_32.png');
+}
+
+.zsmt1 .myFlexContainer-item--bottom {
+	align-self: flex-end;
+
+}
+
+.zsmt1 .myCustomBody {
 	background-color: transparent !important;
-	background-image: url("mhpcar.jpg") !important ;
+	background-image: url("mhpcar.jpg") !important;
 	background-repeat: no-repeat;
 	background-size:cover;
-}  */
+}  
+
 .zsmt1 .myEmployeeImage {
 	
 	height: 80px;
@@ -45,4 +147,6 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 
 .zsmt1 .myPos2{
 	float: right;
+	background-size: cover;
+
 }

@@ -6,19 +6,51 @@ sap.ui.define([
 ], function (JQuery, BaseController, MessageToast, ResourceModel) {
    "use strict";
   
+   var oView,oRouter;
    return BaseController.extend("zsmt1.controller.ProjectList", {
 	   
-	   onPress:function(oEvent){
-		   MessageToast.show("Project selected");
-	   },
-
-				 /*  constructor : function(oView) {
-					this._oView = oView;
-				},*/
+	   onInit: function () {
+		   oView = this.getView();
+		   oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		},
 	   
-
+	   onPress:function(oEvent){
+		  
+		   oRouter.navTo("project",{
+			   projectId : oEvent.getSource().getBindingContext().getProperty("Idproject")
+		   });
+	   },
+	   onEditProject:function(oEvent){
+		   var oView = this.getView();
+		   oView.bindElement({
+				path : "/ProjectSet("+oEvent.getSource().getBindingContext().getProperty("Idproject")+ ")",
+				events : {
+					change: this._onBindingChange.bind(this),
+					dataRequested: function (oEvent) {
+						oView.setBusy(true);
+					},
+					dataReceived: function (oEvent) {
+						oView.setBusy(false);
+					}
+				}
+			});
+		   var oDialog = oView.byId("changeProjectDialog");
+			if (!oDialog) {
+	            // create dialog via fragment factory
+	            oDialog = sap.ui.xmlfragment(this.getView().getId(), "zsmt1.view.ProjectDetailChange",this);
+	            oView.addDependent(oDialog);
+	         }
+	         oDialog.open();
+	   },
+	   onSaveEditDialog:function(){
+		   oView.byId("changeProjectDialog").close();
+		   MessageToast.show("data saved");
+	   },
+	   onCancelEditDialog:function(){
+		   oView.byId("changeProjectDialog").close();
+	   },
 		onOpenDialog : function () {
-			var oView = this.getView();
+			oView = this.getView();
 			var oDialog = oView.byId("createDialog");
 						
 			if (!oDialog) {
@@ -46,6 +78,12 @@ sap.ui.define([
 			}
 			oDialog.open();
 
+		},
+		_onBindingChange : function (oEvent) {
+			// No data for the binding
+			if (!this.getView().getBindingContext()) {
+				oRouter.getTargets().display("notFound");
+			}
 		}
 	});
 	   
