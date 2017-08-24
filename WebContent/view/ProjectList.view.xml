@@ -3,16 +3,15 @@
 	<List id="projectList" class="sapUiResponsiveMargin" width="auto"
 		items="{
 					path:'/ProjectSet',
-					sorter : {
-							parameters:{
+					parameters:{
 							operationMode:'Client'
 							},
+					sorter : {
+							
 							path : 'CustName',
 							group : true
 						}
 					}">
-		<!-- mode="SingleSelectLeft" -->
-
 		<headerToolbar>
 			<Toolbar>
 				<Title text="{i18n>projectListTitle}" />
@@ -25,9 +24,9 @@
 		<items>
 			<CustomListItem type="Navigation" press="onPress">
 				<FlexBox alignItems="Start" justifyContent="SpaceBetween" >
-				
+			
 						<Label text="{Name}"/>
-						<Button icon="sap-icon://edit"  press="onEditProject" />
+						<Button icon="sap-icon://edit"  press="onEditProject"/>
 				
 				</FlexBox>
 			</CustomListItem>

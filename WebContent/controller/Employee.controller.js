@@ -18,7 +18,7 @@ sap.ui.define([
 			oDisplayFragment = sap.ui.xmlfragment(this.getView().getId(), "zsmt1.view.EmployeeDetailDisplay");
 			oLayout = this.getView().byId("EmployeeDetailsFragment");
 			oLayout.insertContent(oDisplayFragment);
-
+		
 		},
 		
 		onNavBack: function () {
@@ -63,7 +63,8 @@ sap.ui.define([
 			oView.byId("changeDialog").close();
 		},
 		onSaveDialog:function(){
-			MessageToast.show("Data saved, don't worry :)");
+			
+			MessageToast.show("Changes saved");
 			oView.byId("changeDialog").close();
 		},
 		_onRouteMatched : function (oEvent) {
