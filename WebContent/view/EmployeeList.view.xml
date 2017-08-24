@@ -26,7 +26,7 @@ press="onPress"
 					parts:[{path:'NoProjects'}],
 					formatOptions: {showMeasure: false}
 				}"
-			numberState="{= ${NoProjects} > 50 ? 'Error' : 'Success'}">
+			numberState="{= ${NoProjects} > 4 ? 'Error' : ${NoProjects}> 1 ? 'Warning' :'Success'}">
 				
 			</ObjectListItem>
 		</items>
