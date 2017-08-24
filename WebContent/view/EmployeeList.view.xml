@@ -12,6 +12,7 @@
 							group : true
 						}
 					}">
+					
 		<columns>
 			<Column  width="12em">
 				<Text text="{i18n>employeeListTitle}" class="myText" />

@@ -32,17 +32,17 @@
 					<f:formElements>
 						<f:FormElement label="Name">
 							<f:fields>
-								<Input value="{Name}" id="nameValue"  />
+								<Input value="{Name}" id="projectDetailName"  />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Customer">
 							<f:fields>
-								<Input value="{CustName}" id="custNameValue"  />
+								<Input value="{CustName}" id="projectDetailCustName"  />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Budget days">
 							<f:fields>
-								<Input value="{BudgetDays}" id="budgetValue"  />
+								<Input value="{BudgetDays}" id="projectDetailBudget"  />
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>
