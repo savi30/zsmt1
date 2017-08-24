@@ -92,7 +92,7 @@
 		"target":"project"
 		},
 		{
-		"pattern":"manager/{employeeId}",
+		"pattern":"manager/employeeDetails/{employeeId}",
 		"name":"managerEmployee",
 		"target":"managerEmployee"
 		}

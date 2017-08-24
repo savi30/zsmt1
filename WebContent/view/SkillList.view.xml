@@ -3,8 +3,12 @@
 	<List id="skillList" class="sapUiResponsiveMargin" width="auto"
 		items="{
 					path:'/SkillSet',
+					parameters:{
+							operationMode:'Client'
+							},
 					sorter : {
-							path : 'Name',
+							
+							path : 'IdSdomain',
 							group : true
 						}
 					}"
