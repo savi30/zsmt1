@@ -1,5 +1,5 @@
 <mvc:View controllerName="zsmt1.controller.ProjectList" xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout">
 	<List id="projectList" class="sapUiResponsiveMargin" width="auto"
 		items="{
 					path:'/ProjectSet',
@@ -13,23 +13,30 @@
 						}
 					}">
 		<headerToolbar>
-			<Toolbar>
+			<Toolbar height="90px">
 				<Title text="{i18n>projectListTitle}" />
 				<ToolbarSpacer />
-				<Button text="{i18n>createProjectTitle}" press="onOpenDialog"
-					class="myCustomButton" icon="sap-icon://create" />
+				<l:VerticalLayout>
+					<Button text="{i18n>createProjectTitle}" press="onOpenDialog"
+						class="myCustomButton" icon="sap-icon://create" />
+												
+				
+						<SearchField liveChange="onSearch" width="80%" />
+
+				</l:VerticalLayout>
+				
 
 			</Toolbar>
 		</headerToolbar>
 		<items>
 			<CustomListItem type="Navigation" press="onPress">
-				<FlexBox alignItems="Start" justifyContent="SpaceBetween" >
-			
-						<Label text="{Name}"/>
-						<Button icon="sap-icon://edit"  press="onEditProject"/>
-				
+				<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+
+					<Label text="{Name}" />
+					<Button icon="sap-icon://edit" press="onEditProject" />
+
 				</FlexBox>
 			</CustomListItem>
-			</items>
+		</items>
 	</List>
 </mvc:View>

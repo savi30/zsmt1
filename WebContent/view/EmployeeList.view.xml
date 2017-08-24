@@ -12,7 +12,9 @@
 							group : true
 						}
 					}">
+			<SearchField liveChange="onSearch" width="80%" />
 		<columns>
+			
 			<Column width="12em">
 				<Text text="{i18n>employeeListTitle}" />
 			</Column>
