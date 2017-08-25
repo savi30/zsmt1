@@ -36,7 +36,7 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 					username = this.getView().byId("nameInput").getValue();
 					password = this.getView().byId("passwordInput").getValue();
 					if (isManager === "true") {
-						if (username == "manager" && password == "1234") {
+						if (username.toLowerCase() == "manager" && password == "1234") {
 							oRouter.navTo("manager");
 						} else {
 							MessageBox.alert("Incorrect username or password");

@@ -8,11 +8,8 @@
 		id="createDialog"
 		title="{i18n>createProject}">
 		<content>
-		<l:VerticalLayout
-		class="sapUiContentPadding"
-		width="100%"> 
+	
 		
-		<VBox class="sapUiSmallMargin">
 		<f:SimpleForm id="SimpleFormToolbar"
 			editable="true"
 			layout="ResponsiveGridLayout"
@@ -32,36 +29,42 @@
 			
 			<f:content>				
 				<Label text="{i18n>projectName}" />
-				<Input type="Text"
+				<Input type="Text" id="createProjectName"
 						placeholder="Enter name ..." />
 						
 				<Label text="{i18n>custName}" />
-				<Input type="Text"
+				<Input type="Text" id="createProjectCustomer"
 						placeholder="Enter customer name ..."/>
 						
 				<Label text="{i18n>budgetDays}"/>
-				<Input  type="Number"
+				<Input  type="Number" id="createProjectBudgetDays"
 						placeholder="Enter budget days for this project ..."/>
 				
 				<Label text="{i18n>startProject}" labelFor="DP1"/>
 				<DatePicker
-					id="DP1"
+					
+					id="createProjectStartDate"
 					placeholder="Enter start date ..."
 					change="handleChange"
-					class="sapUiSmallMarginBottom"/>
+					class="sapUiSmallMarginBottom"
+					valueFormat="yyyy-MM-ddTKK:mm:ss" displayFormat="long"
+					/>
 				
 				<Label text="{i18n>endProject}" labelFor="DP2"/>
 				<DatePicker
-					id="DP2"
+			
+					
+					id="createProjectEndDate"
 					placeholder="Enter end date ..."
 					change="handleChange"
+					valueFormat="yyyy-MM-ddTKK:mm:ss" displayFormat="long"
 					class="sapUiSmallMarginBottom"/>
-										
+					<!-- type="sap.ui.model.type.DateTime" -->					
 				
 				</f:content>
 			</f:SimpleForm>
-		 </VBox>	
-	</l:VerticalLayout>
+		 	
+	
 </content>
 		
 		<beginButton>

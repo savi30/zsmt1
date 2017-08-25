@@ -77,7 +77,7 @@
 
 						<f:FormElement label="Service Unit">
 							<f:fields>
-								<Text text="{IdSrvU}" id="srvUnitText" />
+								<Text text="{SrvUnit>Name}" id="srvUnitText" />
 							</f:fields>
 						</f:FormElement>
 						

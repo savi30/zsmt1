@@ -22,7 +22,7 @@
 			</Toolbar>
 		</headerToolbar>
 		<items>
-			<CustomListItem type="Navigation" press="onPress">
+			<CustomListItem type="Active" press="onPress">
 				<FlexBox alignItems="Start" justifyContent="SpaceBetween" >
 			
 						<Label text="{Name}"/>
