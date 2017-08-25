@@ -32,24 +32,24 @@
 					<f:formElements>
 						<f:FormElement label="Name">
 							<f:fields>
-								<Input value="{Name}" id="nameValue"  />
+								<Input value="{Name}" id="employeeNameValue"  />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Surname">
 							<f:fields>
-								<Input value="{Surname}" id="surnameValue"  />
+								<Input value="{Surname}" id="employeeSurnameValue"  />
 							</f:fields>
 						</f:FormElement>																	
 																												
 						<f:FormElement label="Region">
 							<f:fields>
-								<Input value="{Region}" id="regionValue"  />
+								<Input value="{Region}" id="employeeRegionValue"  />
 							</f:fields>
 						</f:FormElement>
 						
 						<f:FormElement label="Country">
 							<f:fields>
-								<Input value="{Country}" id="countryValue"  />
+								<Input value="{Country}" id="employeeCountryValue"  />
 							</f:fields>
 						</f:FormElement>
 						

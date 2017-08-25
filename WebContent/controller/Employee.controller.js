@@ -62,7 +62,83 @@ sap.ui.define([
 		onCloseDialog : function () {
 			oView.byId("changeDialog").close();
 		},
-		onSaveDialog:function(){
+		onSaveDialog:function(oEvent){
+			
+			var oEntry = {};
+			var oFormatDate = sap.ui.core.format.DateFormat
+			.getDateTimeInstance({
+				pattern : "yyyy-MM-ddTKK:mm:ss"
+			});
+			oEntry.Id = oEvent.getSource().getBindingContext().getProperty("IdEmployee");
+			oEntry.Name = this.getView().byId("employeeNameValue").getValue();
+			oEntry.Surname =  this.getView().byId("employeeSurnameValue").getValue();
+			oEntry.Region =  this.getView().byId("employeeRegionValue").getValue();
+			oEntry.Country =  this.getView().byId("employeeCountryValue").getValue();
+			oEntry.LastModified = new Date(oFormatDate.parse("2017-08-24T00:00:00"));
+
+			OData
+			.request(
+					{
+						requestUri : "http://bcsw-sap078.mymhp.net:8000/sap/opu/odata/SAP/ZSMT1ODATA_SRV/EmployeeSet("+oEntry.Id+")",
+						method : "GET",
+						headers : {
+							"X-Requested-With" : "XMLHttpRequest",
+							"Content-Type" : "application/atom+xml",
+							"DataServiceVersion" : "2.0",
+							"X-CSRF-Token" : "Fetch"
+						}
+					},
+					function(data,
+							response) {
+
+						var oHeaders = {
+							"x-csrf-token" : response.headers['x-csrf-token'],
+							"DataServiceVersion" : "2.0",
+							'Accept' : 'application/json',
+						};
+						OData
+								.request(
+										{
+											requestUri : "http://bcsw-sap078.mymhp.net:8000/sap/opu/odata/SAP/ZSMT1ODATA_SRV/EmployeeSet("+oEntry.Id+")",
+											method : "PUT",
+											headers : oHeaders,
+											data : {
+												IdEmployee : oEntry.Id,
+												Name : oEntry.Name,
+												Surname : oEntry.Surname,
+												WorkingHours : 0,
+												ConsultLevel : "",
+												Region : oEntry.Region,
+												Country: oEntry.Country,
+												NoProjects: 0,
+												IdSrvU: 0,
+												Flag : false,
+												LastModified : oEntry.LastModified
+											}
+										},
+										function(
+												data,
+												request) {
+											MessageToast
+													.show("Employee details updated successfully");
+
+										},
+										function(
+												err) {
+											MessageToast
+													.show("Failed to update employee details");
+
+										});
+					},
+					function(err) {
+						var request = err.request;
+						var response = err.response;
+						MessageToast
+								.show("error Request "
+										+ request
+										+ " Response"
+										+ response);
+					});
 			
 			MessageToast.show("Changes saved");
 			oView.byId("changeDialog").close();
