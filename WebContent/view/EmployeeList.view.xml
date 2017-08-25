@@ -12,25 +12,26 @@
 							group : true
 						}
 					}">
+					
 		<columns>
-			<Column width="12em">
-				<Text text="{i18n>employeeListTitle}" />
+			<Column  width="12em">
+				<Text text="{i18n>employeeListTitle}" class="myText" />
 			</Column>
 			
 			<Column minScreenWidth="Tablet"
 				demandPopin="true"
 				hAlign="Center">
-				<Text text="{i18n>consLeveltitle}" />
+				<Text text="{i18n>consLeveltitle}" class="myText"/>
 			</Column>
 			
 			<Column minScreenWidth="Tablet"
 				demandPopin="true"
 				hAlign="Center">
-				<Text text="{i18n>workingHoursTitle}" />
+				<Text text="{i18n>workingHoursTitle}" class="myText"/>
 			</Column>
 			
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
-				<Text text="{i18n>employeeListNoProjects}" />
+				<Text text="{i18n>employeeListNoProjects}" class="myText"/>
 			</Column>
 		</columns>
 
