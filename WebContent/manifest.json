@@ -92,6 +92,11 @@
 		"target":"project"
 		},
 		{
+		"pattern":"projectDetailOverview/{projectId}",
+		"name":"projectDetailOverview",
+		"target":"projectDetailOverview"
+		},
+		{
 		"pattern":"manager/employeeDetails/{employeeId}",
 		"name":"managerEmployee",
 		"target":"managerEmployee"
@@ -116,6 +121,11 @@
 		"project":
 		{
 			"viewName":"Project",
+			"viewLevel":3
+		},
+		"projectDetailOverview":
+		{
+			"viewName":"ProjectDetailOverview",
 			"viewLevel":3
 		},
 		"manager":
