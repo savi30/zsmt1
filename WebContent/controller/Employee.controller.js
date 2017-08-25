@@ -121,7 +121,7 @@ sap.ui.define([
 												request) {
 											MessageToast
 													.show("Employee details updated successfully");
-
+											this.getView().byId("FormDisplayEmpDetails").getModel().refresh(true);
 										},
 										function(
 												err) {
@@ -139,8 +139,7 @@ sap.ui.define([
 										+ " Response"
 										+ response);
 					});
-			
-			MessageToast.show("Changes saved");
+			this.getView().byId("FormDisplayEmpDetails").getModel().refresh(true);
 			oView.byId("changeDialog").close();
 		},
 		_onRouteMatched : function (oEvent) {
