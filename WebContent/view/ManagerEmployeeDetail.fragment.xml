@@ -13,17 +13,11 @@
 					labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
 					emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
 					columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
-			</f:layout>
-			
-			
-			<f:formContainers>
-				
-			
+			</f:layout>			
+			<f:formContainers>			
 				<f:FormContainer>
 					<f:formElements>
-					
-						<!-- <Image class="myEmployeeImage" src="image/user.png" width="80px" /> -->
-					
+						<!-- <Image class="myEmployeeImage" src="image/user.png" width="80px" /> -->					
 						<f:FormElement label="Name">
 							<f:fields>
 								<Text text="{Name}" id="nameText" />
@@ -82,5 +76,6 @@
 					
 			</f:formContainers>
 		</f:Form>
+		<Button icon="sap-icon://add" press="onAddEmployee"/>
 	</VBox>
 </core:FragmentDefinition>

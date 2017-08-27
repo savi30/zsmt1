@@ -3,15 +3,17 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 		BaseController, MessageToast, History) {
 	"use strict";
 
+	var oRouter;
+	
 	return BaseController.extend("zsmt1.controller.ManagerEmployeeProjects", {
 
 		onInit : function() {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("managerEmployee").attachMatched(this._onRouteMatched,
 					this);
 
 		},
-		_onRouteMatched : function(oEvent) {
+		_onRouteMatched :function(oEvent) {
 			var oArgs, oView;
 			oArgs = oEvent.getParameter("arguments");
 		
@@ -21,7 +23,16 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 				
 				template : new sap.m.StandardListItem({
 					title : "{Name}",
-					description : "{CustName}"
+					type : sap.m.ListType.Active,
+					description : "{CustName}",
+					press:function(){
+						oRouter.navTo("project", {
+							projectId : oEvent.getSource()
+									.getBindingContext()
+									.getProperty(
+											"Idproject")
+						});
+					}
 				})
 			});
 		},

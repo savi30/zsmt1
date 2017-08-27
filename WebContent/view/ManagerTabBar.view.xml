@@ -10,8 +10,8 @@
 				class="sapUiResponsiveContentPadding"
 				binding="{Manager}"
 				outline="None">
-				<items outline="none">	
-					<IconTabFilter id="empTab" text="{i18n>employeeListTitle}" icon ="sap-icon://employee" key="Employee" outline="None">
+				<items >	
+					<IconTabFilter id="empTab" text="{i18n>employeeListTitle}" icon ="sap-icon://employee" key="Employee">
 						<mvc:XMLView viewName="zsmt1.view.EmployeeList"></mvc:XMLView>	
 					</IconTabFilter>
 					<IconTabSeparator/>
@@ -20,7 +20,7 @@
 					</IconTabFilter>
 					<IconTabSeparator/>
 					<IconTabFilter id="reportTab" text="{i18n>reportTitle}" key="Reports" icon ="sap-icon://kpi-corporate-performance">
-					
+						
 					</IconTabFilter>					 
 				</items>
 			</IconTabBar>
