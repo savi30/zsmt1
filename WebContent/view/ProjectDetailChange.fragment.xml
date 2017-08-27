@@ -7,48 +7,57 @@
 		id="changeProjectDialog"
 		title="Edit project">
 		<content>
-		<f:Form id="FormChangeProjectDetails" editable="true">
-			<f:title>
-				<core:Title text="{Name}" />
-			</f:title>
-			<f:layout>
-				<f:ResponsiveGridLayout
-					labelSpanXL="3"
-					labelSpanL="3"
-					labelSpanM="3"
-					labelSpanS="12"
-					adjustLabelSpan="false"
-					emptySpanXL="4"
-					emptySpanL="4"
-					emptySpanM="4"
-					emptySpanS="0"
-					columnsXL="1"
-					columnsL="1"
-					columnsM="1"
-					singleContainerFullSize="false" />
-			</f:layout>
-			<f:formContainers>
-				<f:FormContainer>
-					<f:formElements>
-						<f:FormElement label="Name">
-							<f:fields>
-								<Input value="{Name}" id="projectDetailName"  />
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Customer">
-							<f:fields>
-								<Input value="{CustName}" id="projectDetailCustName"  />
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Budget days">
-							<f:fields>
-								<Input value="{BudgetDays}" id="projectDetailBudget"  />
-							</f:fields>
-						</f:FormElement>
-					</f:formElements>
-				</f:FormContainer>
-			</f:formContainers>
-		</f:Form>
+		<f:SimpleForm id="FormChangeProjectDetails"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			
+			<f:content>				
+				<Label text="{i18n>projectName}" />
+				<Input value="{Name}" id="projectDetailName"  />
+						
+				<Label text="{i18n>custName}" />
+				<Input value="{CustName}" id="projectDetailCustName"  />
+						
+				<Label text="{i18n>budgetDays}"/>
+				<Input value="{BudgetDays}" id="projectDetailBudget"  />
+				
+				<Label text="{i18n>startProject}" labelFor="updateProjectStartDate"/>
+				<DatePicker
+					
+					id="updateProjectStartDate"
+					placeholder="Enter start date ..."
+					change="handleChange"
+					class="sapUiSmallMarginBottom"
+					valueFormat="yyyy-MM-ddTKK:mm:ss" displayFormat="long"
+					/>
+				
+				<Label text="{i18n>endProject}" labelFor="updateProjectEndDate"/>
+				<DatePicker
+			
+					
+					id="updateProjectEndDate"
+					placeholder="Enter end date ..."
+					change="handleChange"
+					valueFormat="yyyy-MM-ddTKK:mm:ss" displayFormat="long"
+					class="sapUiSmallMarginBottom"
+					/>
+					<!-- type="sap.ui.model.type.DateTime" -->					
+				
+				</f:content>
+			</f:SimpleForm>
 	</content>
 	<beginButton>
 			<Button

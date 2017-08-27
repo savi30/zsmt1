@@ -65,6 +65,8 @@ sap.ui.define([
 					}
 				}
 			});
+			var srvUnit = this.getView().byId("srvUnitText");
+			srvUnit.bindElement("/EmployeeSet(" + oArgs.employeeId + ")/toServiceUnit");
 			
 		},
 		_onBindingChange : function (oEvent) {

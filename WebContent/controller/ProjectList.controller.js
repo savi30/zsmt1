@@ -69,10 +69,113 @@ sap.ui
 											}
 											oDialog.open();
 										},
-										onSaveEditDialog : function() {
+										onSaveEditDialog : function(oEvent) {
+
+											var oModel = this.getView()
+													.getModel();
+											var oView = this.getView();
+											var oEntry = {};
+
+											oEntry.Id = oEvent.getSource()
+													.getBindingContext()
+													.getProperty("Idproject")
+
+											oEntry.Name =oView
+													.byId("projectDetailName")
+													.getValue();
+											oEntry.CustName = oView
+													.byId(
+															"projectDetailCustName")
+													.getValue();
+											oEntry.BudgetDays = parseInt(oView
+													.byId(
+															"projectDetailBudget")
+													.getValue());
+
+											oEntry.StartProject = oView
+													.byId(
+															"updateProjectStartDate")
+													.getValue();
+											oEntry.EndProject = oView
+													.byId(
+															"updateProjectEndDate")
+													.getValue();
+
+											OData
+													.request(
+															{
+																requestUri : "http://bcsw-sap078.mymhp.net:8000/sap/opu/odata/SAP/ZSMT1ODATA_SRV/ProjectSet("
+																		+ oEntry.Id
+																		+ ")",
+																method : "GET",
+																headers : {
+																	"X-Requested-With" : "XMLHttpRequest",
+																	"Content-Type" : "application/atom+xml",
+																	"DataServiceVersion" : "2.0",
+																	"X-CSRF-Token" : "Fetch"
+																}
+															},
+															function(data,
+																	response) {
+
+																var oHeaders = {
+																	"x-csrf-token" : response.headers['x-csrf-token'],
+																	"DataServiceVersion" : "2.0",
+																	'Accept' : 'application/json',
+																};
+																OData
+																		.request(
+																				{
+																					requestUri : "http://bcsw-sap078.mymhp.net:8000/sap/opu/odata/SAP/ZSMT1ODATA_SRV/ProjectSet("
+																							+ oEntry.Id
+																							+ ")",
+																					method : "PUT",
+																					headers : oHeaders,
+																					data : {
+																						Idproject : oEntry.Id,
+																						CustName : oEntry.CustName,
+																						Name : oEntry.Name,
+																						BudgetDays : oEntry.BudgetDays,
+																						StartProject : oEntry.StartProject,
+																						EndProject : oEntry.EndProject,
+																						Flag : false,
+																						LastModified : oEntry.StartProject
+																					}
+																				},
+																				function(
+																						data,
+																						request) {
+																					MessageToast
+																							.show("Changes saved");
+																					this
+																							.getView()
+																							.byId(
+																									"projectList")
+																							.getModel()
+																							.refresh(
+																									true);
+																				},
+																				function(
+																						err) {
+																					MessageToast
+																							.show("Failed to update project details");
+
+																				});
+															},
+															function(err) {
+																var request = err.request;
+																var response = err.response;
+																MessageToast
+																		.show("error Request "
+																				+ request
+																				+ " Response"
+																				+ response);
+															});
+											this.getView().byId("projectList")
+													.getModel().refresh(true);
 											oView.byId("changeProjectDialog")
 													.close();
-											MessageToast.show("data saved");
+
 										},
 										onCancelEditDialog : function() {
 											oView.byId("changeProjectDialog")
@@ -173,7 +276,13 @@ sap.ui
 																						request) {
 																					MessageToast
 																							.show("Project created successfully");
-																					this.getView().byId("projectList").getModel().refresh(true);
+																					this
+																							.getView()
+																							.byId(
+																									"projectList")
+																							.getModel()
+																							.refresh(
+																									true);
 																				},
 																				function(
 																						err) {
@@ -192,7 +301,8 @@ sap.ui
 																				+ response);
 															});
 											this._oDialog.close();
-											this.getView().byId("projectList").getModel().refresh(true);
+											this.getView().byId("projectList")
+													.getModel().refresh(true);
 										},
 										afterClose : function() {
 											this._oDialog.destroy();

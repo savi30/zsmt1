@@ -14,15 +14,7 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 		_onRouteMatched : function(oEvent) {
 			var oArgs, oView;
 			oArgs = oEvent.getParameter("arguments");
-			/*
-			 * oView = this.getView(); oView.bindElement({ path :
-			 * "/EmployeeSet(" + oArgs.employeeId + ")/toProject", events : {
-			 * change: this._onBindingChange.bind(this), dataRequested: function
-			 * (oEvent) { oView.setBusy(true); }, dataReceived: function
-			 * (oEvent) { oView.setBusy(false); } }
-			 * 
-			 * });
-			 */
+
 			var oList = this.getView().byId("employeeProjectList");
 			oList.bindItems({
 				path : "/EmployeeSet(" + oArgs.employeeId + ")/toProject",

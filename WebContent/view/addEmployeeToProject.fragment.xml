@@ -1,0 +1,83 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"> 
+	
+	<Dialog
+		id="addToProjectDialog"
+		title="Add {Name Surname} to project">
+		<content>
+
+		<f:SimpleForm id="addEmployeeForm"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			
+			<f:content>				
+				<Label text="project id" />
+				<Input type="Text" id="addEmployeeProjectId"
+						placeholder="Enter id ..." />
+						
+				<Label text="Number of days"/>
+				<Input  type="Number" id="addEmployeeBudgetDays"
+						placeholder="Enter budget days for {Name}..."/>
+				
+				<Label text="join date" labelFor="DP1"/>
+				<DatePicker
+					
+					id="addEmployeeJoinDate"
+					placeholder="Enter join date ..."
+					change="handleChange"
+					class="sapUiSmallMarginBottom"
+					valueFormat="yyyy-MM-ddTKK:mm:ss" displayFormat="long"
+					/>
+				
+				<Label text="Finish date" labelFor="DP2"/>
+				<DatePicker
+			
+					
+					id="addEmployeeFinishDate"
+					placeholder="Enter finish date ..."
+					change="handleChange"
+					valueFormat="yyyy-MM-ddTKK:mm:ss" displayFormat="long"
+					class="sapUiSmallMarginBottom"/>
+				
+				</f:content>
+			</f:SimpleForm>
+		 	
+	
+</content>
+		
+		<beginButton>
+					
+			<Button 
+			text="{i18n>closeButtonText}"
+			press="onCloseDialog" />	
+		</beginButton>
+		
+		<endButton>
+			<Button 
+			text="{i18n>saveButtonText}"
+			press="onSaveDialog"/>
+		</endButton>
+		
+		
+	</Dialog>
+	
+
+</core:FragmentDefinition>
+	
+	

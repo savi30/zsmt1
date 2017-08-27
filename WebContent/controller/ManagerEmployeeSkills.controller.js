@@ -13,6 +13,9 @@ sap.ui.define([
 			oRouter.getRoute("managerEmployee").attachMatched(this._onRouteMatched, this);
 			
 		},
+		onSkillSelect:function(oEvent){
+			MessageToast.show("skill selected");
+		},
 		_onRouteMatched : function (oEvent) {
 			var oArgs, oView;
 			oArgs = oEvent.getParameter("arguments");
@@ -29,11 +32,28 @@ sap.ui.define([
 						oView.setBusy(false);
 					}
 				},
-                template : new sap.m.StandardListItem({
-                    title: "{Name}"   
-    
+                template : new sap.m.CustomListItem({ 
+            
+                		type : sap.m.ListType.Active,
+                        press : this.onSkillSelect,
+                        content : [
+                            new sap.m.FlexBox({
+                            	alignItems : sap.m.FlexAlignItems.Start,
+                            	justifyContent : sap.m.FlexJustifyContent.SpaceBetween,
+                            	items:[
+                            	new sap.m.Label({
+                            		text:"{Name}"
+                            	}),
+                            	new sap.m.Label("skillLevel",{
+                            		text:"{EmployeeLevel}"
+                            	})
+                            	
+                            	]
+                            })	
+                       ],
                 })
-            }); 
+            }); 	
+			
 		},
 		_onBindingChange : function (oEvent) {
 			// No data for the binding
