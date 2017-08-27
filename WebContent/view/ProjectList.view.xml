@@ -22,7 +22,7 @@
 		</headerToolbar>
 		<items>
 			<CustomListItem type="Active" press="onPress">
-				<FlexBox alignItems="Start" justifyContent="SpaceBetween" >
+				<FlexBox alignItems="Center" justifyContent="SpaceBetween" >
 			
 						<Label text="{Name}"/>
 						<Button class="myCustomButton" icon="sap-icon://edit"  press="onEditProject"/>
