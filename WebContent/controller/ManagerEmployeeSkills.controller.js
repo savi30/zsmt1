@@ -33,9 +33,6 @@ sap.ui.define([
 					}
 				},
                 template : new sap.m.CustomListItem({ 
-            
-                		type : sap.m.ListType.Active,
-                        press : this.onSkillSelect,
                         content : [
                             new sap.m.FlexBox({
                             	alignItems : sap.m.FlexAlignItems.Start,
@@ -43,11 +40,7 @@ sap.ui.define([
                             	items:[
                             	new sap.m.Label({
                             		text:"{Name}"
-                            	}),
-                            	new sap.m.Label("skillLevel",{
-                            		text:"{EmployeeLevel}"
-                            	})
-                            	
+                            	})                            	
                             	]
                             })	
                        ],

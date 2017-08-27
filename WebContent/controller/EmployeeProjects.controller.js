@@ -2,11 +2,11 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 		"sap/m/MessageToast", "sap/ui/core/routing/History" ], function(JQuery,
 		BaseController, MessageToast, History) {
 	"use strict";
-
+	var oRouter;
 	return BaseController.extend("zsmt1.controller.EmployeeProjects", {
 
 		onInit : function() {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("employee").attachMatched(this._onRouteMatched,
 					this);
 
@@ -21,7 +21,8 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 				
 				template : new sap.m.StandardListItem({
 					title : "{Name}",
-					description : "{CustName}"
+					description : "{CustName}",
+					
 				})
 			});
 		},

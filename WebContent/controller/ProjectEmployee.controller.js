@@ -5,38 +5,34 @@ sap.ui.define([
    "sap/ui/core/routing/History"
 ], function (JQuery, BaseController, MessageToast, History) {
    "use strict";
-  
+   var oRouter;
    return BaseController.extend("zsmt1.controller.ProjectEmployee", {
 	   
 	   onInit: function () {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("project").attachMatched(this._onRouteMatched, this);
 			
 		},
 		_onRouteMatched : function (oEvent) {
 			var oArgs, oView;
 			oArgs = oEvent.getParameter("arguments");
-/*			oView = this.getView();
-			oView.bindElement({
-				path : "/EmployeeSet(" + oArgs.employeeId + ")/toProject",
-				events : {
-					change: this._onBindingChange.bind(this),
-					dataRequested: function (oEvent) {
-						oView.setBusy(true);
-					},
-					dataReceived: function (oEvent) {
-						oView.setBusy(false);
-					}
-				}
-			
-			});*/
+
 			var oList = this.getView().byId("projectEmployeeList");
 			oList.bindItems({
                 path :  "/ProjectSet(" + oArgs.projectId + ")/toEmployee",
-         
+                
                 template : new sap.m.StandardListItem({
                     title: "{Name}",
-                    description: "{Surname}"
+                    type : sap.m.ListType.Active,
+                    description: "{Surname}",
+                    press : function(){
+    						oRouter.navTo("managerEmployee", {
+    							employeeId : oEvent.getSource()
+    									.getBindingContext()
+    									.getProperty(
+    											"IdEmployee")
+    						});
+    					}
                 })
             }); 
 		},
