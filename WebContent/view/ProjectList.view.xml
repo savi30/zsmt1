@@ -13,17 +13,17 @@
 						}
 					}">
 		<headerToolbar>
-			<Toolbar height="90px">
+			<Toolbar>
 				<Title text="{i18n>projectListTitle}" />
 				<ToolbarSpacer />
-				<l:VerticalLayout>
+				
+				<SearchField liveChange="onSearch" width="30%" />
 					<Button text="{i18n>createProjectTitle}" press="onOpenDialog"
 						class="myCustomButton" icon="sap-icon://create" />
 												
 				
-						<SearchField liveChange="onSearch" width="80%" />
+						
 
-				</l:VerticalLayout>
 				
 
 			</Toolbar>

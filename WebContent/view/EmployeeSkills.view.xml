@@ -1,5 +1,21 @@
 <mvc:View controllerName="zsmt1.controller.EmployeeSkills"
 	 xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<List id="employeeSkillList" class="sapUiResponsiveMargin" width="auto"/>
+	
+	<List id="employeeSkillList" class="sapUiResponsiveMargin" width="auto">
+	
+	<headerToolbar>
+			<Toolbar>
+	
+	
+	<ToolbarSpacer />
+	
+	<Button text="{i18n>addSkillEmp}" press="onOpenDialog"
+						class="myCustomButton" icon="sap-icon://add" />
+	</Toolbar>
+	</headerToolbar>
+	
+	</List>
+	
+
 </mvc:View>

@@ -1,0 +1,80 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"> 
+	
+	<Dialog
+		id="employeeAddSkill"
+		title="{i18n>addSkillEmp}">
+		<content>
+		<l:VerticalLayout
+		class="sapUiContentPadding"
+		width="100%"> 
+		
+		<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormToolbar"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			
+			<f:content>				
+				<Label text="{i18n>skillListTitle}" />
+				<SearchField 
+						id="searchField"
+						placeholder="Add skill ..." 
+						enableSuggestions="true"
+						search="onSearch"
+						suggest="onSuggest"
+						suggestionItems="{path: '/SkillSet'}"
+				>
+					<suggestionItems>
+					<SuggestionItem text="{Name}"  
+					description="{path:'Name'}"
+					    />
+				</suggestionItems>
+			    </SearchField> 
+						
+				<Label text="{i18n>levelSkill}" />
+				<Input type="Text"
+						placeholder="Add level ..."/>
+										
+				
+				</f:content>
+			</f:SimpleForm>
+		 </VBox>	
+	</l:VerticalLayout>
+</content>
+		
+		<beginButton>
+					
+			<Button 
+			text="{i18n>closeButtonText}"
+			press="onCloseDialog" />	
+		</beginButton>
+		
+		<endButton>
+			<Button 
+			text="{i18n>saveButtonText}"
+			press="onSaveDialog"/>
+		</endButton>
+		
+		
+	</Dialog>
+	
+
+</core:FragmentDefinition>
+	
+	
