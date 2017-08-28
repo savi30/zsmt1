@@ -9,6 +9,12 @@ sap.ui.define([
    return BaseController.extend("zsmt1.controller.EmployeeSkills", {
 	   
 	   onInit: function () {
+		   var url = "http://bcsw-sap078.mymhp.net:8000/sap/opu/odata/sap/ZSMT1ODATA_SRV/";
+		   var oData = new sap.ui.model.odata.v2.ODataModel(url);		   
+		   var oModel= this.getView();
+		   oModel.setModel(oData,"test");
+			   
+		  
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("employee").attachMatched(this._onRouteMatched, this);
 			
@@ -34,6 +40,9 @@ sap.ui.define([
 					type:sap.m.ListType.Detail                                                                       
             })
             }); 
+			
+			 
+			
 		},
 		_onBindingChange : function (oEvent) {
 			// No data for the binding

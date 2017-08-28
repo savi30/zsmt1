@@ -2,4 +2,5 @@
 	 xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<List id="employeeSkillList" class="sapUiResponsiveMargin" width="auto"/>
+	
 </mvc:View>
