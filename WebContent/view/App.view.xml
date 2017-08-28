@@ -1,5 +1,5 @@
 <mvc:View controllerName="zsmt1.controller.App" xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true">
 	<App class="zsmt1" id="app">
 
 		<Page class="myAppPage" title="{i18n>homePageTitle}">
@@ -16,10 +16,9 @@
 					<Button text="{i18n>selectManagerText}" press="onSelectManager"
 						class="myAppButtonManager" icon="sap-icon://manager" />
 
-					<Button text="{i18n>selectEmployeeText}" press="onSelectEmployee"
-						class="myAppButtonEmployee" icon="sap-icon://employee" />
-
-
+					<VBox press="onSelectEmployee" class="myAppButtonEmployee">
+						<Text icon="sap-icon://manager" text="{i18n>selectEmployeeText}"/>
+					</VBox>
 				</FlexBox>
 			</VBox>
 
