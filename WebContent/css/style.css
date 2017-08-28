@@ -145,20 +145,18 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 .zsmt1 .myAppButtonManager {
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
-	background-color: #0000ff;
 	text-align: center;
 	align-self: center;
 	justify-self: center;
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
-	border-radius: 8px;
-	width: 100%;
-	margin: auto;
-	margin-bottom: 3%;
+	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0
+		rgba(0, 0, 0, 0.36);
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	width: 70%;
 }
 
 .zsmt1 .myAppButtonManager:hover {
-	background-color: #82abf7; /* Green */
+	background-color: rgba(255, 255, 255, 0.8); /* Green */
 }
 
 .zsmt1 .myAppButtonEmployee {
@@ -167,17 +165,15 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	text-align: center;
 	align-self: center;
 	justify-self: center;
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
+	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0
+		rgba(0, 0, 0, 0.36);
+	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 50%;
-	padding:6%;
-	width: 50%;
-	border-style: solid;
-	border-color: blue;
+	width: 70%;
 }
 
 .zsmt1 .myAppButtonEmployee:hover {
-	background-color: #ffffff; /* Green */
+	background-color: rgba(255, 255, 255, 0.8); /* Green */
 }
 
 .zsmt1 .myAppFlexContainer {
@@ -203,10 +199,10 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 .zsmt1 .myAppFlexBoxButtons {
 	display: -webkit-flex;
 	display: flex;
-	padding: 4%;
-	flex-direction: column;
+	padding: 5%;
 	width: 30%;
-	align-self: start;
+	
+	align-self: center;
 	justify-self: center;
 	align-content: center;
 	justify-content: center;
