@@ -4,7 +4,8 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.ui.layout.form"
 	busyIndicatorDelay="0">
-	
+			
+			
 			<IconTabBar
 				id="iconTabBar"
 				class="sapUiResponsiveContentPadding"
@@ -21,8 +22,11 @@
 					<IconTabSeparator/>
 					<IconTabFilter id="reportTab" text="{i18n>reportTitle}" key="Reports" icon ="sap-icon://kpi-corporate-performance">
 						
-					</IconTabFilter>					 
+					</IconTabFilter>	
+							 
 				</items>
+				
 			</IconTabBar>
+			
 	
 </mvc:View>

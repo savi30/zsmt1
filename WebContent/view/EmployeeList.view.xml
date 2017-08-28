@@ -1,5 +1,6 @@
 <mvc:View controllerName="zsmt1.controller.EmployeeList" xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
+	
 	<Table id="employeeList" class="sapUiResponsiveMargin" width="auto"
 		items="{
 					path:'/EmployeeSet',
@@ -11,8 +12,19 @@
 							path : 'IdSrvU',
 							group : true
 						}
-					}">
-					
+					}">	
+								
+			<headerToolbar>
+				<Toolbar>
+					<ToolbarSpacer />
+				
+						<SearchField 
+							liveChange="onSearch" 
+							placeholder="Search Employee..."
+							width="30%"  
+							selectOnFocus="false"/>			
+				</Toolbar>
+			</headerToolbar>
 		<columns>
 			<Column  width="12em">
 				<Text text="{i18n>employeeListTitle}" class="myText" />
@@ -62,5 +74,6 @@
 			</ColumnListItem>
 		</items>
 	</Table>
+	
 </mvc:View>
 
