@@ -13,30 +13,11 @@
 					labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
 					emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
 					columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
-			</f:layout>
-			
-			
-			<f:formContainers>
-				
-			
-				<f:FormContainer >
-					<f:formElements class="myPos1">
-
-						<f:FormElement>
-							<f:fields>
-								<Image class="myEmployeeImage" src="image/user.png" width="80px" >
-								</Image>
-							</f:fields>
-						</f:FormElement>
-						
-					</f:formElements>
-				</f:FormContainer>
-			
-	
+			</f:layout>			
+			<f:formContainers>			
 				<f:FormContainer>
-					<f:formElements class="myPos2">
-			
-			
+					<f:formElements>
+						<!-- <Image class="myEmployeeImage" src="image/user.png" width="80px" /> -->					
 						<f:FormElement label="Name">
 							<f:fields>
 								<Text text="{Name}" id="nameText" />
@@ -80,7 +61,7 @@
 
 						<f:FormElement label="Service Unit">
 							<f:fields>
-								<Text text="{IdSrvU}" id="srvUnitText" />
+								<Text text="{Name}" id="srvUnitText" />
 							</f:fields>
 						</f:FormElement>
 
@@ -89,13 +70,12 @@
 								<Text text="{LastModified}" id="lastModText" />
 							</f:fields>
 						</f:FormElement>
-						
+
 						</f:formElements>
 						</f:FormContainer>
-						
-
-				
+					
 			</f:formContainers>
 		</f:Form>
+		<Button icon="sap-icon://add" press="onAddEmployee"/>
 	</VBox>
 </core:FragmentDefinition>

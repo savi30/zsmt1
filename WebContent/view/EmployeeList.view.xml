@@ -11,34 +11,36 @@
 							path : 'IdSrvU',
 							group : true
 						}
-					}">
-			<SearchField liveChange="onSearch" width="80%" />
+					}">				
 		<columns>
-			
-			<Column width="12em">
-				<Text text="{i18n>employeeListTitle}" />
+			<Column  width="12em">
+				<Text text="{i18n>employeeListTitle}" class="myText" />
 			</Column>
 			
 			<Column minScreenWidth="Tablet"
 				demandPopin="true"
 				hAlign="Center">
-				<Text text="{i18n>consLeveltitle}" />
+				<Text text="{i18n>consLeveltitle}" class="myText"/>
 			</Column>
 			
 			<Column minScreenWidth="Tablet"
 				demandPopin="true"
 				hAlign="Center">
-				<Text text="{i18n>workingHoursTitle}" />
+				<Text text="{i18n>workingHoursTitle}" class="myText"/>
 			</Column>
 			
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<Text text="{i18n>employeeListNoProjects}" class="myText"/>
+			</Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
-				<Text text="{i18n>employeeListNoProjects}" />
+				<Text text="Add to Project" class="myText"/>
 			</Column>
 		</columns>
 
 		<items>
 			<ColumnListItem type="Active" press="onPress">
 				<cells>
+			
 					<ObjectIdentifier title="{Name} {Surname}" />
 
 					<Text text="{ConsultLevel}" />
@@ -50,8 +52,11 @@
 					parts:[{path:'NoProjects'}],
 					formatOptions: {showMeasure: false}
 				}"
-						state="{= ${NoProjects} > 4 ? 'Error' : ${NoProjects}> 1 ? 'Warning' :'Success'}">
+						state="{= ${NoProjects} > 4 ? 'Error' : ${NoProjects}> 2 ? 'Warning' :'Success'}">
 					</ObjectNumber>
+					
+					<Button icon = "sap-icon://add" press="onAddEmployeeToProject"/>
+		
 				</cells>
 			</ColumnListItem>
 		</items>

@@ -8,16 +8,19 @@
 			<IconTabBar
 				id="iconTabBar"
 				class="sapUiResponsiveContentPadding"
-				binding="{Manager}">
-				<items>	
-					<IconTabFilter id="empTab" text="{i18n>employeeListTitle}" key="Employee">
+				binding="{Manager}"
+				outline="None">
+				<items >	
+					<IconTabFilter id="empTab" text="{i18n>employeeListTitle}" icon ="sap-icon://employee" key="Employee">
 						<mvc:XMLView viewName="zsmt1.view.EmployeeList"></mvc:XMLView>	
 					</IconTabFilter>
-					<IconTabFilter id="projectTab" text="{i18n>projectListTitle}" key="Projects">
+					<IconTabSeparator/>
+					<IconTabFilter id="projectTab" icon ="sap-icon://task" text="Projects" key="Projects">
 						<mvc:XMLView viewName="zsmt1.view.ProjectList"></mvc:XMLView>					
 					</IconTabFilter>
-					<IconTabFilter id="reportTab" text="{i18n>reportTitle}" key="Reports">
-					
+					<IconTabSeparator/>
+					<IconTabFilter id="reportTab" text="{i18n>reportTitle}" key="Reports" icon ="sap-icon://kpi-corporate-performance">
+						
 					</IconTabFilter>					 
 				</items>
 			</IconTabBar>

@@ -29,10 +29,10 @@ sap.ui.define([
 						oView.setBusy(false);
 					}
 				},
-                template : new sap.m.StandardListItem({
-                    title: "{Name}"   
-    
-                })
+				template : new sap.m.StandardListItem({ 
+					title:"{Name}",
+					type:sap.m.ListType.Detail                                                                       
+            })
             }); 
 		},
 		   onSaveDialog:function(){

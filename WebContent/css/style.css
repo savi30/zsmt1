@@ -1,18 +1,20 @@
-.zsmt1 .myCustomButton.sapMBtn {
-	margin-right: 5.125rem
-
+.zsmt1 .myCustomButton . sapMBtn {
+	background-color: Transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
 }
 
-html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
+html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	margin-left: 0.125rem;
 	margin-right: 0
 }
 
 .zsmt1 .myCustomText {
-
 	font-weight: bold;
 }
-
 
 .zsmt1 .fontSize {
 	font-size: 20px;
@@ -88,14 +90,12 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 	padding: 3%;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: #82abf7;
 	border-radius: 4px;
 }
 
 .zsmt1 .myAppPage {
 	width: 100%;
 	height: 100%;
-	background-color: #82abf7;
 }
 
 .zsmt1 .myAppImage {
@@ -123,7 +123,8 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 }
 
 .zsmt1 .myLoginButton {
-	background-color: #82abf7; /* Green */
+	background-color: #82abf7;
+	/* Green */
 	border: none;
 	width: 100%;
 	border-radius: 4px;
@@ -133,14 +134,14 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 }
 
 .zsmt1 .myLoginButton:hover {
-	background-color: #0000ff; /* Green */
-    color: white;
+	/* Green */
+	background-color: #0000ff;
 }
 
 .zsmt1 .myAppButtonManager {
 	-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-	color: #82abf7; /* Green */
+	transition-duration: 0.4s;
+	background-color: #0000ff;
 	text-align: center;
 	align-self: center;
 	justify-self: center;
@@ -150,18 +151,16 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 	width: 100%;
 	margin: auto;
 	margin-bottom: 3%;
-	
 }
 
 .zsmt1 .myAppButtonManager:hover {
-	background-color: #0000ff; /* Green */
-    color: white;
+	background-color: #82abf7; /* Green */
 }
 
 .zsmt1 .myAppButtonEmployee {
 	-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-	color: #82abf7; /* Green */
+	transition-duration: 0.4s;
+	background-color: #0000ff; /* Green */
 	text-align: center;
 	align-self: center;
 	justify-self: center;
@@ -174,8 +173,7 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 }
 
 .zsmt1 .myAppButtonEmployee:hover {
-	background-color: #0000ff; /* Green */
-    color: white;
+	background-color: #82abf7; /* Green */
 }
 
 .zsmt1 .myAppFlexContainer {
@@ -208,7 +206,6 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 	justify-self: center;
 	align-content: center;
 	justify-content: center;
-
 }
 
 .zsmt1 .myFlexContainer {
@@ -245,32 +242,38 @@ html[dir="rtl"] .zsmt1.myCustomButton.sapMBtn {
 
 .zsmt1 .myFlexContainer-item--bottom {
 	align-self: flex-end;
-
 }
 
 .zsmt1 .myCustomBody {
 	background-color: transparent !important;
 	background-image: url("mhpcar.jpg") !important;
 	background-repeat: no-repeat;
-	background-size:cover;
-}  
+	background-size: cover;
+}
 
 .zsmt1 .myEmployeeImage {
-	
 	height: 80px;
-	
 	align-self: center;
 	justify-self: center;
 	margin-left: auto;
-	margin-right: auto; 
+	margin-right: auto;
 }
 
-.zsmt1 .myPos1{
+.zsmt1 .myPos1 {
 	align-self: center;
 }
 
-.zsmt1 .myPos2{
+.zsmt1 .myPos2 {
 	float: right;
 	background-size: cover;
+}
 
+.zsmt1 .myText {
+	font-weight: bold;
+	font-size: 18px;
+	color: black;
+}
+
+.zsmt1 .tr {
+	background-color: rgba(255, 0, 255, 0.5) !important;
 }
