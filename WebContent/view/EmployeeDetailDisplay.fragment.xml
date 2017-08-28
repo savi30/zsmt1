@@ -1,9 +1,12 @@
 <core:FragmentDefinition xmlns="sap.m"
 	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
-	<VBox class="sapUiSmallMargin">
+	<FlexBox class="myDetailsFlexBox">
 
+		<VBox  class="myEmployeeProfileImageVbox">
+			<Image src="image/user.png" class="myEmployeeProfileImage"/>
+		</VBox>
+		<VBox  class="myEmployeeProfileDetailsVbox">
 		<f:Form id="FormDisplayEmpDetails" editable="false">
-
 			<f:title>
 				<core:Title text="{Name} {Surname}" />
 			</f:title>
@@ -14,26 +17,15 @@
 					emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
 					columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
 			</f:layout>
-			
-			
-			<f:formContainers>	
-	
-				<f:FormContainer >
 
-					<f:formElements >
 
-						<f:FormElement>
-							<f:fields>
-								<Image class="myEmployeeImage" src="image/user.png" width="80px" >
-								</Image>
-							</f:fields>
-						</f:FormElement>
-						
-					</f:formElements>
-					
-					<f:formElements >
-			
-			
+			<f:formContainers>
+
+				<f:FormContainer>
+
+					<f:formElements>
+
+
 						<f:FormElement label="Name">
 							<f:fields>
 								<Text text="{Name}" id="nameText" />
@@ -77,18 +69,19 @@
 
 						<f:FormElement label="Service Unit">
 							<f:fields>
-								<Text  text ="{Name}" id="srvUnitText" />
+								<Text text="{Name}" id="srvUnitText" />
 							</f:fields>
 						</f:FormElement>
-						
-						</f:formElements>
-		
-						
-						</f:FormContainer>
-						
 
-				
+					</f:formElements>
+
+
+				</f:FormContainer>
+
+
+
 			</f:formContainers>
 		</f:Form>
-	</VBox>
+		</VBox>
+	</FlexBox>
 </core:FragmentDefinition>

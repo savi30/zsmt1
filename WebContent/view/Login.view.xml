@@ -12,20 +12,18 @@
 						class="myFlexContainer myFlexContainer-item myFlexContainer-item--top myFlexContainer-item--bottom">
 
 						<VBox class="myVbox">
-							<Image class="myLoginImage" src="image/padlock.png" />
-							<Label text="Username" labelFor="nameInput" />
+							<Image class="myLoginImage" press="handleLogin" src="image/padlock.png" />
+							<Label text="Username" labelFor="nameInput" class="myFlexText"/>
 
 							<Input id="nameInput" class="sapUiSmallMarginBottom" type="Text"
 								placeholder="Enter Username ..." valueStateText="Username must not be empty. Maximum 30 characters." />
 
-							<Label text="Password" labelFor="passwordInput" />
+							<Label text="Password" labelFor="passwordInput" class="myFlexText"/>
 
 							<Input id="passwordInput" class="sapUiSmallMarginBottom"
 								type="Password" placeholder="Enter Password ..." valueStateText="Password must not be empty." />
 						</VBox>
-						<VBox class="myVboxButton">
-							<Button text="Login" press="handleLogin" class="myLoginButton" />
-						</VBox>
+	
 
 
 

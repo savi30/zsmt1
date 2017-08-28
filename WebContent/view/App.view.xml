@@ -1,25 +1,16 @@
 <mvc:View controllerName="zsmt1.controller.App" xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true">
 	<App class="zsmt1" id="app">
-
 		<Page class="myAppPage" title="{i18n>homePageTitle}">
-
 			<VBox class="myAppVbox">
 				<FlexBox class="myAppFlexContainer">
 					<Image class="myAppImage" src="image/MHP.svg"></Image>
 				</FlexBox>
-
-
 				<FlexBox class="myAppFlexBoxButtons">
-
-
-					<Button text="{i18n>selectManagerText}" press="onSelectManager"
-						class="myAppButtonManager" icon="sap-icon://manager" />
-
-					<Button text="{i18n>selectEmployeeText}" press="onSelectEmployee"
-						class="myAppButtonEmployee" icon="sap-icon://employee" />
-
-
+					<Image press="onSelectManager" class="myAppButtonManager" src="image/manager5.png">
+					</Image>
+					<Image press="onSelectEmployee" class="myAppButtonEmployee" src="image/employee5.png">
+					</Image>
 				</FlexBox>
 			</VBox>
 
