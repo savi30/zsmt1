@@ -5,16 +5,11 @@ sap.ui.define([
    "sap/ui/core/routing/History"
 ], function (JQuery, BaseController, MessageToast, History) {
    "use strict";
-  
+   var oTemplate,oModel;
    return BaseController.extend("zsmt1.controller.EmployeeSkills", {
 	   
-	   onInit: function () {
-		   var url = "http://bcsw-sap078.mymhp.net:8000/sap/opu/odata/sap/ZSMT1ODATA_SRV/";
-		   var oData = new sap.ui.model.odata.v2.ODataModel(url);		   
-		   var oModel= this.getView();
-		   oModel.setModel(oData,"test");
-			   
-		  
+	   onInit: function () {		   
+		   
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("employee").attachMatched(this._onRouteMatched, this);
 			this.oSF = this.getView().byId("searchField");
@@ -23,7 +18,35 @@ sap.ui.define([
 			var oArgs, oView;
 			oArgs = oEvent.getParameter("arguments");
 			oView = this.getView();
+			
+			 if(!oTemplate){
+				
+				 oTemplate = new sap.m.CustomListItem({ 
+	                    content : [
+	                        new sap.m.FlexBox({
+	                        	alignItems : sap.m.FlexAlignItems.Start,
+	                        	justifyContent : sap.m.FlexJustifyContent.SpaceBetween,
+	                        	items:[
+	                        	new sap.m.Label("levelLabel",{
+	                        		text:"{Name}"
+	                        	}),
+	                        	new sap.m.Button({
+	                        		icon:"sap-icon://edit",
+	                        		press:function(oEvent){
+	                        			 alert("s");}
+	                        	})
+	                        	]
+	                        })	
+	                   ],
+	            });
+	            	 	 
+			 }
+			
+			
 			var oList = this.getView().byId("employeeSkillList");
+			oModel = this.getView().getModel();
+			oModel.read("/SkillEmpSet(IdEmployee=1,IdSkill=1)");
+			oList.setModel(oModel,"skillEmp");
 			oList.bindItems({
                 path :  "/EmployeeSet(" + oArgs.employeeId + ")/toSkill",
                 events : {
@@ -35,15 +58,21 @@ sap.ui.define([
 						oView.setBusy(false);
 					}
 				},
-				template : new sap.m.StandardListItem({ 
-					title:"{Name}",
-					type:sap.m.ListType.Detail                                                                       
-            })
-            }); 
+				template : oTemplate
+			});
 			
-			 
 			
 		},
+		onBeforeRendering:function(){
+			/*var oList = this.getView().byId("employeeSkillList").getItems();
+			
+			for (var i=0; i<oList.length; i++){
+				var a = sap.ui.getCore().byId("levelLabel");			
+				a.bindObject("/SkillEmpSet(IdEmployee=1,IdSkill=1)");
+	
+			}*/
+		},
+	
 		   onSaveDialog:function(){
 			   this._oSkillDialog.close();
 			   MessageToast.show("Skill saved");
@@ -68,6 +97,28 @@ sap.ui.define([
 
 			
 			},
+			onOpenEditDialog1:function(oEvent){
+				if (!this._oSkillEditDialog) {
+					this._oSkillEditDialog = sap.ui
+							.xmlfragment(
+									"zsmt1.view.EmployeeEditSkillLevel",
+									this
+											.getView()
+											.getController());
+					this.getView().addDependent(
+							this._oSkillEditDialog);
+				}
+
+				this._oSkillEditDialog.open();
+    		}, 
+			onSaveSkillDialog:function(){
+				MessageToast.show("ok");
+				this.__oSkillEditDialog.close();
+			},
+			onCloseSkillDialog:function(){
+				this.__oSkillEditDialog.close();
+			}
+			,
 		_onBindingChange : function (oEvent) {
 			// No data for the binding
 			if (!this.getView().getBindingContext()) {

@@ -3,10 +3,8 @@
 	xmlns:mvc="sap.ui.core.mvc">
 	
 	<List id="employeeSkillList" class="sapUiResponsiveMargin" width="auto">
-	
 	<headerToolbar>
 			<Toolbar>
-	
 	
 	<ToolbarSpacer />
 	
