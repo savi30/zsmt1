@@ -29,8 +29,6 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	justify-self: center;
 	margin-left: auto;
 	margin-right: auto;
-	opacity: 0.8;
-	filter: alpha(opacity = 50);
 	width: 80%;
 }
 
@@ -86,11 +84,21 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	justify-self: center;
 	flex-direction: column;
 	width: 30%;
-	height: 100%;
-	padding: 3%;
 	margin-right: auto;
 	margin-left: auto;
 	border-radius: 4px;
+	justify-content: center;
+	align-content: center;
+	padding-top: 3%;
+}
+
+.zsmt1 .myPage {
+	background-image: url("../image/PorscheBack.jpg");
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	justify-content: center;
+	align-content: center;
 }
 
 .zsmt1 .myAppPage {
@@ -188,7 +196,8 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	border: 4px blue;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: transparent;
+	background: linear-gradient(rgba(255, 255, 255, 0.8),
+		rgba(255, 255, 255, 0.1));
 	border-radius: 1px;
 	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0
 		rgba(0, 0, 0, 0.38);
@@ -201,7 +210,6 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	display: flex;
 	padding: 5%;
 	width: 30%;
-	
 	align-self: center;
 	justify-self: center;
 	align-content: center;
@@ -220,28 +228,24 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	border: 4px blue;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: white;
+	background: linear-gradient(rgba(255, 255, 255, 0.8),
+		rgba(255, 255, 255, 0.1));
 	border-radius: 4px;
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
 		rgba(0, 0, 0, 0.19);
-	justify-self: center;
 	border-radius: 4px;
+	border-radius: 4px
 }
 
-.zsmt1 .myFlexContainer-item {
-	max-width: 50%;
-}
-
-.zsmt1 .myFlexContainer-item--top {
-	align-self: flex-start;
+.zsmt1 .myFlexText {
+	font-weight: bold;
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: 2px 1.5px #2c3f63;
+	font-size: 120%;
 }
 
 .myBackgroundStyle .sapMPageBgStandard {
 	background-image: url('HTML5_Badge_32.png');
-}
-
-.zsmt1 .myFlexContainer-item--bottom {
-	align-self: flex-end;
 }
 
 .zsmt1 .myDetailsFlexBox {
