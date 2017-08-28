@@ -186,6 +186,22 @@ sap.ui
 												oRouter.getTargets().display(
 														"notFound");
 											}
+										},
+										onSearch : function (oEvt) {
+											 
+											// add filter for search
+											var aFilters = [];
+											var sQuery = oEvt.getSource().getValue();
+											if (sQuery && sQuery.length > 0) {
+												var filter = new sap.ui.model.Filter("Surname", sap.ui.model.FilterOperator.StartsWith, sQuery);
+												aFilters.push(filter);
+												
+											}
+								 
+											// update list binding
+											var list = this.getView().byId("employeeList");
+											var binding = list.getBinding("items");
+											binding.filter(aFilters, "Application");
 										}
 
 									});
