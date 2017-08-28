@@ -64,6 +64,19 @@ sap.ui
 
 											this._actionSheet.openBy(oButton);
 										},
+										onHomePage : function() {
+											var oHistory = History
+													.getInstance();
+											var sPreviousHash = oHistory
+													.getPreviousHash();
+
+											if (sPreviousHash !== undefined) {
+											
+												var oRouter = sap.ui.core.UIComponent
+														.getRouterFor(this);
+												oRouter.navTo("manager", {}, true);
+											}
+										},
 										onAddEmployee : function(oEvent) {
 
 											var oView = this.getView();

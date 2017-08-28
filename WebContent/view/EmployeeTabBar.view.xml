@@ -15,7 +15,8 @@
 					</IconTabFilter>
 					<IconTabFilter id="employeeAllProjects" text="{i18n>projectAllListTitle}" key="AllProjects">
 						<mvc:XMLView viewName="zsmt1.view.EmployeeAllProjects"/> 
-					</IconTabFilter>
+					</IconTabFilter>										
+					
 				</items>
 			</IconTabBar>
 	
