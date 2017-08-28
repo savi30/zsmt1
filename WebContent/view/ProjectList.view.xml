@@ -15,31 +15,18 @@
 		<headerToolbar>
 			<Toolbar>
 				<ToolbarSpacer />
-				
-				<SearchField 
-				liveChange="onSearch" 
-				placeholder="Search Project..."
-				width="30%"  
-				selectOnFocus="false"/>
-					<Button text="{i18n>createProjectTitle}" press="onOpenDialog"
-						class="myCustomButton" icon="sap-icon://create" />
-												
-				
-						
 
-				
-
+				<SearchField liveChange="onSearch" placeholder="Search Project..."
+					width="30%" selectOnFocus="false" />
+				<Button text="{i18n>createProjectTitle}" press="onOpenDialog"
+					class="myCustomButton" icon="sap-icon://create" />
 			</Toolbar>
 		</headerToolbar>
 		<items>
-
 			<CustomListItem type="Active" press="onPress">
-				<FlexBox alignItems="Center" justifyContent="SpaceBetween" >
-			
-						<Label text="{Name}"/>
-						<Button class="myCustomButton" icon="sap-icon://edit"  press="onEditProject"/>
-				
-
+				<FlexBox alignItems="Center" justifyContent="SpaceBetween">
+					<Label text="{Name}" />
+					<Button class="myCustomButton" icon="sap-icon://edit" press="onEditProject" />
 				</FlexBox>
 			</CustomListItem>
 		</items>

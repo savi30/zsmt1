@@ -1,4 +1,3 @@
-
 jQuery.sap.require("sap.ui.core.format.DateFormat");
 sap.ui
 		.define(
@@ -69,37 +68,36 @@ sap.ui
 												oView.addDependent(oDialog);
 											}
 											oDialog.open();
+											var oFormatDate = sap.ui.core.format.DateFormat.getDateInstance({
+												pattern : "yyyy-MM-ddTKK:mm:ss"
+											});
+											var sd = this.getView().byId("updateProjectStartDate");
+											sd.setValue(oFormatDate.format(this.getView().getBindingContext().getProperty("StartProject")));
+											var sd = this.getView().byId("updateProjectEndDate");
+											sd.setValue(oFormatDate.format(this.getView().getBindingContext().getProperty("EndProject")));
 										},
 										onSaveEditDialog : function(oEvent) {
-
-											var oModel = this.getView()
-													.getModel();
+											
+											var oModel = this.getView().getModel();
 											var oView = this.getView();
 											var oEntry = {};
-
 											oEntry.Id = oEvent.getSource()
 													.getBindingContext()
-													.getProperty("Idproject")
-
-											oEntry.Name =oView
-													.byId("projectDetailName")
+													.getProperty("Idproject");
+											oEntry.Name = oView.byId(
+													"projectDetailName")
 													.getValue();
-											oEntry.CustName = oView
-													.byId(
-															"projectDetailCustName")
+											oEntry.CustName = oView.byId(
+													"projectDetailCustName")
 													.getValue();
 											oEntry.BudgetDays = parseInt(oView
-													.byId(
-															"projectDetailBudget")
+													.byId("projectDetailBudget")
 													.getValue());
-
-											oEntry.StartProject = oView
-													.byId(
-															"updateProjectStartDate")
+											oEntry.StartProject =  oView.byId(
+													"updateProjectStartDate")
 													.getValue();
-											oEntry.EndProject = oView
-													.byId(
-															"updateProjectEndDate")
+											oEntry.EndProject = oView.byId(
+													"updateProjectEndDate")
 													.getValue();
 
 											OData
@@ -148,8 +146,7 @@ sap.ui
 																						request) {
 																					MessageToast
 																							.show("Changes saved");
-																					this
-																							.getView()
+																						oView
 																							.byId(
 																									"projectList")
 																							.getModel()
@@ -172,11 +169,10 @@ sap.ui
 																				+ " Response"
 																				+ response);
 															});
-											this.getView().byId("projectList")
+											oView.byId("projectList")
 													.getModel().refresh(true);
 											oView.byId("changeProjectDialog")
-													.close();
-
+											.close();
 										},
 										onCancelEditDialog : function() {
 											oView.byId("changeProjectDialog")
@@ -196,15 +192,10 @@ sap.ui
 											}
 
 											this._oDialog.open();
-
 										},
-
 										onCloseDialog : function() {
-
 											this._oDialog.close();
-
 										},
-
 										onSaveDialog : function() {
 											var oModel = this.getView()
 													.getModel();
@@ -316,23 +307,24 @@ sap.ui
 														"notFound");
 											}
 										},
-										onSearch : function (oEvt) {
-											 
+										onSearch : function(oEvt) {
+
 											// add filter for search
 											var aFilters = [];
-											var sQuery = oEvt.getSource().getValue();
+											var sQuery = oEvt.getSource()
+													.getValue();
 											if (sQuery && sQuery.length > 0) {
-												var filter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.StartsWith, sQuery);
+												var filter = new sap.ui.model.Filter("Name",sap.ui.model.FilterOperator.StartsWith,sQuery);
 												aFilters.push(filter);
-												
+
 											}
-								 
-											// update list binding
-											var list = this.getView().byId("projectList");
-											var binding = list.getBinding("items");
-											binding.filter(aFilters, "Application");
+											var list = this.getView().byId(
+													"projectList");
+											var binding = list
+													.getBinding("items");
+											binding.filter(aFilters,
+													"Application");
 										}
 									});
 
 				});
-
