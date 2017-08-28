@@ -1,7 +1,11 @@
 <core:FragmentDefinition xmlns="sap.m"
 	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
-	<VBox class="sapUiSmallMargin">
+	<FlexBox class="myDetailsFlexBox">
 
+		<VBox  class="myEmployeeProfileImageVbox">
+			<Image src="image/user.png" class="myEmployeeProfileImage"/>
+		</VBox>
+		<VBox  class="myEmployeeProfileDetailsVbox">
 		<f:Form id="FormDisplayEmpDetails" editable="false">
 
 			<f:title>
@@ -76,6 +80,7 @@
 					
 			</f:formContainers>
 		</f:Form>
+		</VBox>
 		<Button icon="sap-icon://add" press="onAddEmployee"/>
-	</VBox>
+	</FlexBox>	
 </core:FragmentDefinition>

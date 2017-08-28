@@ -244,6 +244,32 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	align-self: flex-end;
 }
 
+.zsmt1 .myDetailsFlexBox {
+	display: flex;
+	align-items: centre;
+}
+
+.zsmt1 .myEmployeeProfileImageVbox {
+	width: 30%;
+	heigh: 80%;
+	align-content: center;
+	justify-content: center;
+}
+
+.zsmt1 .myEmployeeProfileDetailsVbox {
+	width: 100%;
+	margin-top: 5%;
+	margin: auto;
+}
+
+.zsmt1 .myEmployeeProfileImage {
+	width: 70%;
+	align-self: center;
+	heigh: 80%;
+	margin: auto;
+	justify-self: center;
+}
+
 .zsmt1 .myCustomBody {
 	background-color: transparent !important;
 	background-image: url("mhpcar.jpg") !important;
