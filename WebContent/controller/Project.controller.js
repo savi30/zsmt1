@@ -22,7 +22,40 @@ sap.ui.define([
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("App", {}, true);
 			}
+		},
+		
+		handleOpenToolbar : function(oEvent) {
+			var oButton = oEvent.getSource();
+
+			// create action sheet only once
+			if (!this._actionSheet) {
+				this._actionSheet = sap.ui
+						.xmlfragment(
+								"zsmt1.view.ManagerToolbar",
+								this);
+				this.getView().addDependent(
+						this._actionSheet);
+			}
+
+			this._actionSheet.openBy(oButton);
+		},
+		onHomePage : function() {
+			var oHistory = History
+					.getInstance();
+			var sPreviousHash = oHistory
+					.getPreviousHash();
+
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				var oRouter = sap.ui.core.UIComponent
+						.getRouterFor(this);
+				oRouter.navTo("manager", {}, true);
+			}
 		}
+		
+		
+		
 /*			handleOpenToolbar : function (oEvent) {
 			var oButton = oEvent.getSource();
  
