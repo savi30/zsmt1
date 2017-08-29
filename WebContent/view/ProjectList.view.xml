@@ -58,7 +58,7 @@
 
 					<ObjectNumber number="{BudgetDays}" />
 
-					<Text text="{EndProject}"/>
+					<Text id="projectListEndDate" text="{EndProject}"/>
 					
 					<Button class="myCustomButton" icon="sap-icon://edit" press="onEditProject" />
 		
