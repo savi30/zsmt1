@@ -27,7 +27,7 @@
 			singleContainerFullSize="false" >
 			
 			<f:content>				
-				<Label text="project id" />
+				<Label text="Project ID" />
 				<Input type="Text" id="addEmployeeProjectId"
 						placeholder="Enter id ..." />
 						

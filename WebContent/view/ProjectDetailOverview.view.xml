@@ -9,7 +9,7 @@
 
 	<mvc:XMLView viewName="zsmt1.view.EmployeeProjectDetails"/> 
 	
-	<IconTabBar id="iconTabBarProj"
+	<IconTabBar id="iconTabBarProjDetail"
 				class="sapUiResponsiveContentPadding">
 	<items>
 	<IconTabFilter id="employeeTabManager" text="{i18n>selectEmployeeText}" key="Employee">

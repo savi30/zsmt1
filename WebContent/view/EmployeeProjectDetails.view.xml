@@ -7,7 +7,7 @@
 	xmlns:mvc="sap.ui.core.mvc">
 	
 	<VBox class="sapUiSmallMargin">
-		<f:Form id="FormDisplayProjDetails" editable="false">
+		<f:Form id="FormDisplayProjDetailsEmployee" editable="false">
 			<f:title>
 				<core:Title text="{Name} {CustName}" />
 			</f:title>
@@ -32,32 +32,32 @@
 					<f:formElements>
 						<f:FormElement label="Name">
 							<f:fields>
-								<Text text="{Name}" id="nameText"  />
+								<Text text="{Name}" id="nameTextProjectDetails"  />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Customer">
 							<f:fields>
-								<Text text="{CustName}" id="custNameText"  />
+								<Text text="{CustName}" id="custNameTextEmployee"  />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Budget days">
 							<f:fields>
-								<Text text="{BudgetDays}" id="budgetDaysText"  />
+								<Text text="{BudgetDays}" id="budgetDaysTextEmployee"  />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Start Project">
 							<f:fields>
-								<Text text="{StartProject}" id="startProjectText"  />
+								<Text text="{StartProject}" id="startProjectTextEmployee"  />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="End Project">
 							<f:fields>
-								<Text text="{EndProject}" id="endProjectText"  />
+								<Text text="{EndProject}" id="endProjectTextEmployee"  />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Completed Flag">
 							<f:fields>
-								<Text text="{Flag}" id="flagText"  />
+								<Text text="{Flag}" id="flagTextEmployee"  />
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>

@@ -6,34 +6,25 @@
 			<Image src="image/user.png" class="myEmployeeProfileImage" />
 		</VBox>
 		<VBox class="myEmployeeProfileDetailsVbox">
-			<f:Form id="FormDisplayEmpDetails" editable="false">
+			<f:Form id="XFormDisplayEmpDetails" editable="false">
 				<f:title>
 					<core:Title text="{Name} {Surname}" />
 				</f:title>
 
-				 <f:layout>
-					<f:ResponsiveLayout
-					    labelSpanXL="4"
-						labelSpanL="4" 
-						labelSpanM="3" 
-						labelSpanS="12" 
-						adjustLabelSpan="false"
-						emptySpanXL="4" 
-						emptySpanL="4" 
-						emptySpanM="4" 
-						emptySpanS="0"
-						columnsXL="1" 
-						columnsL="1" 
-						columnsM="1" 
-						singleContainerFullSize="false" 
-						 /> 
-				</f:layout> 
+				<f:layout>
+
+					<f:ResponsiveGridLayout labelSpanXL="3"
+						labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
+						emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+						columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+
+				</f:layout>
 				<f:formContainers>
 					<f:FormContainer>
 						<f:formElements>
-							<f:FormElement label="Name"   >
+							<f:FormElement label="Name">
 								<f:fields>
-									<Text text="{Name}" id="nameText"  />
+									<Text text="{Name}" id="nameTextDetail" />
 								</f:fields>
 							</f:FormElement>
 							<f:FormElement label="Surname">

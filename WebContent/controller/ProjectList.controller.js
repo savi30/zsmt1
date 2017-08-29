@@ -268,8 +268,7 @@ sap.ui
 																						request) {
 																					MessageToast
 																							.show("Project created successfully");
-																					this
-																							.getView()
+																					oView
 																							.byId(
 																									"projectList")
 																							.getModel()
@@ -293,7 +292,7 @@ sap.ui
 																				+ response);
 															});
 											this._oDialog.close();
-											this.getView().byId("projectList")
+											oView.byId("projectList")
 													.getModel().refresh(true);
 										},
 										afterClose : function() {
