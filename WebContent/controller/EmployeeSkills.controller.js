@@ -128,6 +128,7 @@ sap.ui.define([
 			},
 			_onRouteMatched : function (oEvent) {
 				
+				var oList = this.getView().byId("employeeSkillList");
 				oArgs = oEvent.getParameter("arguments");
 				 if(!oTemplate){
 					
@@ -143,7 +144,7 @@ sap.ui.define([
 		                        	new sap.m.Button({
 		                        		icon:"sap-icon://edit",
 		                        		press:function(oEvent){
-		                        			 alert("s");}
+		                        			MessageToast.show("implement edit");}
 		                        	})
 		                        	]
 		                        })	
@@ -151,9 +152,7 @@ sap.ui.define([
 		            });
 		            	 	 
 				 }
-				var oList = this.getView().byId("employeeSkillList");
-				/*oModel.read("/SkillEmpSet(IdEmployee=1,IdSkill=1)");*/
-				/*oList.setModel(oModel,"skillEmp");*/
+				 
 				oList.bindItems({
 	                path :  "/EmployeeSet(" + oArgs.employeeId + ")/toSkill",
 	                events : {
@@ -170,8 +169,14 @@ sap.ui.define([
 				
 				
 			},
+			onBeforeRendering:function(){
+				var oList = this.getView().byId("employeeSkillList");
+				var obj = oList.getItems();
+				var obj2 = obj[0];
+			}
+			,
 		_onBindingChange : function (oEvent) {
-			// No data for the binding
+			
 			if (!this.getView().getBindingContext()) {
 				sap.ui.core.UIComponent.getRouterFor(this).getTargets().display("notFound");
 			}
