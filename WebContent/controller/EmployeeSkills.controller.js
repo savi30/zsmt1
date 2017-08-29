@@ -137,20 +137,27 @@ sap.ui.define([
 		                        new sap.m.FlexBox({
 		                        	alignItems : sap.m.FlexAlignItems.Start,
 		                        	justifyContent : sap.m.FlexJustifyContent.SpaceBetween,
-		                        	items:[
-		                        	new sap.m.Label("levelLabel",{
+		                        	items:[      
+		                        	new sap.m.Label("skillId",{
+		                        		visible:false,
+		                        		text:"{SkillId}"
+		                        	}), 
+		                        	new sap.m.Text("nameLabel",{
 		                        		text:"{Name}"
+		                        			
 		                        	}),
-		                        	new sap.m.Button({
-		                        		icon:"sap-icon://edit",
-		                        		press:function(oEvent){
-		                        			MessageToast.show("implement edit");}
+		                        	new sap.m.ProgressIndicator("skillLevelProgressBar",{
+		                        		percentValue:0,
+		                        		displayValue:"",
+		                        		showValue:true,
+		                        		state:sap.ui.core.ValueState.None,
+		                        		width:"190px",
+		                        		height:"20px"
 		                        	})
 		                        	]
 		                        })	
 		                   ],
-		            });
-		            	 	 
+		            }); 	 	 
 				 }
 				 
 				oList.bindItems({
@@ -161,18 +168,93 @@ sap.ui.define([
 							oView.setBusy(true);
 						},
 						dataReceived: function (oEvent) {
+							
+							oModel = oView.getModel();
+							var oList = oView.byId("employeeSkillList");
+							var oItems = oList.getItems();
+							for (var i=0;i<oItems.length;i++){ 
+							var skillId = parseInt(oItems[i].mAggregations.content[0].mAggregations.items[0].getText());
+							var sPath = "/SkillEmpSet(IdEmployee="+oArgs.employeeId+",IdSkill="+skillId +")";
+							oModel.read(sPath,this);
+							var skillLevel = oModel.getProperty("/SkillEmpSet(IdEmployee="+parseInt(oArgs.employeeId)+",IdSkill="+skillId +")/EmployeeLevel");	
+							oItems[i].mAggregations.content[0].mAggregations.items[2].addStyleClass("sapUiSmallMarginBottom");
+							switch(skillLevel){
+								case 1:
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Error);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+									break;
+								case 2:
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Warning);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+									break;
+								case 3:
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Warning);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+									break;
+								case 4:
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Success);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+									break;
+								case 5:
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Success);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+									oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+									break;
+								default:
+									break;
+							}
+							}
 							oView.setBusy(false);
 						}
 					},
 					template : oTemplate
 				});
 				
-				
 			},
-			onBeforeRendering:function(){
+			onAfterRendering:function(){
+				oModel = oView.getModel();
 				var oList = this.getView().byId("employeeSkillList");
-				var obj = oList.getItems();
-				var obj2 = obj[0];
+				var oItems = oList.getItems();
+				for (var i=0;i<oItems.length;i++){ 
+				var skillId = parseInt(oItems[i].mAggregations.content[0].mAggregations.items[0].getText());
+				var sPath = "/SkillEmpSet(IdEmployee="+oArgs.employeeId+",IdSkill="+skillId +")";
+				oModel.read(sPath,this);
+				var skillLevel = oModel.getProperty("/SkillEmpSet(IdEmployee="+parseInt(oArgs.employeeId)+",IdSkill="+skillId +")/EmployeeLevel");		
+				oItems[i].mAggregations.content[0].mAggregations.items[2].addStyleClass("sapUiSmallMarginBottom");
+				switch(skillLevel){
+				case 1:
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Error);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+					break;
+				case 2:
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Warning);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+					break;
+				case 3:
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Warning);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+					break;
+				case 4:
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Success);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+					break;
+				case 5:
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setState(sap.ui.core.ValueState.Success);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setPercentValue(parseFloat(skillLevel)*20);
+					oItems[i].mAggregations.content[0].mAggregations.items[2].setDisplayValue(skillLevel);
+					break;
+				default:
+					break;
+			}
+				}
 			}
 			,
 		_onBindingChange : function (oEvent) {
