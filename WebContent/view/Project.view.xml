@@ -8,7 +8,7 @@
 		  navButtonPress="onNavBack" >
 		 
 	<headerContent>
-		<Toolbar id="managerEmployeeToolBar">
+		<Toolbar id="projectToolBar">
 				<Button  icon="sap-icon://home" press="onHomePage"
 				class="sapUiSmallMarginBottom" />
 				<ToolbarSpacer/>
