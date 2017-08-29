@@ -12,6 +12,16 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	margin-right: 0
 }
 
+.zsmt1 .myAllPages {
+	background-image: url("../image/wall.jpg");
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	justify-content: center;
+	align-content: center;
+}
+
+
 .zsmt1 .myCustomText {
 	font-weight: bold;
 }
@@ -184,6 +194,13 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	background-color: rgba(255, 255, 255, 0.8); /* Green */
 }
 
+.zsmt1 .myEmployeeFragment{
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.18);
+}
+
+
+
 .zsmt1 .myAppFlexContainer {
 	display: -webkit-flex;
 	display: flex;
@@ -251,6 +268,11 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 .zsmt1 .myDetailsFlexBox {
 	display: flex;
 	align-items: centre;
+}
+
+
+.zsmt1 .myDetailsGrid {
+	background: blue;
 }
 
 .zsmt1 .myEmployeeProfileImageVbox {

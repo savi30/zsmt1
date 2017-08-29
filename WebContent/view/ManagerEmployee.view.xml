@@ -3,7 +3,7 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Page title="{i18n>appTitle}"		  
-		  class="sapUiResponsiveContentPadding" showNavButton="true"
+		  class="sapUiResponsiveContentPadding myAllPages" showNavButton="true"
 		navButtonPress="onNavBack">
 	<headerContent>
 		<Toolbar id="managerEmployeeToolBar">

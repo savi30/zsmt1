@@ -18,7 +18,7 @@
 					<f:formElements>
 						<f:FormElement label="ID">
 							<f:fields>
-								<Text text="{Idproject}" id="idprojectText" />
+								<Text text="{Idproject}" id="idprojectText"/>
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Name">
