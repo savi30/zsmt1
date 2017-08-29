@@ -1,6 +1,8 @@
 <mvc:View controllerName="zsmt1.controller.EmployeeProjects"
-	 xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<List id="employeeProjectList" class="sapUiResponsiveMargin" width="auto"/>
-
+	xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<List id="employeeMyProjectList" class="sapUiResponsiveMargin"
+		width="auto"/>
 </mvc:View>
+
+
+

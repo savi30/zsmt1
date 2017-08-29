@@ -10,12 +10,12 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 			oRouter.getRoute("employee").attachMatched(this._onRouteMatched,
 					this);
 
-		},
+		},				
 		_onRouteMatched : function(oEvent) {
 			var oArgs, oView;
 			oArgs = oEvent.getParameter("arguments");
 
-			var oList = this.getView().byId("employeeProjectList");
+			var oList = this.getView().byId("employeeMyProjectList");
 			oList.bindItems({
 				path : "/EmployeeSet(" + oArgs.employeeId + ")/toProject",
 				
