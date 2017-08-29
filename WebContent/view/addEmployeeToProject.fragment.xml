@@ -44,11 +44,8 @@
 					class="sapUiSmallMarginBottom"
 					valueFormat="yyyy-MM-ddTKK:mm:ss" displayFormat="long"
 					/>
-				
 				<Label text="Finish date" labelFor="DP2"/>
 				<DatePicker
-			
-					
 					id="addEmployeeFinishDate"
 					placeholder="Enter finish date ..."
 					change="handleChange"

@@ -150,7 +150,7 @@ sap.ui
 																						Joindate : oEntry.StartProject,
 																						Enddate : oEntry.EndProject,
 																						Flag : false,
-																						LastModified : oEntry.LastModified
+																						LastModified : oEntry.EndProject
 																					}
 																				},
 																				function(
