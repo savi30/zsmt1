@@ -16,12 +16,12 @@
 							<Label text="Username" labelFor="nameInput" class="myFlexText"/>
 
 							<Input id="nameInput" class="sapUiSmallMarginBottom" type="Text"
-								placeholder="Enter Username ..." valueStateText="Username must not be empty. Maximum 30 characters." />
+								placeholder="Enter Username ..." valueStateText="Username must not be empty. Maximum 30 characters." submit="handleLogin"/>
 
 							<Label text="Password" labelFor="passwordInput" class="myFlexText"/>
 
 							<Input id="passwordInput" class="sapUiSmallMarginBottom"
-								type="Password" placeholder="Enter Password ..." valueStateText="Password must not be empty." />
+								type="Password" placeholder="Enter Password ..." valueStateText="Password must not be empty." submit="handleLogin"/>
 						</VBox>
 	
 
