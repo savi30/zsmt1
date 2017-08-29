@@ -73,7 +73,7 @@ sap.ui.define([
 													IdEmployee : oEntry.EmpId,
 													IdSkill : oEntry.SkillId,
 													EmployeeLevel : oEntry.SkillLevel,
-													LastModified : oFormatDate.format(oEntry.LastModified)
+													LastModfied : oFormatDate.format(oEntry.LastModified)
 												}
 											},
 											function(
