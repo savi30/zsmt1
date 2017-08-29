@@ -1,0 +1,22 @@
+<mvc:View controllerName="zsmt1.controller.EmployeeAllColleaguesList"
+	xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<List id="employeeAllEmployee" class="sapUiResponsiveMargin"
+		width="auto"
+		items="{
+					path:'/EmployeeSet',
+					parameters:{
+							operationMode:'Client'
+							},
+					sorter : {
+							
+							path : 'IdSrvU',
+							group : true
+						}
+					}">
+
+		<items>
+			<ObjectListItem type="Active" press="onPress" title="{Name} {Surname}" >
+			</ObjectListItem>
+		</items>
+	</List>
+</mvc:View>

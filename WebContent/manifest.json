@@ -100,6 +100,11 @@
 		"pattern":"manager/employeeDetails/{employeeId}",
 		"name":"managerEmployee",
 		"target":"managerEmployee"
+		},
+		{
+		"pattern":"employee/employeeAllColleaguesDetails/{employeeId}",
+		"name":"employeeAllColleagues",
+		"target":"employeeAllColleagues"
 		}
 	  ],
 	  "targets": {
@@ -141,6 +146,11 @@
 	  "managerEmployee":
 	  {
 	  		"viewName":"ManagerEmployee",
+	  		"viewLevel":3
+	  },
+	  "employeeAllColleagues":
+	  {
+	  		"viewName":"EmployeeAllColleagues",
 	  		"viewLevel":3
 	  }
 	  }
