@@ -18,6 +18,14 @@
 	</headerContent>	  
 		  
 	<mvc:XMLView viewName="zsmt1.view.ProjectDetails"/> 
-	<mvc:XMLView viewName="zsmt1.view.ProjectEmployee"/>
+	
+	<IconTabBar id="iconTabBarProj"
+				class="sapUiResponsiveContentPadding">
+	<items>
+	<IconTabFilter id="employeeTabManager" text="{i18n>selectEmployeeText}" key="Employee">
+						<mvc:XMLView viewName="zsmt1.view.ProjectEmployee"/> 
+	</IconTabFilter>
+	</items>
+	</IconTabBar>
 	</Page>
 </mvc:View>
