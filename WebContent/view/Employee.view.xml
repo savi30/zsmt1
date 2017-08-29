@@ -3,7 +3,7 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Page title="{i18n>appTitle}"		  
-		  class="sapUiResponsiveContentPadding">
+		  class="sapUiResponsiveContentPadding myAllPages">
 	<headerContent>
 		<Toolbar id="employeeToolBar">
 				<ToolbarSpacer/>
@@ -12,7 +12,7 @@
 		</Toolbar>
 	</headerContent>
 	
-	<Panel id="EmployeeDetailsFragment"/>
+	<Panel id="EmployeeDetailsFragment" class="myEmployeeFragment"/>
 	
 	<mvc:XMLView viewName="zsmt1.view.EmployeeTabBar"/> 
 	

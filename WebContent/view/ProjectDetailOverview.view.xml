@@ -4,7 +4,7 @@
 	xmlns:mvc="sap.ui.core.mvc">
 	<Page
 	 showNavButton="true"
-		navButtonPress="onNavBack" >
+		navButtonPress="onNavBack" class="myAllPages">
 	<mvc:XMLView viewName="zsmt1.view.EmployeeProjectDetails"/> 
 	<mvc:XMLView viewName="zsmt1.view.EmployeeProjectEmployee"/>
 	</Page>
