@@ -2,10 +2,21 @@
 	controllerName="zsmt1.controller.Project" 
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<Page
-	 showNavButton="true"
-		navButtonPress="onNavBack" >
+	<Page  title="{i18n>appTitle}"		  
+		   class="sapUiResponsiveContentPadding"
+		   showNavButton="true"
+		   navButtonPress="onNavBack" >
 	<mvc:XMLView viewName="zsmt1.view.EmployeeProjectDetails"/> 
-	<mvc:XMLView viewName="zsmt1.view.EmployeeProjectEmployee"/>
+	
+	<IconTabBar id="iconTabBarProj"
+				class="sapUiResponsiveContentPadding">
+	<items>
+	<IconTabFilter id="employeeTabManager" text="{i18n>selectEmployeeText}" key="Employee">
+						<mvc:XMLView viewName="zsmt1.view.EmployeeProjectEmployee"/> 
+	</IconTabFilter>
+	</items>
+	</IconTabBar>
+	
+	
 	</Page>
 </mvc:View>

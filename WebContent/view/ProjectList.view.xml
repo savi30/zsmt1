@@ -1,6 +1,7 @@
 <mvc:View controllerName="zsmt1.controller.ProjectList" xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout">
-	<List id="projectList" class="sapUiResponsiveMargin" width="auto"
+	xmlns:mvc="sap.ui.core.mvc" >
+
+	<Table id="projectList" class="sapUiResponsiveMargin" width="auto"
 		items="{
 					path:'/ProjectSet',
 					parameters:{
@@ -11,24 +12,58 @@
 							path : 'CustName',
 							group : true
 						}
-					}">
-		<headerToolbar>
-			<Toolbar>
-				<ToolbarSpacer />
+					}">	
+								
+			<headerToolbar>
+				<Toolbar>
+					<ToolbarSpacer />
+				
+						<SearchField 
+							liveChange="onSearch" 
+							placeholder="Search Project..."
+							width="30%"  
+							selectOnFocus="false"/>	
+						<Button text="{i18n>createProjectTitle}" press="onOpenDialog"
+								class="myCustomButton" icon="sap-icon://create" />			
+				</Toolbar>
+			</headerToolbar>
+			
+		<columns>
+			<Column  width="12em">
+				<Text text="{i18n>projectAllListTitle}" class="myText" />
+			</Column>			
+			
+			<Column minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="{i18n>budgetDays}" class="myText"/>
+			</Column>
+			
+			<Column minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="{i18n>endProject}" class="myText"/>
+			</Column>
+			
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+				<Text text="{i18n>editProject}" class="myText"/>
+			</Column>
+		</columns>
 
-				<SearchField liveChange="onSearch" placeholder="Search Project..."
-					width="30%" selectOnFocus="false" />
-				<Button text="{i18n>createProjectTitle}" press="onOpenDialog"
-					class="myCustomButton" icon="sap-icon://create" />
-			</Toolbar>
-		</headerToolbar>
 		<items>
-			<CustomListItem type="Active" press="onPress">
-				<FlexBox alignItems="Center" justifyContent="SpaceBetween">
-					<Label text="{Name}" />
+			<ColumnListItem type="Active" press="onPress">
+				<cells>
+			
+					<ObjectIdentifier title="{Name}" />
+
+					<ObjectNumber number="{BudgetDays}" />
+
+					<Text text="{EndProject}"/>
+					
 					<Button class="myCustomButton" icon="sap-icon://edit" press="onEditProject" />
-				</FlexBox>
-			</CustomListItem>
+		
+				</cells>
+			</ColumnListItem>
 		</items>
-	</List>
+	</Table>
 </mvc:View>
