@@ -13,9 +13,14 @@
 					<IconTabFilter id="skillsTab" text="{i18n>skillListTitle}" key="Skills">
 						<mvc:XMLView viewName="zsmt1.view.EmployeeSkills"/> 
 					</IconTabFilter>
-					<IconTabFilter id="TabBaremployeeAllProjects" text="{i18n>projectAllListTitle}" key="AllProjects">
+					<IconTabFilter id="employeeAllProjectsTabBar" text="{i18n>projectAllListTitle}" key="AllProjects">
+
 						<mvc:XMLView viewName="zsmt1.view.EmployeeAllProjects"/> 
 					</IconTabFilter>										
+					
+					<IconTabFilter id="employeeAllEmployee" text="{i18n>allEmployees}" key="AllEmployee">
+						<mvc:XMLView viewName="zsmt1.view.EmployeeAllColleaguesList"/> 
+					</IconTabFilter>	
 					
 				</items>
 			</IconTabBar>
