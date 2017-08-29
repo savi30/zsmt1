@@ -21,6 +21,8 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 					username = this.getView().byId("nameInput").setValue("");
 					password = this.getView().byId("passwordInput")
 							.setValue("");
+				
+		
 
 				},
 
@@ -48,7 +50,7 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 							oModel.read(sPath, this);
 							var name = oModel.getProperty("/EmployeeSet("+password+")/Name");
 							var id = oModel.getProperty("/EmployeeSet("+password+")/IdEmployee");
-							if( username.toUpperCase()==name && password == id){
+							if( username.toUpperCase() == name.toUpperCase() && password == id){
 							oRouter.navTo("employee", {
 								employeeId : password
 							});

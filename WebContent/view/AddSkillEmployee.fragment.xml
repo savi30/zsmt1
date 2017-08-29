@@ -1,79 +1,54 @@
-<core:FragmentDefinition
-	xmlns="sap.m"
-	xmlns:l="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form"
-	xmlns:core="sap.ui.core"> 
-	
-	<Dialog
-		id="employeeAddSkill"
-		title="{i18n>addSkillEmp}">
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+
+	<Dialog id="employeeAddSkill" title="{i18n>addSkillEmp}">
 		<content>
-		<l:VerticalLayout
-		class="sapUiContentPadding"
-		width="100%"> 
-		
-		<VBox class="sapUiSmallMargin">
-		<f:SimpleForm id="SimpleFormToolbar"
-			editable="true"
-			layout="ResponsiveGridLayout"
-			labelSpanXL="4"
-			labelSpanL="3"
-			labelSpanM="4"
-			labelSpanS="12"
-			adjustLabelSpan="false"
-			emptySpanXL="0"
-			emptySpanL="4"
-			emptySpanM="0"
-			emptySpanS="0"
-			columnsXL="2"
-			columnsL="1"
-			columnsM="1"
-			singleContainerFullSize="false" >
-			
-			<f:content>				
-				<Label text="{i18n>skillListTitle}" />
-				<SearchField 
-						id="searchField"
-						placeholder="Add skill ..." 
-						enableSuggestions="true"
-						search="onSearch"
-						suggest="onSuggest"
-						suggestionItems="{path: '/SkillSet'}"
-				>
-					<suggestionItems>
-					<SuggestionItem text="{Name}"  
-					description="{path:'Name'}"
-					    />
-				</suggestionItems>
-			    </SearchField> 
-						
-				<Label text="{i18n>levelSkill}" />
-				<Input type="Text"
-						placeholder="Add level ..."/>
-										
-				
-				</f:content>
-			</f:SimpleForm>
-		 </VBox>	
-	</l:VerticalLayout>
-</content>
-		
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm id="SimpleFormToolbar" editable="true"
+						layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3"
+						labelSpanM="4" labelSpanS="12" adjustLabelSpan="false"
+						emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+						columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false">
+
+						<f:content>
+							<Label text="{i18n>skillListTitle}" />
+							<Input id="addSkill" type="Text" placeholder="Add skill ..."
+								showSuggestion="true" suggestionItems="{/SkillSet}"
+								suggestionItemSelected="onSuggestionItemSelected">
+								<suggestionItems>
+									<core:ListItem text="{Name}" key="{SkillId}" />
+								</suggestionItems>
+							</Input>
+							<Label text="{i18n>levelSkill}" />
+							<Select id="addSkillLevel" placeholder="Add level ...">
+								<items>
+									<core:Item text="1" key="1" />
+									<core:Item text="2" key="2" />
+									<core:Item text="3" key="3" />
+									<core:Item text="4" key="4" />
+									<core:Item text="5" key="5" />
+								</items>
+							</Select>
+							<Label id="addSkillId" visible="false"/>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+			</l:VerticalLayout>
+		</content>
+
 		<beginButton>
-					
-			<Button 
-			text="{i18n>closeButtonText}"
-			press="onCloseDialog" />	
+
+			<Button text="{i18n>closeButtonText}" press="onCloseDialog" />
 		</beginButton>
-		
+
 		<endButton>
-			<Button 
-			text="{i18n>saveButtonText}"
-			press="onSaveDialog"/>
+			<Button text="{i18n>saveButtonText}" press="onSaveDialog" />
 		</endButton>
-		
-		
+
 	</Dialog>
-	
+
 
 </core:FragmentDefinition>
 	

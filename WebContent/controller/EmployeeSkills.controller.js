@@ -5,99 +5,107 @@ sap.ui.define([
    "sap/ui/core/routing/History"
 ], function (JQuery, BaseController, MessageToast, History) {
    "use strict";
-   var oTemplate,oModel;
+   var oTemplate,oModel,oView,oArgs;
    return BaseController.extend("zsmt1.controller.EmployeeSkills", {
 	   
 	   onInit: function () {		   
-		   
+		   	oView = this.getView();
+		   	oModel = oView.getModel();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("employee").attachMatched(this._onRouteMatched, this);
-			this.oSF = this.getView().byId("searchField");
 		},
-		_onRouteMatched : function (oEvent) {
-			var oArgs, oView;
-			oArgs = oEvent.getParameter("arguments");
-			oView = this.getView();
-			
-			 if(!oTemplate){
-				
-				 oTemplate = new sap.m.CustomListItem({ 
-	                    content : [
-	                        new sap.m.FlexBox({
-	                        	alignItems : sap.m.FlexAlignItems.Start,
-	                        	justifyContent : sap.m.FlexJustifyContent.SpaceBetween,
-	                        	items:[
-	                        	new sap.m.Label("levelLabel",{
-	                        		text:"{Name}"
-	                        	}),
-	                        	new sap.m.Button({
-	                        		icon:"sap-icon://edit",
-	                        		press:function(oEvent){
-	                        			 alert("s");}
-	                        	})
-	                        	]
-	                        })	
-	                   ],
-	            });
-	            	 	 
-			 }
-			
-			
-			var oList = this.getView().byId("employeeSkillList");
-			oModel = this.getView().getModel();
-			oModel.read("/SkillEmpSet(IdEmployee=1,IdSkill=1)");
-			oList.setModel(oModel,"skillEmp");
-			oList.bindItems({
-                path :  "/EmployeeSet(" + oArgs.employeeId + ")/toSkill",
-                events : {
-					change: this._onBindingChange.bind(this),
-					dataRequested: function (oEvent) {
-						oView.setBusy(true);
-					},
-					dataReceived: function (oEvent) {
-						oView.setBusy(false);
-					}
-				},
-				template : oTemplate
-			});
-			
-			
+		onOpenDialog : function() {
+
+			if (!this._oSkillDialog) {
+				this._oSkillDialog = sap.ui
+						.xmlfragment(
+								"zsmt1.view.AddSkillEmployee",
+								this
+										.getView()
+										.getController());
+				this.getView().addDependent(
+						this._oSkillDialog);
+			}
+
+			this._oSkillDialog.open();
+		
 		},
-		onBeforeRendering:function(){
-			/*var oList = this.getView().byId("employeeSkillList").getItems();
-			
-			for (var i=0; i<oList.length; i++){
-				var a = sap.ui.getCore().byId("levelLabel");			
-				a.bindObject("/SkillEmpSet(IdEmployee=1,IdSkill=1)");
-	
-			}*/
-		},
-	
-		   onSaveDialog:function(){
+		onSaveDialog:function(oEvent){
+				var oFormatDate = sap.ui.core.format.DateFormat
+				.getDateTimeInstance({
+					pattern : "yyyy-MM-ddTKK:mm:ss"
+				});
+			   var oEntry = {};
+			   oEntry.EmpId = parseInt(oArgs.employeeId);
+			   oEntry.SkillId = parseInt(sap.ui.getCore().byId("addSkillId").getText());
+			   oEntry.SkillLevel = parseInt(sap.ui.getCore().byId("addSkillLevel").getSelectedKey());
+			   oEntry.LastModified = new Date(oFormatDate.parse("2017-08-24T00:00:00"));
+			   
+			   OData
+				.request(
+						{
+							requestUri : "http://bcsw-sap078.mymhp.net:8000/sap/opu/odata/SAP/ZSMT1ODATA_SRV/SkillSet("
+									+ oEntry.SkillId
+									+ ")",
+							method : "GET",
+							headers : {
+								"X-Requested-With" : "XMLHttpRequest",
+								"Content-Type" : "application/atom+xml",
+								"DataServiceVersion" : "2.0",
+								"X-CSRF-Token" : "Fetch"
+							}
+						},
+						function(data,
+								response) {
+
+							var oHeaders = {
+								"x-csrf-token" : response.headers['x-csrf-token'],
+								"DataServiceVersion" : "2.0",
+								'Accept' : 'application/json',
+							};
+							OData
+									.request(
+											{
+												requestUri : "http://bcsw-sap078.mymhp.net:8000/sap/opu/odata/SAP/ZSMT1ODATA_SRV/SkillEmpSet",
+												method : "POST",
+												headers : oHeaders,
+												data : {
+													IdEmployee : oEntry.EmpId,
+													IdSkill : oEntry.SkillId,
+													EmployeeLevel : oEntry.SkillLevel,
+													LastModified : oFormatDate.format(oEntry.LastModified)
+												}
+											},
+											function(
+													data,
+													request) {
+												MessageToast
+														.show("Skill added");
+												oView.byId("employeeSkillList")
+														.getModel()
+														.refresh(
+																true);
+											},
+											function(
+													err) {
+												MessageToast
+														.show("Failed to add skill");
+
+											});
+						},
+						function(err) {
+							MessageBox
+									.alert("The skill you selected doesn't exist");
+						});
+			   
+			   oView.byId("employeeSkillList").getModel().refresh(
+				true);
 			   this._oSkillDialog.close();
-			   MessageToast.show("Skill saved");
 		   },
 		   onCloseDialog:function(){
 			   this._oSkillDialog.close();
 		   },
-		   onOpenDialog : function() {
-
-				if (!this._oSkillDialog) {
-					this._oSkillDialog = sap.ui
-							.xmlfragment(
-									"zsmt1.view.AddSkillEmployee",
-									this
-											.getView()
-											.getController());
-					this.getView().addDependent(
-							this._oSkillDialog);
-				}
-
-				this._oSkillDialog.open();
-
-			
-			},
-			onOpenEditDialog1:function(oEvent){
+			onOpenEditDialog:function(oEvent){
 				if (!this._oSkillEditDialog) {
 					this._oSkillEditDialog = sap.ui
 							.xmlfragment(
@@ -117,33 +125,63 @@ sap.ui.define([
 			},
 			onCloseSkillDialog:function(){
 				this.__oSkillEditDialog.close();
-			}
-			,
+			},
+			_onRouteMatched : function (oEvent) {
+				
+				oArgs = oEvent.getParameter("arguments");
+				 if(!oTemplate){
+					
+					 oTemplate = new sap.m.CustomListItem({ 
+		                    content : [
+		                        new sap.m.FlexBox({
+		                        	alignItems : sap.m.FlexAlignItems.Start,
+		                        	justifyContent : sap.m.FlexJustifyContent.SpaceBetween,
+		                        	items:[
+		                        	new sap.m.Label("levelLabel",{
+		                        		text:"{Name}"
+		                        	}),
+		                        	new sap.m.Button({
+		                        		icon:"sap-icon://edit",
+		                        		press:function(oEvent){
+		                        			 alert("s");}
+		                        	})
+		                        	]
+		                        })	
+		                   ],
+		            });
+		            	 	 
+				 }
+				var oList = this.getView().byId("employeeSkillList");
+				/*oModel.read("/SkillEmpSet(IdEmployee=1,IdSkill=1)");*/
+				/*oList.setModel(oModel,"skillEmp");*/
+				oList.bindItems({
+	                path :  "/EmployeeSet(" + oArgs.employeeId + ")/toSkill",
+	                events : {
+						change: this._onBindingChange.bind(this),
+						dataRequested: function (oEvent) {
+							oView.setBusy(true);
+						},
+						dataReceived: function (oEvent) {
+							oView.setBusy(false);
+						}
+					},
+					template : oTemplate
+				});
+				
+				
+			},
 		_onBindingChange : function (oEvent) {
 			// No data for the binding
 			if (!this.getView().getBindingContext()) {
 				sap.ui.core.UIComponent.getRouterFor(this).getTargets().display("notFound");
 			}
 		},
-		onSearch: function (event) {
-			var item = event.getParameters("suggestionItem");
-			if (item) {
-				sap.m.MessageToast.show("search for: " + item.query);
-			}
-		},
-		onSuggest: function (event) {
-			var value = event.getParameter("suggestValue");
-			var filters = [];
-			if (value) {
-				filters = [new sap.ui.model.Filter(
-						[ new sap.ui.model.Filter("Name", function(sDes) 
-								{
-                    return (sDes || "").toUpperCase().indexOf(value.toUpperCase()) > -1;
-                })
-            ], false)];
-			}
-			sap.ui.getCore().byId("searchField").getBinding("suggestionItems").filter(filters);
-			sap.ui.getCore().byId("searchField").suggest();
+
+		onSuggestionItemSelected: function (oEvent) {
+			var oItem = oEvent.getParameter("selectedItem");
+			var oContext = oItem.getBindingContext().getProperty("SkillId");
+			var oLabelId = sap.ui.getCore().byId("addSkillId");
+			oLabelId.setText(oContext);
 		}
 		
 

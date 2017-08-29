@@ -9,7 +9,7 @@ sap.ui
 						ResourceModel, formatter) {
 					"use strict";
 
-					var oRouter;
+					var oRouter,oView;
 
 					return BaseController
 							.extend(
@@ -17,6 +17,7 @@ sap.ui
 									{
 
 										onInit : function() {
+											oView = this.getView();
 											oRouter = sap.ui.core.UIComponent
 													.getRouterFor(this);
 										},
@@ -157,8 +158,7 @@ sap.ui
 																						request) {
 																					MessageToast
 																							.show("Success");
-																					this
-																							.getView()
+																					oView
 																							.getModel()
 																							.refresh(
 																									true);
@@ -174,7 +174,7 @@ sap.ui
 																MessageBox
 																		.alert("The project you selected doesn't exist");
 															});
-											this.getView().getModel().refresh(
+											oView.getModel().refresh(
 													true);
 											oView.byId("addToProjectDialog")
 													.close();

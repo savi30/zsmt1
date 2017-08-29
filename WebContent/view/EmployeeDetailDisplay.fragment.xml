@@ -45,7 +45,10 @@
 
 						<f:FormElement label="Working Hours">
 							<f:fields>
-								<Text text="{WorkingHours}" id="whText" />
+								<Text text="{
+								path='WorkingHours',
+								formatter: '.formatter.contractType'
+								}" id="whText" />
 							</f:fields>
 						</f:FormElement>
 

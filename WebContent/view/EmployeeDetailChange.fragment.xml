@@ -47,9 +47,19 @@
 																												
 						<f:FormElement label="Region">
 							<f:fields>
-
-								<Input value="{Region}" id="employeeRegionValue"  />
-
+								<Select id="employeeRegionValue" selectedKey="{Region}">
+									<items>
+										<core:Item text="North" key="N"/>
+										<core:Item text="South" key="S"/>
+										<core:Item text="Est" key="E"/>
+										<core:Item text="West" key="W"/>
+										<core:Item text="North-Est" key="NE"/>
+										<core:Item text="North-West" key="NW"/>
+										<core:Item text="South-Est" key="SE"/>
+										<core:Item text="South-West" key="SW"/>
+									</items>
+								</Select>
+							
 							</f:fields>
 						</f:FormElement>
 						

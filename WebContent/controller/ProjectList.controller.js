@@ -86,10 +86,10 @@ sap.ui
 													.getProperty("Idproject");
 											oEntry.Name = oView.byId(
 													"projectDetailName")
-													.getValue();
+													.getValue().toUpperCase();
 											oEntry.CustName = oView.byId(
 													"projectDetailCustName")
-													.getValue();
+													.getValue().toUpperCase();
 											oEntry.BudgetDays = parseInt(oView
 													.byId("projectDetailBudget")
 													.getValue());
@@ -203,12 +203,12 @@ sap.ui
 
 											oEntry.Name = sap.ui.getCore()
 													.byId("createProjectName")
-													.getValue();
+													.getValue().toUpperCase();
 											oEntry.CustName = sap.ui
 													.getCore()
 													.byId(
 															"createProjectCustomer")
-													.getValue();
+													.getValue().toUpperCase();
 											oEntry.BudgetDays = parseInt(sap.ui
 													.getCore()
 													.byId(

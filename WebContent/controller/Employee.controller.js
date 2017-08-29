@@ -2,14 +2,15 @@ sap.ui.define([
 	"jquery.sap.global",
    "zsmt1/controller/BaseController",
    "sap/m/MessageToast",
-   "sap/ui/core/routing/History"
-], function (JQuery, BaseController, MessageToast, History) {
+   "sap/ui/core/routing/History",
+   "zsmt1/model/formatter"
+], function (JQuery, BaseController, MessageToast, History,formatter) {
    "use strict";
  
    var oDisplayFragment, oArgs, oView, oLayout,oRouter;
    
    return BaseController.extend("zsmt1.controller.Employee", {
-	   
+	   formatter: formatter,
 	   onInit: function () {
 		   
 		    oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -70,10 +71,10 @@ sap.ui.define([
 				pattern : "yyyy-MM-ddTKK:mm:ss"
 			});
 			oEntry.Id = oEvent.getSource().getBindingContext().getProperty("IdEmployee");
-			oEntry.Name = this.getView().byId("employeeNameValue").getValue();
-			oEntry.Surname =  this.getView().byId("employeeSurnameValue").getValue();
-			oEntry.Region =  this.getView().byId("employeeRegionValue").getValue();
-			oEntry.Country =  this.getView().byId("employeeCountryValue").getValue();
+			oEntry.Name = this.getView().byId("employeeNameValue").getValue().toUpperCase();
+			oEntry.Surname =  this.getView().byId("employeeSurnameValue").getValue().toUpperCase();
+			oEntry.Region =  this.getView().byId("employeeRegionValue").getSelectedKey();
+			oEntry.Country =  this.getView().byId("employeeCountryValue").getValue().toUpperCase();
 			oEntry.LastModified = new Date(oFormatDate.parse("2017-08-24T00:00:00"));
 
 			OData
@@ -121,7 +122,7 @@ sap.ui.define([
 												request) {
 											MessageToast
 													.show("Employee details updated successfully");
-											this.getView().byId("FormDisplayEmpDetails").getModel().refresh(true);
+											oView.byId("FormDisplayEmpDetails").getModel().refresh(true);
 										},
 										function(
 												err) {
@@ -139,7 +140,7 @@ sap.ui.define([
 										+ " Response"
 										+ response);
 					});
-			this.getView().byId("FormDisplayEmpDetails").getModel().refresh(true);
+			oView.byId("FormDisplayEmpDetails").getModel().refresh(true);
 			oView.byId("changeDialog").close();
 		},
 		_onRouteMatched : function (oEvent) {

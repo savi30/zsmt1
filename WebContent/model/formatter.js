@@ -1,15 +1,21 @@
-jQuery.sap.declare("model.formatter");
+sap.ui.define([], function () {
+	"use strict";
 
-formatter = {
+	return {
 
-  getName : function (value) {
+		contractType: function (iWorkingHours) {
+			var oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
 
-  if( value == 10) return "Success";
-
-  if( value == 3) return "Error";
-
-  return "None";
-
-  }
-
-};
+			switch (iWorkingHours) {
+				case "4":
+					return resourceBundle.getText("workingHours4");
+				case "6":
+					return resourceBundle.getText("workingHours6");
+				case "8":
+					return resourceBundle.getText("workingHours8");
+				default:
+					return sStatus;
+			}
+		}
+	};
+});
