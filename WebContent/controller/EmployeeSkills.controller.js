@@ -134,12 +134,10 @@ sap.ui
 												oTemplate = new sap.m.CustomListItem(
 														{
 															type : sap.m.ListType.Active,
-													
+															press : this.onSelectSkill,
 															content : [ new sap.m.FlexBox(
 																	{
-
 																		alignItems : sap.m.FlexAlignItems.Start,
-
 																		justifyContent : sap.m.FlexJustifyContent.SpaceBetween,
 																		items : [
 																				new sap.m.Label(
@@ -401,48 +399,59 @@ sap.ui
 											}
 										},
 										onSelectSkill : function(oEvent) {
-											
-											/*var employeeId = oArgs.employeeId;
-											var oView = this.getView();
-											oView
-													.bindElement({
-														path : "/SkillEmpSet(IdEmployee="
-																+ parseInt(oArgs.employeeId)
-																+ ",IdSkill="
-																+  oEvent.getSource()
-																.getBindingContext()
-																.getProperty("IdSkill") + ")",
-														events : {
-															change : this._onBindingChange
-																	.bind(this),
-															dataRequested : function(
-																	oEvent) {
-																oView
-																		.setBusy(true);
-															},
-															dataReceived : function(
-																	oEvent) {
-																oView
-																		.setBusy(false);
-															}
-														}
-													});
-											if (!this._oSkillEditDialog) {
-												this._oSkillEditDialog = sap.ui
-														.xmlfragment(
-																"zsmt1.view.EmployeeEditSkill",
-																oView
-																		.getController());
-												oView.addDependent(
-														this._oSkillEditDialog);
-											}
 
-											this._oSkillEditDialog.open();*/
+											var employeeId = oArgs.employeeId;
+											sap.ui.getCore().byId("employeeEditSkill")
+													.bindElement(
+															{
+																path : "/SkillEmpSet(IdEmployee="
+																		+ parseInt(oArgs.employeeId)
+																		+ ",IdSkill="
+																		+ oEvent
+																				.getSource()
+																				.getBindingContext()
+																				.getProperty(
+																						"SkillId")
+																		+ ")",
+																events : {
+																	/*
+																	 * change :
+																	 * this._onBindingChange
+																	 * .bind(this),
+																	 */
+
+																	dataRequested : function(
+																			oEvent) {
+																		oView
+																				.setBusy(true);
+																	},
+																	dataReceived : function(
+																			oEvent) {
+																		oView
+																				.setBusy(false);
+																	}
+																}
+															});
+											var oDialog = oView
+													.byId("employeeEditSkill");
+											if (!oDialog) {
+
+												oDialog = sap.ui
+														.xmlfragment(
+																this
+																		.getView()
+																		.getId(),
+																"zsmt1.view.EmployeeEditSkill",
+																this);
+												oView.addDependent(oDialog);
+											}
+											oDialog.open();
 
 										},
 										onCloseEditDialog : function(oEvent) {
 											this._oSkillEditDialog.close();
 										},
+
 										onSaveEditDialog : function(oEvent) {
 											var skillId = oEvent.getSource()
 													.getBindingContext()
@@ -523,13 +532,14 @@ sap.ui
 																				});
 															},
 															function(err) {
-																MessageBox
-																		.alert("The skill you selected doesn't exist");
+																MessageToast
+																		.show("The skill you selected doesn't exist");
 															});
 
 											oView.byId("employeeSkillList")
 													.getModel().refresh(true);
-											this._oSkillEditDialog.close();
+											oView.byId("employeeEditSkill")
+													.close();
 										},
 										onDeleteSkill : function(oEvent) {
 											var skillId = oEvent.getSource()
@@ -617,12 +627,12 @@ sap.ui
 
 											oView.byId("employeeSkillList")
 													.getModel().refresh(true);
-											this._oSkillEditDialog.close();
+											oView.byId("employeeEditSkill")
+													.close();
 										},
 										_onBindingChange : function(oEvent) {
 
-											if (!this.getView()
-													.getBindingContext()) {
+											if (!oView.getBindingContext()) {
 												sap.ui.core.UIComponent
 														.getRouterFor(this)
 														.getTargets().display(
