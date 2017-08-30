@@ -1,101 +1,57 @@
 
-<mvc:View controllerName="zsmt1.controller.SkillReportList" height="100%"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
-	xmlns="sap.m" 	xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar"
-	xmlns:vm="sap.ui.comp.variants">
-<!-- 	<f:DynamicPage id="skillDynamicPage">
-		<f:title>
-			<f:DynamicPageTitle>
-				<f:heading>
-					<vm:VariantManagement standardItemText="Skills">
-					</vm:VariantManagement>
-				</f:heading>
-			</f:DynamicPageTitle>
-		</f:title>
-		DynamicPage Header
-		<f:header>
-			<f:DynamicPageHeader pinnable="true">
-				<f:content>
-					<fb:FilterBar reset="onReset" search="onSearch"
-						useToolbar="false" showGoOnFB="false">
-						<fb:filterItems>
-							<fb:FilterItem name="subDomain" label="Sub Domain">
-								<fb:control>
-									<Select id="subDomainFilter" forceSelection="true"
-										change="onSelectChange"
-										items="{
+<mvc:View controllerName="zsmt1.controller.SkillReportList"
+	height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:vm="sap.ui.comp.variants">
+	<fb:FilterBar reset="onReset" search="onSearch"
+		useToolbar="false" showGoOnFB="false">
+		<fb:filterItems>
+			<fb:FilterItem name="subDomain" label="Sub Domain">
+				<fb:control>
+					<Select id="subDomainFilter" forceSelection="true" change="onSelectChange"
+						items="{
                                                     path: '/SubDomainSet'
                                                 }">
-										<core:Item key="{IdSdomain}" text="{Name}" />
-									</Select>
-								</fb:control>
-							</fb:FilterItem>
-							<fb:FilterItem name="ServiceUnit" label="ServiceUnit">
-								<fb:control>
-									<Select id="serviceUnitFilter" change="onSelectChange"
-										forceSelection="true"
-										items="{
+						<core:Item key="{IdSdomain}" text="{Name}" />
+					</Select>
+				</fb:control>
+			</fb:FilterItem>
+			<fb:FilterItem name="ServiceUnit" label="ServiceUnit">
+				<fb:control>
+					<Select id="serviceUnitFilter" change="onSelectChange"
+						forceSelection="true"
+						items="{
                                                     path: '/SrvUnitSet'
                                                  }">
-										<core:Item key="{Name}" text="{Name}" />
-									</Select>
-								</fb:control>
-							</fb:FilterItem>
-							<fb:FilterItem name="Region" label="Region">
-								<fb:control>
-									<Select id="regionFilter" change="onSelectChange"
-										forceSelection="true">
-										
-										<items>
-											<core:Item text="North" key="N" />
-											<core:Item text="South" key="S" />
-											<core:Item text="Est" key="E" />
-											<core:Item text="West" key="W" />
-											<core:Item text="North-Est" key="NE" />
-											<core:Item text="North-West" key="NW" />
-											<core:Item text="South-Est" key="SE" />
-											<core:Item text="South-West" key="SW" />
-										</items>
-									</Select>
-								</fb:control>
-							</fb:FilterItem>
-						</fb:filterItems>
-					</fb:FilterBar>
-				</f:content>
-			</f:DynamicPageHeader>
-		</f:header>
+						<core:Item key="{Name}" text="{Name}" />
+					</Select>
+				</fb:control>
+			</fb:FilterItem>
+			<fb:FilterItem name="Region" label="Region">
+				<fb:control>
+					<Select id="regionFilter" change="onSelectChange"
+						forceSelection="true">
 
-		DynamicPage Content
-		<f:content>
-			<List id="skillReportList" class="sapUiResponsiveMargin" width="auto"
-				items="{
-					path:'/SkillSet',
-					parameters:{
-							operationMode:'Client'
-							},
-					sorter : {
-							
-							path : 'IdSdomain',
-							group : true
-						}
-					}">
-				<headerToolbar>
-					<Toolbar>
-						<Title text="{i18n>skillListTitle}" />
-						<ToolbarSpacer />
-					</Toolbar>
-				</headerToolbar>
-				<items>
-					<ObjectListItem title="{Name}" type="Active" press="onPress">
-					</ObjectListItem>
-				</items>
-			</List>
-		</f:content> 
-	</f:DynamicPage>-->
+						<items>
+							<core:Item text="North" key="N" />
+							<core:Item text="South" key="S" />
+							<core:Item text="Est" key="E" />
+							<core:Item text="West" key="W" />
+							<core:Item text="North-Est" key="NE" />
+							<core:Item text="North-West" key="NW" />
+							<core:Item text="South-Est" key="SE" />
+							<core:Item text="South-West" key="SW" />
+						</items>
+					</Select>
+				</fb:control>
+			</fb:FilterItem>
+		</fb:filterItems>
+	</fb:FilterBar>
 
 	<List id="skillReportList" class="sapUiResponsiveMargin" width="auto"
-				items="{
+		items="{
 					path:'/SkillSet',
+					templateSharable:true,
 					parameters:{
 							operationMode:'Client'
 							},
@@ -105,16 +61,16 @@
 							group : true
 						}
 					}">
-				<headerToolbar>
-					<Toolbar>
-						<Title text="{i18n>skillListTitle}" />
-						<ToolbarSpacer />
-					</Toolbar>
-				</headerToolbar>
-				<items>
-					<ObjectListItem title="{Name}" type="Active" press="onPress">
-					</ObjectListItem>
-				</items>
-			</List>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>skillListTitle}" />
+				<ToolbarSpacer />
+			</Toolbar>
+		</headerToolbar>
+		<items>
+			<ObjectListItem title="{Name}" type="Active" press="onPress">
+			</ObjectListItem>
+		</items>
+	</List>
 
 </mvc:View>
