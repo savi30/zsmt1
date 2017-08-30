@@ -105,6 +105,11 @@
 		"pattern":"employee/employeeAllColleaguesDetails/{employeeId}",
 		"name":"employeeAllColleagues",
 		"target":"employeeAllColleagues"
+		},
+		{
+		"pattern":"manager/employeeToSkill/{skillId}",
+		"name":"skillEmployees",
+		"target":"skillEmployees"
 		}
 	  ],
 	  "targets": {
@@ -152,7 +157,12 @@
 	  {
 	  		"viewName":"EmployeeAllColleagues",
 	  		"viewLevel":3
-	  }
+	  },
+	  "skillEmployees":
+	  	{
+	  		"viewName":"EmployeeListSkill",
+	  		"viewLevel":3
+	  	}
 	  }
 	},
 	"resources": {

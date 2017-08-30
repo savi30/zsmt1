@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="zsmt1.controller.ManagerTabBar"
+	controllerName="zsmt1.controller.Report"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.ui.layout.form"
@@ -12,21 +12,19 @@
 				binding="{Manager}"
 				outline="None">
 				<items >	
-					<IconTabFilter id="empTab" text="{i18n>employeeListTitle}" icon ="sap-icon://employee" key="Employee">
-						<mvc:XMLView viewName="zsmt1.view.EmployeeList"></mvc:XMLView>	
+					
+					<IconTabFilter id="capOvertab" text="{i18n>capOver}" icon ="sap-icon://overview-chart" key="CapacityOver">
+						<!-- <mvc:XMLView viewName="zsmt1.view.EmployeeList"></mvc:XMLView>	 -->
 					</IconTabFilter>
-					<IconTabSeparator/>
+					
+					<!-- <IconTabSeparator/>
 					<IconTabFilter id="projectTab" icon ="sap-icon://task" text="Projects" key="Projects">
 						<mvc:XMLView viewName="zsmt1.view.ProjectList"></mvc:XMLView>					
 					</IconTabFilter>
 					<IconTabSeparator/>
-					<IconTabFilter id="skillTab" text="Skills" key="Skills" icon ="sap-icon://goal">
-						<mvc:XMLView viewName="zsmt1.view.SkillReportList"></mvc:XMLView>	
-					</IconTabFilter>
-					<IconTabSeparator/>
 					<IconTabFilter id="reportTab" text="{i18n>reportTitle}" key="Reports" icon ="sap-icon://kpi-corporate-performance">
-						<mvc:XMLView viewName="zsmt1.view.Report"></mvc:XMLView>
-					</IconTabFilter>	
+						
+					</IconTabFilter> -->	
 							 
 				</items>
 				
