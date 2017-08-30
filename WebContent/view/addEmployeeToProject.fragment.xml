@@ -6,7 +6,10 @@
 	
 	<Dialog
 		id="addToProjectDialog"
-		title="Add {Name Surname} to project">
+		title="Add {Name Surname} to project"
+		showHeader="true"
+		>
+		
 		<content>
 
 		<f:SimpleForm id="addEmployeeForm"
@@ -66,6 +69,7 @@
 		</beginButton>
 		
 		<endButton>
+		
 			<Button 
 			text="{i18n>saveButtonText}"
 			press="onSaveDialog"/>

@@ -1,12 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
-
 	<Dialog id="employeeEditSkill" title="Edit skill level" showHeader="true">
-	<!--  <customHeader>
-        <Bar>
-            <Button press="onCloseEditDialog" icon="sap-icon://sys-cancel"/>
-        </Bar>
-    </customHeader> -->
 		<content>
 			<l:VerticalLayout class="sapUiContentPadding" width="100%">
 				<VBox class="sapUiSmallMargin">
@@ -32,18 +26,12 @@
 				</VBox>
 			</l:VerticalLayout>
 		</content>
-
-		<beginButton>
+		<buttons>
+			<Button text="Cancel" press="onCloseEditDialog"/>
 			<Button text="DeleteSkill" press="onDeleteSkill" type="Reject"/>
-		</beginButton>
-
-		<endButton>
 			<Button text="{i18n>saveButtonText}" press="onSaveEditDialog" />
-		</endButton>
-
+		</buttons>
 	</Dialog>
-
-
 </core:FragmentDefinition>
 	
 	
