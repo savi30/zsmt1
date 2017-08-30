@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+
+	<Dialog id="employeeEditSkill" title="EDIT {Name} LEVEL">
+		<content>
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm id="editSkillSimpleFormToolbar" editable="true"
+						layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3"
+						labelSpanM="4" labelSpanS="12" adjustLabelSpan="false"
+						emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+						columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false">
+
+						<f:content>
+							<Label text="{i18n>levelSkill}" />
+							<Select id="editSkillLevel" placeholder="Add level ..." value="{EmployeeLevel}">
+								<items>
+									<core:Item text="1" key="1" />
+									<core:Item text="2" key="2" />
+									<core:Item text="3" key="3" />
+									<core:Item text="4" key="4" />
+									<core:Item text="5" key="5" />
+								</items>
+							</Select>
+							<Label id="editSkillId" visible="false"/>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+			</l:VerticalLayout>
+		</content>
+
+		<beginButton>
+			<Button text="DeleteSkill" press="onDeleteSkill" type="Reject"/>
+		</beginButton>
+
+		<endButton>
+			<Button text="{i18n>closeButtonText}" press="onCloseEditDialog" />
+			<Button text="{i18n>saveButtonText}" press="onSaveEditDialog" />
+		</endButton>
+
+	</Dialog>
+
+
+</core:FragmentDefinition>
+	
+	
