@@ -308,7 +308,6 @@ sap.ui
 										},
 										onSearch : function(oEvt) {
 
-											// add filter for search
 											var aFilters = [];
 											var sQuery = oEvt.getSource()
 													.getValue();
