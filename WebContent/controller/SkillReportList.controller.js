@@ -5,12 +5,25 @@ sap.ui.define([
    "sap/ui/model/resource/ResourceModel"
 ], function (JQuery, BaseController, MessageToast, ResourceModel) {
    "use strict";
-  
+   var oRouter;
    return BaseController.extend("zsmt1.controller.SkillReportList", {
 	   
-	   onPress:function(oEvent){
-		   MessageToast.show("Skill selected");
-	   }
+	   onInit : function() {
+			var oView = this.getView();
+			 oRouter = sap.ui.core.UIComponent
+					.getRouterFor(this);
+		},
+
+		onPress : function(oEvent) {
+
+			oRouter.navTo("skillEmployees", {
+				skillId : oEvent.getSource()
+						.getBindingContext()
+						.getProperty(
+								"SkillId")
+			});
+		}
+	   
 
 	});
 });
