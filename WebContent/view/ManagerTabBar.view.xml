@@ -20,6 +20,9 @@
 						<mvc:XMLView viewName="zsmt1.view.ProjectList"></mvc:XMLView>					
 					</IconTabFilter>
 					<IconTabSeparator/>
+					<IconTabFilter id="skillTab" text="Skills" key="Skills" icon ="sap-icon://goal">
+						<mvc:XMLView viewName="zsmt1.view.SkillReportList"></mvc:XMLView>	
+					</IconTabFilter>
 					<IconTabFilter id="reportTab" text="{i18n>reportTitle}" key="Reports" icon ="sap-icon://kpi-corporate-performance">
 						
 					</IconTabFilter>	
