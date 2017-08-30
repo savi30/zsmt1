@@ -3,6 +3,9 @@
 	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
 
 	<VBox class="sapUiSmallMargin">
+	<HBox class="myHboxAlign">
+		<Image src="image/in_progress.png" width="100%" />
+	</HBox>
 		<f:Form id="FormDisplayProjDetails" editable="false">
 			<f:title>
 				<core:Title text="{Name} {CustName}" />
@@ -18,7 +21,7 @@
 					<f:formElements>
 						<f:FormElement label="ID">
 							<f:fields>
-								<Text text="{Idproject}" id="idprojectText"/>
+								<Text text="{Idproject}" id="idprojectText" />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Name">
@@ -60,6 +63,10 @@
 				</f:FormContainer>
 			</f:formContainers>
 		</f:Form>
+		<HBox class="myHboxAlign">
+		<Button text="Add Employee" press="onPress" />
+	</HBox>
 	</VBox>
+	
 
 </mvc:View>
