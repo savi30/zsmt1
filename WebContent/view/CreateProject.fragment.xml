@@ -10,7 +10,7 @@
 		<content>
 	
 		
-		<f:SimpleForm id="SimpleFormToolbar"
+		<f:SimpleForm id="CreateProjectSimpleFormToolbar"
 			editable="true"
 			layout="ResponsiveGridLayout"
 			labelSpanXL="4"

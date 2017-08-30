@@ -2,85 +2,86 @@
 	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
 	<FlexBox class="myDetailsFlexBox">
 
-		<VBox  class="myEmployeeProfileImageVbox">
-			<Image src="image/user.png" class="myEmployeeProfileImage"/>
+		<VBox class="myEmployeeProfileImageVbox">
+			<Image src="image/user.png" class="myEmployeeProfileImage" />
 		</VBox>
-		<VBox  class="myEmployeeProfileDetailsVbox">
-		<f:Form id="FormDisplayEmpDetails" editable="false">
+		<VBox class="myEmployeeProfileDetailsVbox">
+			<f:Form id="FormDisplayEmpDetails" editable="false">
 
-			<f:title>
-				<core:Title text="{Name} {Surname}" />
-			</f:title>
+				<f:title>
+					<core:Title text="{Name} {Surname}" />
+				</f:title>
 
-			<f:layout>
-				<f:ResponsiveGridLayout labelSpanXL="3"
-					labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
-					emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
-					columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
-			</f:layout>			
-			<f:formContainers>			
-				<f:FormContainer>
-					<f:formElements>
-						<!-- <Image class="myEmployeeImage" src="image/user.png" width="80px" /> -->					
-						<f:FormElement label="Name">
-							<f:fields>
-								<Text text="{Name}" id="nameText" />
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Surname">
-							<f:fields>
-								<Text text="{Surname}" id="surnameText" />
-							</f:fields>
-						</f:FormElement>
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="3"
+						labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
+						emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+						columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<!-- <Image class="myEmployeeImage" src="image/user.png" width="80px" 
+								/> -->
+							<f:FormElement label="Name">
+								<f:fields>
+									<Text text="{Name}" id="nameTextManager" />
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Surname">
+								<f:fields>
+									<Text text="{Surname}" id="surnameTextManager" />
+								</f:fields>
+							</f:FormElement>
 
-						<f:FormElement label="Active Projects">
-							<f:fields>
-								<Text text="{NoProjects}" id="projectsText" />
-							</f:fields>
-						</f:FormElement>
+							<f:FormElement label="Active Projects">
+								<f:fields>
+									<Text text="{NoProjects}" id="projectsTextManager" />
+								</f:fields>
+							</f:FormElement>
 
-						<f:FormElement label="Working Hours">
-							<f:fields>
-								<Text text="{WorkingHours}" id="whText" />
-							</f:fields>
-						</f:FormElement>
+							<f:FormElement label="Working Hours">
+								<f:fields>
+									<Text text="{WorkingHours}" id="whTextManager" />
+								</f:fields>
+							</f:FormElement>
 
-						<f:FormElement label="Consultant Level">
-							<f:fields>
-								<Text text="{ConsultLevel}" id="consultLevelText" />
-							</f:fields>
-						</f:FormElement>
+							<f:FormElement label="Consultant Level">
+								<f:fields>
+									<Text text="{ConsultLevel}" id="consultLevelTextManager" />
+								</f:fields>
+							</f:FormElement>
 
-						<f:FormElement label="Country">
-							<f:fields>
-								<Text text="{Country}" id="countryText" />
-							</f:fields>
-						</f:FormElement>
+							<f:FormElement label="Country">
+								<f:fields>
+									<Text text="{Country}" id="countryTextManager" />
+								</f:fields>
+							</f:FormElement>
 
-						<f:FormElement label="Region">
-							<f:fields>
-								<Text text="{Region}" id="regionText" />
-							</f:fields>
-						</f:FormElement>
+							<f:FormElement label="Region">
+								<f:fields>
+									<Text text="{Region}" id="regionTextManager" />
+								</f:fields>
+							</f:FormElement>
 
-						<f:FormElement label="Service Unit">
-							<f:fields>
-								<Text text="{Name}" id="srvUnitText" />
-							</f:fields>
-						</f:FormElement>
+							<f:FormElement label="Service Unit">
+								<f:fields>
+									<Text text="{Name}" id="srvUnitTextManager" />
+								</f:fields>
+							</f:FormElement>
 
-						<f:FormElement label="Last Modified">
-							<f:fields>
-								<Text text="{LastModified}" id="lastModText" />
-							</f:fields>
-						</f:FormElement>
+							<f:FormElement label="Last Modified">
+								<f:fields>
+									<Text text="{LastModified}" id="lastModText" />
+								</f:fields>
+							</f:FormElement>
 
 						</f:formElements>
-						</f:FormContainer>
-					
-			</f:formContainers>
-		</f:Form>
+					</f:FormContainer>
+
+				</f:formContainers>
+			</f:Form>
 		</VBox>
-		<Button icon="sap-icon://add" press="onAddEmployee"/>
-	</FlexBox>	
+		<Button icon="sap-icon://add" press="onAddEmployee" />
+	</FlexBox>
 </core:FragmentDefinition>

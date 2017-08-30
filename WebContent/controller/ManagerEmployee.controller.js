@@ -249,7 +249,7 @@ sap.ui
 														}
 													});
 											var srvUnit = this.getView().byId(
-													"srvUnitText");
+													"srvUnitTextManager");
 											srvUnit.bindElement("/EmployeeSet("
 													+ oArgs.employeeId
 													+ ")/toServiceUnit");

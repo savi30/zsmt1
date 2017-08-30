@@ -6,7 +6,7 @@
 			<l:VerticalLayout class="sapUiContentPadding" width="100%">
 
 				<VBox class="sapUiSmallMargin">
-					<f:SimpleForm id="SimpleFormToolbar" editable="true"
+					<f:SimpleForm id="AddSkillSimpleFormToolbar" editable="true"
 						layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3"
 						labelSpanM="4" labelSpanS="12" adjustLabelSpan="false"
 						emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"

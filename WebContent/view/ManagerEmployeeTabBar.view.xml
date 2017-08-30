@@ -4,13 +4,13 @@
 	xmlns:mvc="sap.ui.core.mvc">
 	
 	<IconTabBar
-				id="iconTabBar"
+				id="iconTabBarManager"
 				class="sapUiResponsiveContentPadding">
 				<items>
-					<IconTabFilter id="projectsTab" text="Projects" key="Projects">
+					<IconTabFilter id="projectsTabManager" text="Projects" key="Projects">
 						<mvc:XMLView viewName="zsmt1.view.ManagerEmployeeProjects"/> 
 					</IconTabFilter>
-					<IconTabFilter id="skillsTab" text="Skills" key="Skills">
+					<IconTabFilter id="skillsTabManager" text="Skills" key="Skills">
 						<mvc:XMLView viewName="zsmt1.view.ManagerEmployeeSkills"/> 
 					</IconTabFilter>
 				</items>

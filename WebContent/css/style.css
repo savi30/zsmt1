@@ -12,6 +12,27 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	margin-right: 0
 }
 
+.zsmt1 .myHeaderDetails {
+	display: -webkit-flex;
+	display: flex;
+	align-self: center;
+	justify-self: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: 3%;
+	border: 4px blue;
+	margin-right: auto;
+	margin-left: auto;
+	background: linear-gradient(rgba(255, 255, 255, 0.8),
+		rgba(255, 255, 255, 0.1));
+	border-radius: 4px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	border-radius: 4px;
+	border-radius: 4px
+}
+
 .zsmt1 .myAllPages {
 	background-image: url("../image/wall.jpg");
 	background-position: bottom;
@@ -20,7 +41,6 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	justify-content: center;
 	align-content: center;
 }
-
 
 .zsmt1 .myCustomText {
 	font-weight: bold;
@@ -194,12 +214,12 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	background-color: rgba(255, 255, 255, 0.8); /* Green */
 }
 
-.zsmt1 .myEmployeeFragment{
+.zsmt1 .myEmployeeFragment {
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
 		rgba(0, 0, 0, 0.18);
+		width:100%;
+		height:100%;
 }
-
-
 
 .zsmt1 .myAppFlexContainer {
 	display: -webkit-flex;
@@ -269,7 +289,6 @@ html[dir="rtl"] .zsmt1 . myCustomButton . sapMBtn {
 	display: flex;
 	align-items: centre;
 }
-
 
 .zsmt1 .myDetailsGrid {
 	background: blue;
