@@ -41,17 +41,35 @@
 						</f:FormElement>
 						<f:FormElement label="Start Project">
 							<f:fields>
-								<Text text="{StartProject}" id="startProjectText" />
+								<Text text="{
+					path:'StartProject',
+					type: 'sap.ui.model.type.Date',
+         			formatOptions: {
+         			  pattern: 'dd/MM/yyyy'
+          			}
+          			}" id="startProjectText" />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="End Project">
 							<f:fields>
-								<Text text="{EndProject}" id="endProjectText" />
+								<Text text="{
+					path:'EndProject',
+					type: 'sap.ui.model.type.Date',
+         			formatOptions: {
+         			  pattern: 'dd/MM/yyyy'
+          			}
+          			}" id="endProjectText" />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Last Modified">
 							<f:fields>
-								<Text text="{LastModified}" id="lastModifiedText" />
+								<Text text="{
+					path:'LastModified',
+					type: 'sap.ui.model.type.Date',
+         			formatOptions: {
+         			  pattern: 'dd/MM/yyyy'
+          			}
+          			}" id="lastModifiedText" />
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>

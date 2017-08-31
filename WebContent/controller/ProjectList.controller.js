@@ -17,8 +17,8 @@ sap.ui
 											oView = this.getView();
 											oRouter = sap.ui.core.UIComponent
 													.getRouterFor(this);
+											
 										},
-
 										onPress : function(oEvent) {
 
 											oRouter.navTo("project", {
