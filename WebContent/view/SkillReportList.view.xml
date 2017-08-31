@@ -61,12 +61,7 @@
 							group : true
 						}
 					}">
-		<headerToolbar>
-			<Toolbar>
-				<Title text="{i18n>skillListTitle}" />
-				<ToolbarSpacer />
-			</Toolbar>
-		</headerToolbar>
+		
 		<items>
 			<ObjectListItem title="{Name}" type="Active" press="onPress">
 			</ObjectListItem>

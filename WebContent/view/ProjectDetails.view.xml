@@ -4,12 +4,12 @@
 
 	<VBox class="sapUiSmallMargin">
 	<HBox class="myHboxAlign">
-		<Image src="image/in_progress.png" width="100%" />
+		<Button id="projectProgressIcon" width="100%" />
 	</HBox>
 		<f:Form id="FormDisplayProjDetails" editable="false">
-			<f:title>
-				<core:Title text="{Name} {CustName}" />
-			</f:title>
+		<f:title>
+				<core:Title text="{Name}" />
+			</f:title> 
 			<f:layout>
 				<f:ResponsiveGridLayout labelSpanXL="3"
 					labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
@@ -49,11 +49,6 @@
 								<Text text="{EndProject}" id="endProjectText" />
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label="Completed Flag">
-							<f:fields>
-								<Text text="{Flag}" id="flagText" />
-							</f:fields>
-						</f:FormElement>
 						<f:FormElement label="Last Modified">
 							<f:fields>
 								<Text text="{LastModified}" id="lastModifiedText" />
@@ -64,7 +59,6 @@
 			</f:formContainers>
 		</f:Form>
 		<HBox class="myHboxAlign">
-		<Button text="Add Employee" press="onPress" />
 	</HBox>
 	</VBox>
 	

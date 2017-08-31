@@ -400,59 +400,59 @@ sap.ui
 										},
 										onSelectSkill : function(oEvent) {
 
-											var employeeId = oArgs.employeeId;
-											sap.ui.getCore().byId("employeeEditSkill")
-													.bindElement(
-															{
-																path : "/SkillEmpSet(IdEmployee="
-																		+ parseInt(oArgs.employeeId)
-																		+ ",IdSkill="
-																		+ oEvent
-																				.getSource()
-																				.getBindingContext()
-																				.getProperty(
-																						"SkillId")
-																		+ ")",
-																events : {
-																	/*
-																	 * change :
-																	 * this._onBindingChange
-																	 * .bind(this),
-																	 */
-
-																	dataRequested : function(
-																			oEvent) {
-																		oView
-																				.setBusy(true);
-																	},
-																	dataReceived : function(
-																			oEvent) {
-																		oView
-																				.setBusy(false);
-																	}
-																}
-															});
 											var oDialog = oView
 													.byId("employeeEditSkill");
 											if (!oDialog) {
 
 												oDialog = sap.ui
 														.xmlfragment(
-																this
-																		.getView()
-																		.getId(),
+																oView.getId(),
 																"zsmt1.view.EmployeeEditSkill",
 																this);
 												oView.addDependent(oDialog);
 											}
 											oDialog.open();
 
+											var employeeId = oArgs.employeeId;
+											oView.mAggregations.content[0]
+													.bindElement({
+														path : "/SkillEmpSet(IdEmployee="
+																+ parseInt(oArgs.employeeId)
+																+ ",IdSkill="
+																+ oEvent
+																		.getSource()
+																		.getBindingContext()
+																		.getProperty(
+																				"SkillId")
+																+ ")",
+														events : {
+															
+															  change :
+																  this._onBindingChange
+															 .bind(this),
+															 
+
+															dataRequested : function(
+																	oEvent) {
+																oView
+																		.setBusy(true);
+															},
+															dataReceived : function(
+																	oEvent) {
+																oView
+																		.setBusy(false);
+															}
+														}
+													});
+
 										},
-										onCloseEditDialog : function(oEvent) {
-											this._oSkillEditDialog.close();
+										onCloseEditLevelDialog : function(
+												oEvent) {
+											oView.byId("employeeEditSkill")
+													.close();
 										},
 
-										onSaveEditDialog : function(oEvent) {
+										onSaveEditLevelDialog : function(oEvent) {
 											var skillId = oEvent.getSource()
 													.getBindingContext()
 													.getProperty("IdSkill");

@@ -27,9 +27,11 @@
 			</l:VerticalLayout>
 		</content>
 		<buttons>
-			<Button text="Cancel" press="onCloseEditDialog"/>
-			<Button text="DeleteSkill" press="onDeleteSkill" type="Reject"/>
-			<Button text="{i18n>saveButtonText}" press="onSaveEditDialog" />
+		    <Button text="DeleteSkill" press="onDeleteSkill" type="Reject"/>
+		  
+			<Button text="Cancel" press="onCloseEditLevelDialog"/>
+			
+			<Button text="{i18n>saveButtonText}" press="onSaveEditLevelDialog" />
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

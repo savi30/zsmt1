@@ -10,9 +10,7 @@
 				<f:title>
 					<core:Title text="{Name} {Surname}" />
 				</f:title>
-
 				<f:layout>
-
 					<f:ResponsiveGridLayout labelSpanXL="3"
 						labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
 						emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
@@ -32,55 +30,38 @@
 									<Text text="{Surname}" id="surnameText" />
 								</f:fields>
 							</f:FormElement>
-
 							<f:FormElement label="Active Projects">
 								<f:fields>
 									<Text text="{NoProjects}" id="projectsText" />
 								</f:fields>
 							</f:FormElement>
-
 							<f:FormElement label="Working Hours">
 								<f:fields>
-									<Text
-										text="{
-								path='WorkingHours',
-								formatter: '.formatter.contractType'
-								}"
-										id="whText" />
+									<Text text="{WorkingHours}" />
 								</f:fields>
 							</f:FormElement>
-
 							<f:FormElement label="Consultant Level">
 								<f:fields>
 									<Text text="{ConsultLevel}" id="consultLevelText" />
 								</f:fields>
 							</f:FormElement>
-
 							<f:FormElement label="Country">
 								<f:fields>
 									<Text text="{Country}" id="countryText" />
 								</f:fields>
 							</f:FormElement>
-
 							<f:FormElement label="Region">
 								<f:fields>
 									<Text text="{Region}" id="regionText" />
 								</f:fields>
 							</f:FormElement>
-
 							<f:FormElement label="Service Unit">
 								<f:fields>
 									<Text text="{Name}" id="srvUnitText" />
 								</f:fields>
 							</f:FormElement>
-
 						</f:formElements>
-
-
 					</f:FormContainer>
-
-
-
 				</f:formContainers>
 			</f:Form>
 		</VBox>

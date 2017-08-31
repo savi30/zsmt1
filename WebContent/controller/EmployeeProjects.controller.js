@@ -18,14 +18,23 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 			var oList = this.getView().byId("employeeMyProjectList");
 			oList.bindItems({
 				path : "/EmployeeSet(" + oArgs.employeeId + ")/toProject",
-				
 				template : new sap.m.StandardListItem({
+					type : sap.m.ListType.Active,
+					press:this.onProjectSelected,
 					title : "{Name}",
 					description : "{CustName}",
 					
 				})
 			});
 		},
+		onProjectSelected:function(oEvent){
+			oRouter.navTo("projectDetailOverview", {
+				projectId : oEvent.getSource()
+						.getBindingContext().getProperty(
+								"Idproject")
+			});
+		}
+		,
 		_onBindingChange : function(oEvent) {
 			// No data for the binding
 			if (!this.getView().getBindingContext()) {
