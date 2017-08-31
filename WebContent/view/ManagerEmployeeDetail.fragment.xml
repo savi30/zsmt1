@@ -88,6 +88,5 @@
 				</f:formContainers>
 			</f:Form>
 		</VBox>
-		<Button icon="sap-icon://add" press="onAddEmployee" />
 	</FlexBox>
 </core:FragmentDefinition>

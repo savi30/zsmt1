@@ -29,10 +29,16 @@
 			columnsM="1"
 			singleContainerFullSize="false" >
 			
-			<f:content>				
-				<Label text="Project ID" />
-				<Input type="Text" id="addEmployeeProjectId"
-						placeholder="Enter id ..." />
+			<f:content>	
+				<Label id="idSelectedProject" visible ="false"	/>		
+				<Label text="Project" />
+							<Input id="addToProject" type="Text" placeholder="Enter project name ..."
+								showSuggestion="true" suggestionItems="{/ProjectSet}"
+								suggestionItemSelected="onSuggestionItemSelected">
+								<suggestionItems>
+									<core:ListItem text="{Name}" additionalText="{CustName}" key="{Idproject}" />
+								</suggestionItems>
+				</Input>
 						
 				<Label text="Number of days"/>
 				<Input  type="Number" id="addEmployeeBudgetDays"

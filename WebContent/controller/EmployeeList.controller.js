@@ -97,8 +97,8 @@ sap.ui
 
 											oEntry.ProjId = parseInt(oView
 													.byId(
-															"addEmployeeProjectId")
-													.getValue());
+															"idSelectedProject")
+													.getText());
 
 											oEntry.BudgetDays = parseInt(oView
 													.byId(
@@ -186,6 +186,16 @@ sap.ui
 												oRouter.getTargets().display(
 														"notFound");
 											}
+										},
+										onSuggestionItemSelected : function(oEvent) {
+											var oItem = oEvent
+													.getParameter("selectedItem");
+											var oContext = oItem
+													.getBindingContext()
+													.getProperty("Idproject");
+											var oLabelId = this.getView()
+													.byId("idSelectedProject");
+											oLabelId.setText(oContext);
 										},
 										onSearch : function (oEvt) {
 											 

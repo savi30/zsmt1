@@ -72,12 +72,22 @@ sap.ui.define([ "jquery.sap.global", "zsmt1/controller/BaseController",
 				path : "/SkillSet(" + oArgs.skillId + ")/toEmployee",
 				
 				template : new sap.m.StandardListItem({
+					type : sap.m.ListType.Active,
+					press : function(){
+						oRouter.navTo("managerEmployee", {
+							employeeId : oEvent.getSource()
+									.getBindingContext()
+									.getProperty(
+											"IdEmployee")
+						});
+					},
 					title : "{Surname}",
 					description : "{Name}",
 					
 				})
 			});
 		},
+		
 		_onBindingChange : function(oEvent) {
 			// No data for the binding
 			if (!this.getView().getBindingContext()) {
