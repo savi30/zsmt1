@@ -1,34 +1,53 @@
-<mvc:View
-	controllerName="zsmt1.controller.Report"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form"
-	busyIndicatorDelay="0">
-			
-			
-			<IconTabBar
-				id="iconTabBar"
-				class="sapUiResponsiveContentPadding"
-				binding="{Manager}"
-				outline="None">
-				<items >	
+<mvc:View controllerName="zsmt1.controller.Report" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:s="sap.suite.ui.microchart">
+
+	<Table id="reportList" class="sapUiResponsiveMargin" width="auto"
+		items="{
+					path:'/CapacityReportSet',
+					parameters:{
+							operationMode:'Client'
+							},
+					sorter : {
+							
+							path : 'SrvUName',
+							group : true
+						}
+					}">
+
+		<columns>
+			<Column width="12em">
+				<Text text="Name" class="myText" />
+			</Column>
+
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<Text text="Surname" class="myText" />
+			</Column>
+
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<Text text="Region" class="myText" />
+			</Column>
+
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<Text text="Overall Capacity" class="myText" />
+			</Column>
+		</columns>
+
+		<items>
+			<ColumnListItem type="Active" press="onPress">
+				<cells>
 					
-					<IconTabFilter id="capOvertab" text="{i18n>capOver}" icon ="sap-icon://overview-chart" key="CapacityOver">
-						<!-- <mvc:XMLView viewName="zsmt1.view.EmployeeList"></mvc:XMLView>	 -->
-					</IconTabFilter>
-					
-					<!-- <IconTabSeparator/>
-					<IconTabFilter id="projectTab" icon ="sap-icon://task" text="Projects" key="Projects">
-						<mvc:XMLView viewName="zsmt1.view.ProjectList"></mvc:XMLView>					
-					</IconTabFilter>
-					<IconTabSeparator/>
-					<IconTabFilter id="reportTab" text="{i18n>reportTitle}" key="Reports" icon ="sap-icon://kpi-corporate-performance">
+					<ObjectIdentifier title="{EmployeeName} " />
+
+					<Text
+						text="{EmployeeSurname}" />
 						
-					</IconTabFilter> -->	
-							 
-				</items>
-				
-			</IconTabBar>
-			
-	
+					<Text 
+						text="{Region}" />
+
+					<s:RadialMicroChart id="capacityChart" size="S" percentage="{Capacity}" class="sapUiSmallMargin"/>
+
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
 </mvc:View>
